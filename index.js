@@ -920,18 +920,28 @@ const getHomePage = () => `
         </div>
       </section>
 
-      <!-- Clients Section -->
+      <!-- Impact Section -->
       <section class="how-it-works">
         <div class="container">
-          <h2 class="section-title">Our Clients</h2>
-          <p class="section-subtitle">We have been working with some Fortune 500+ clients</p>
+          <h2 class="section-title">Our Impact</h2>
+          <p class="section-subtitle">Transforming lives through skills development and economic mobility</p>
           <div class="client-logos">
-            <div class="client-logo">🏢</div>
-            <div class="client-logo">🏪</div>
-            <div class="client-logo">🏭</div>
-            <div class="client-logo">🏦</div>
-            <div class="client-logo">🏛️</div>
-            <div class="client-logo">🏬</div>
+            <div class="impact-stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Youth Trained</div>
+            </div>
+            <div class="impact-stat">
+              <div class="stat-number">85%</div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+            <div class="impact-stat">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Industry Partners</div>
+            </div>
+            <div class="impact-stat">
+              <div class="stat-number">Udaipur</div>
+              <div class="stat-label">Starting Point</div>
+            </div>
           </div>
         </div>
       </section>
