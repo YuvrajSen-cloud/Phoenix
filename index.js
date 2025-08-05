@@ -1408,18 +1408,18 @@ const getCourseDetailsPage = (course) => `
         }
 
         .educator-name {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           font-weight: 600;
-          color: #1e293b;
+          color: #374151;
         }
 
         .educator-title {
-          color: #64748b;
-          font-size: 0.9rem;
+          color: #6b7280;
+          font-size: 0.85rem;
         }
 
         .educator-bio {
-          color: #64748b;
+          color: #6b7280;
           line-height: 1.6;
         }
 
