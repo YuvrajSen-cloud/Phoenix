@@ -2101,6 +2101,39 @@ const server = http.createServer((req, res) => {
     res.end(getHomePage());
   } else if (pathname === '/courses') {
     res.end(getCoursesPage(coursesData));
+  } else if (pathname.startsWith('/courses/')) {
+    // Extract course ID from URL
+    const courseId = parseInt(pathname.split('/')[2]);
+    const course = coursesData.find(c => c.id === courseId);
+
+    if (course) {
+      res.end(getCourseDetailsPage(course));
+    } else {
+      res.writeHead(404, { 'Content-Type': 'text/html' });
+      res.end(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Course Not Found - Phoenix</title>
+          <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f8fafc; }
+            .container { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+            h1 { color: #e74c3c; margin-bottom: 1rem; }
+            p { color: #64748b; margin-bottom: 2rem; }
+            a { color: #4f46e5; text-decoration: none; padding: 12px 24px; background: #f1f5f9; border-radius: 8px; display: inline-block; transition: background 0.3s ease; }
+            a:hover { background: #e2e8f0; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>📚 Course Not Found</h1>
+            <p>The course you're looking for doesn't exist or has been moved.</p>
+            <a href="/courses">← Browse All Courses</a>
+          </div>
+        </body>
+        </html>
+      `);
+    }
   } else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end(`
