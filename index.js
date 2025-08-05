@@ -840,6 +840,19 @@ const getHomePage = () => `
           justify-content: center;
           font-size: 2.5rem;
           color: #22c55e;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .course-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .course-image:hover img {
+          transform: scale(1.05);
         }
 
         .course-content {
