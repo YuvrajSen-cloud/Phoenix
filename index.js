@@ -887,25 +887,42 @@ const getHomePage = () => `
         </div>
       </section>
 
-      <!-- How it Works Section -->
+      <!-- Clients Section -->
       <section class="how-it-works">
         <div class="container">
-          <h2 class="section-title">How it Works</h2>
+          <h2 class="section-title">Our Clients</h2>
+          <p class="section-subtitle">We have been working with some Fortune 500+ clients</p>
+          <div class="client-logos">
+            <div class="client-logo">🏢</div>
+            <div class="client-logo">🏪</div>
+            <div class="client-logo">🏭</div>
+            <div class="client-logo">🏦</div>
+            <div class="client-logo">🏛️</div>
+            <div class="client-logo">🏬</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section">
+        <div class="container">
+          <h2 class="section-title">Manage your entire community <br>in a single system</h2>
+          <p class="section-subtitle">Who is Phoenix suitable for?</p>
           <div class="steps-container">
             <div class="step-card">
-              <div class="step-number">1</div>
-              <h3>Learn Skills</h3>
-              <p>Choose from industry-relevant courses designed to enhance your professional capabilities and career prospects.</p>
+              <div class="step-icon">👥</div>
+              <h3>Membership Organisations</h3>
+              <p>Our membership management software provides full automation of membership renewals and payments</p>
             </div>
             <div class="step-card">
-              <div class="step-number">2</div>
-              <h3>Get Certified</h3>
-              <p>Complete assessments and earn recognized certifications that validate your expertise to employers.</p>
+              <div class="step-icon">🏛️</div>
+              <h3>National Associations</h3>
+              <p>Our membership management software provides full automation of membership renewals and payments</p>
             </div>
             <div class="step-card">
-              <div class="step-number">3</div>
-              <h3>Start Your Career</h3>
-              <p>Apply your new skills and certifications to secure better job opportunities and advance your career.</p>
+              <div class="step-icon">🎯</div>
+              <h3>Clubs And Groups</h3>
+              <p>Our membership management software provides full automation of membership renewals and payments</p>
             </div>
           </div>
         </div>
