@@ -761,6 +761,32 @@ const getHomePage = () => `
           line-height: 1.6;
         }
 
+        /* Client Logos */
+        .client-logos {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 3rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        }
+
+        .client-logo {
+          font-size: 2.5rem;
+          opacity: 0.6;
+          transition: opacity 0.3s ease;
+        }
+
+        .client-logo:hover {
+          opacity: 1;
+        }
+
+        /* Services Section */
+        .services-section {
+          padding: 80px 0;
+          background: #f9fafb;
+        }
+
         /* Featured Courses Section */
         .featured-courses {
           padding: 100px 0;
