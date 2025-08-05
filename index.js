@@ -1322,17 +1322,17 @@ const getCourseDetailsPage = (course) => `
 
         .enrollment-card {
           background: white;
-          border-radius: 15px;
+          border-radius: 8px;
           padding: 2rem;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          border: 1px solid #f3f4f6;
           text-align: center;
           margin-bottom: 2rem;
         }
 
         .price-display {
-          font-size: 2.5rem;
-          font-weight: 700;
-          color: #059669;
+          font-size: 2.2rem;
+          font-weight: 600;
+          color: #22c55e;
           margin-bottom: 1rem;
         }
 
@@ -1612,7 +1612,7 @@ const getCourseDetailsPage = (course) => `
                 <li style="margin-bottom: 0.5rem;">📊 <strong>${course.level}</strong> level course</li>
                 <li style="margin-bottom: 0.5rem;">⏱️ <strong>${course.duration}</strong> duration</li>
                 <li style="margin-bottom: 0.5rem;">🎓 <strong>${course.curriculum.length}</strong> comprehensive modules</li>
-                <li style="margin-bottom: 0.5rem;">����️ <strong>${course.type.replace('-', ' ')}</strong> career track</li>
+                <li style="margin-bottom: 0.5rem;">🏷️ <strong>${course.type.replace('-', ' ')}</strong> career track</li>
                 <li style="margin-bottom: 0.5rem;">🌟 Learn from industry expert</li>
               </ul>
             </div>
