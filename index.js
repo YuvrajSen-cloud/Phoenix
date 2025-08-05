@@ -1865,22 +1865,22 @@ const getCoursesPage = (courses) => `
         }
 
         .course-title {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #1e293b;
+          color: #374151;
         }
 
         .course-educator {
           color: #22c55e;
-          font-size: 0.9rem;
-          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          margin-bottom: 0.75rem;
           font-weight: 500;
         }
 
         .course-description {
-          color: #64748b;
-          font-size: 0.95rem;
+          color: #6b7280;
+          font-size: 0.9rem;
           margin-bottom: 1rem;
           line-height: 1.5;
         }
@@ -1893,27 +1893,27 @@ const getCoursesPage = (courses) => `
         }
 
         .course-tag {
-          padding: 4px 12px;
-          border-radius: 15px;
-          font-size: 0.8rem;
-          font-weight: 600;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          font-weight: 500;
           text-transform: uppercase;
         }
 
         .blue-collar {
           background: #dbeafe;
-          color: #1e40af;
+          color: #1d4ed8;
         }
 
         .white-collar {
-          background: #f3e8ff;
+          background: #ede9fe;
           color: #7c3aed;
         }
 
         .course-price {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #059669;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #22c55e;
         }
 
         .enroll-btn {
