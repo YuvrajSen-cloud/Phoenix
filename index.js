@@ -1205,15 +1205,15 @@ const getCourseDetailsPage = (course) => `
         .content-section {
           background: white;
           padding: 2rem;
-          border-radius: 15px;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
           margin-bottom: 2rem;
         }
 
         .section-title {
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: #1e293b;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #374151;
           margin-bottom: 1.5rem;
           display: flex;
           align-items: center;
@@ -1221,7 +1221,8 @@ const getCourseDetailsPage = (course) => `
         }
 
         .section-icon {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
+          color: #22c55e;
         }
 
         /* What You'll Learn */
@@ -1611,7 +1612,7 @@ const getCourseDetailsPage = (course) => `
                 <li style="margin-bottom: 0.5rem;">📊 <strong>${course.level}</strong> level course</li>
                 <li style="margin-bottom: 0.5rem;">⏱️ <strong>${course.duration}</strong> duration</li>
                 <li style="margin-bottom: 0.5rem;">🎓 <strong>${course.curriculum.length}</strong> comprehensive modules</li>
-                <li style="margin-bottom: 0.5rem;">🏷️ <strong>${course.type.replace('-', ' ')}</strong> career track</li>
+                <li style="margin-bottom: 0.5rem;">����️ <strong>${course.type.replace('-', ' ')}</strong> career track</li>
                 <li style="margin-bottom: 0.5rem;">🌟 Learn from industry expert</li>
               </ul>
             </div>
