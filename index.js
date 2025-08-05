@@ -61,7 +61,7 @@ const coursesData = [
     category: "Energy",
     type: "blue-collar",
     price: "ISA Available",
-    image: "☀️",
+    image: "https://images.pexels.com/photos/9875408/pexels-photo-9875408.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Learn sustainable energy solutions and solar installation techniques",
     fullDescription: "Become a certified solar panel installation technician and join the growing renewable energy sector. This hands-on course covers everything from basic electrical principles to advanced installation techniques.",
     duration: "8 weeks",
