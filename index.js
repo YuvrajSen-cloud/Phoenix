@@ -933,6 +933,634 @@ const getHomePage = () => `
     </html>
 `;
 
+const getCourseDetailsPage = (course) => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>${course.title} - Phoenix Course Details</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: #f8fafc;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: white;
+          padding: 1rem 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #4f46e5;
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: #4f46e5;
+        }
+
+        .nav-links a.active {
+          color: #4f46e5;
+          font-weight: 600;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+          background: white;
+          padding: 1rem 0;
+          margin-top: 80px;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb-links {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #64748b;
+        }
+
+        .breadcrumb-links a {
+          color: #4f46e5;
+          text-decoration: none;
+        }
+
+        .breadcrumb-links span {
+          color: #cbd5e1;
+        }
+
+        /* Course Header */
+        .course-header {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 3rem 0;
+        }
+
+        .course-header-content {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        .course-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+
+        .course-subtitle {
+          font-size: 1.2rem;
+          opacity: 0.9;
+          margin-bottom: 1.5rem;
+        }
+
+        .course-educator {
+          font-size: 1.1rem;
+          color: #a7f3d0;
+          margin-bottom: 2rem;
+        }
+
+        .course-hero-image {
+          text-align: center;
+          font-size: 8rem;
+          background: rgba(255,255,255,0.1);
+          border-radius: 20px;
+          padding: 2rem;
+        }
+
+        /* Key Info Section */
+        .key-info-section {
+          background: white;
+          padding: 2rem 0;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .key-info-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 2rem;
+        }
+
+        .info-item {
+          text-align: center;
+          padding: 1.5rem;
+          background: #f8fafc;
+          border-radius: 12px;
+        }
+
+        .info-icon {
+          font-size: 2.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .info-label {
+          font-size: 0.9rem;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #1e293b;
+        }
+
+        /* Main Content */
+        .main-content {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 3rem;
+          padding: 3rem 0;
+        }
+
+        .content-section {
+          background: white;
+          padding: 2rem;
+          border-radius: 15px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+          margin-bottom: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #1e293b;
+          margin-bottom: 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .section-icon {
+          font-size: 1.5rem;
+        }
+
+        /* What You'll Learn */
+        .learning-objectives {
+          list-style: none;
+        }
+
+        .learning-objectives li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          margin-bottom: 1rem;
+          padding: 0.75rem;
+          background: #f8fafc;
+          border-radius: 8px;
+        }
+
+        .learning-objectives li::before {
+          content: "✅";
+          font-size: 1.2rem;
+          flex-shrink: 0;
+        }
+
+        /* Curriculum Accordion */
+        .curriculum-item {
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          overflow: hidden;
+        }
+
+        .curriculum-header {
+          background: #f8fafc;
+          padding: 1rem 1.5rem;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background 0.3s ease;
+        }
+
+        .curriculum-header:hover {
+          background: #f1f5f9;
+        }
+
+        .curriculum-header.active {
+          background: #4f46e5;
+          color: white;
+        }
+
+        .curriculum-title {
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+
+        .curriculum-toggle {
+          font-size: 1.2rem;
+          transition: transform 0.3s ease;
+        }
+
+        .curriculum-header.active .curriculum-toggle {
+          transform: rotate(180deg);
+        }
+
+        .curriculum-content {
+          padding: 0 1.5rem;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+
+        .curriculum-content.active {
+          max-height: 200px;
+          padding: 1rem 1.5rem;
+        }
+
+        .curriculum-lessons {
+          list-style: none;
+        }
+
+        .curriculum-lessons li {
+          padding: 0.5rem 0;
+          color: #64748b;
+          border-bottom: 1px solid #f1f5f9;
+        }
+
+        .curriculum-lessons li:last-child {
+          border-bottom: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+          position: sticky;
+          top: 120px;
+          height: fit-content;
+        }
+
+        .enrollment-card {
+          background: white;
+          border-radius: 15px;
+          padding: 2rem;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .price-display {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #059669;
+          margin-bottom: 1rem;
+        }
+
+        .enrollment-features {
+          list-style: none;
+          margin: 1.5rem 0;
+          text-align: left;
+        }
+
+        .enrollment-features li {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+          color: #64748b;
+        }
+
+        .enrollment-features li::before {
+          content: "✓";
+          color: #059669;
+          font-weight: bold;
+        }
+
+        .enroll-btn {
+          width: 100%;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          color: white;
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          border: none;
+          border-radius: 12px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          margin-bottom: 1rem;
+        }
+
+        .enroll-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+        }
+
+        .money-back {
+          font-size: 0.9rem;
+          color: #64748b;
+        }
+
+        /* Educator Bio */
+        .educator-card {
+          background: white;
+          border-radius: 15px;
+          padding: 2rem;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .educator-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .educator-avatar {
+          font-size: 3rem;
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .educator-name {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #1e293b;
+        }
+
+        .educator-title {
+          color: #64748b;
+          font-size: 0.9rem;
+        }
+
+        .educator-bio {
+          color: #64748b;
+          line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .main-content {
+            grid-template-columns: 1fr;
+          }
+
+          .sidebar {
+            position: static;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .course-header-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+
+          .course-title {
+            font-size: 2rem;
+          }
+
+          .course-hero-image {
+            font-size: 5rem;
+          }
+
+          .key-info-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses" class="active">Courses</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Breadcrumb -->
+      <section class="breadcrumb">
+        <div class="container">
+          <div class="breadcrumb-links">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/courses">Courses</a>
+            <span>/</span>
+            <span>${course.title}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Course Header -->
+      <section class="course-header">
+        <div class="container">
+          <div class="course-header-content">
+            <div>
+              <h1 class="course-title">${course.title}</h1>
+              <p class="course-subtitle">${course.fullDescription}</p>
+              <p class="course-educator">with ${course.educator}</p>
+            </div>
+            <div class="course-hero-image">
+              ${course.image}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Info Section -->
+      <section class="key-info-section">
+        <div class="container">
+          <div class="key-info-grid">
+            <div class="info-item">
+              <div class="info-icon">⏱️</div>
+              <div class="info-label">Duration</div>
+              <div class="info-value">${course.duration}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🗣️</div>
+              <div class="info-label">Language</div>
+              <div class="info-value">${course.language}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📊</div>
+              <div class="info-label">Level</div>
+              <div class="info-value">${course.level}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🏷️</div>
+              <div class="info-label">Category</div>
+              <div class="info-value">${course.category}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container" style="max-width: none; display: contents;">
+          <div>
+            <!-- What You'll Learn -->
+            <div class="content-section">
+              <h2 class="section-title">
+                <span class="section-icon">🎯</span>
+                What You'll Learn
+              </h2>
+              <ul class="learning-objectives">
+                ${course.whatYouLearn.map(skill => `
+                  <li>${skill}</li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <!-- Curriculum -->
+            <div class="content-section">
+              <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Course Curriculum
+              </h2>
+              <div class="curriculum-accordion">
+                ${course.curriculum.map((module, index) => `
+                  <div class="curriculum-item">
+                    <div class="curriculum-header" onclick="toggleModule(${index})">
+                      <span class="curriculum-title">${module.module}</span>
+                      <span class="curriculum-toggle">▼</span>
+                    </div>
+                    <div class="curriculum-content" id="module-${index}">
+                      <ul class="curriculum-lessons">
+                        ${module.lessons.map(lesson => `
+                          <li>${lesson}</li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Educator Bio -->
+            <div class="content-section">
+              <h2 class="section-title">
+                <span class="section-icon">👨‍🏫</span>
+                Meet Your Instructor
+              </h2>
+              <div class="educator-header">
+                <div class="educator-avatar">
+                  ${course.educatorImage}
+                </div>
+                <div>
+                  <div class="educator-name">${course.educator}</div>
+                  <div class="educator-title">Course Instructor</div>
+                </div>
+              </div>
+              <p class="educator-bio">${course.educatorBio}</p>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="sidebar">
+            <div class="enrollment-card">
+              <div class="price-display">${course.price}</div>
+              <ul class="enrollment-features">
+                <li>Lifetime access to course materials</li>
+                <li>Certificate of completion</li>
+                <li>24/7 student support</li>
+                <li>Mobile and desktop access</li>
+                <li>30-day money-back guarantee</li>
+              </ul>
+              <button class="enroll-btn">Enroll Now</button>
+              <p class="money-back">💯 30-day money-back guarantee</p>
+            </div>
+
+            <div class="educator-card">
+              <h3 style="margin-bottom: 1rem; color: #1e293b;">Course Highlights</h3>
+              <ul style="list-style: none; color: #64748b;">
+                <li style="margin-bottom: 0.5rem;">📊 <strong>${course.level}</strong> level course</li>
+                <li style="margin-bottom: 0.5rem;">⏱️ <strong>${course.duration}</strong> duration</li>
+                <li style="margin-bottom: 0.5rem;">🎓 <strong>${course.curriculum.length}</strong> comprehensive modules</li>
+                <li style="margin-bottom: 0.5rem;">🏷️ <strong>${course.type.replace('-', ' ')}</strong> career track</li>
+                <li style="margin-bottom: 0.5rem;">🌟 Learn from industry expert</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        function toggleModule(index) {
+          const header = document.querySelectorAll('.curriculum-header')[index];
+          const content = document.getElementById(\`module-\${index}\`);
+
+          header.classList.toggle('active');
+          content.classList.toggle('active');
+        }
+
+        // Enroll button functionality
+        document.querySelector('.enroll-btn').addEventListener('click', () => {
+          alert('Enrollment system coming soon! We will notify you when registration opens for this course.');
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+      </script>
+    </body>
+    </html>
+`;
+
 const getCoursesPage = (courses) => `
     <!DOCTYPE html>
     <html lang="hi">
