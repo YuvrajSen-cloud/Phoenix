@@ -1112,8 +1112,8 @@ const getCourseDetailsPage = (course) => `
 
         /* Course Header */
         .course-header {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          color: #374151;
           padding: 3rem 0;
         }
 
