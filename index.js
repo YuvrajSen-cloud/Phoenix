@@ -1831,32 +1831,32 @@ const getCoursesPage = (courses) => `
         /* Course Grid */
         .course-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 1.5rem;
         }
 
         .course-card {
           background: white;
-          border-radius: 15px;
+          border-radius: 8px;
           overflow: hidden;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+          border: 1px solid #f3f4f6;
           transition: all 0.3s ease;
           cursor: pointer;
         }
 
         .course-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+          border-color: #22c55e;
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .course-card-image {
-          height: 180px;
-          background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+          height: 160px;
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 3.5rem;
-          color: white;
+          font-size: 3rem;
+          color: #22c55e;
           position: relative;
         }
 
