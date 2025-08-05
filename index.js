@@ -946,26 +946,26 @@ const getHomePage = () => `
         </div>
       </section>
 
-      <!-- Services Section -->
+      <!-- Approach Section -->
       <section class="services-section">
         <div class="container">
-          <h2 class="section-title">Manage your entire community <br>in a single system</h2>
-          <p class="section-subtitle">Who is Phoenix suitable for?</p>
+          <h2 class="section-title">Our Hybrid Learning <br>Approach</h2>
+          <p class="section-subtitle">Combining digital accessibility with hands-on training for maximum impact</p>
           <div class="steps-container">
             <div class="step-card">
-              <div class="step-icon">👥</div>
-              <h3>Membership Organisations</h3>
-              <p>Our membership management software provides full automation of membership renewals and payments</p>
+              <div class="step-icon">📱</div>
+              <h3>Mobile Platform</h3>
+              <p>User-friendly mobile learning platform designed for accessibility, allowing learners to study anytime, anywhere with industry-vetted course content.</p>
             </div>
             <div class="step-card">
-              <div class="step-icon">🏛️</div>
-              <h3>National Associations</h3>
-              <p>Our membership management software provides full automation of membership renewals and payments</p>
+              <div class="step-icon">🔧</div>
+              <h3>Hands-on Workshops</h3>
+              <p>Practical training sessions that provide real-world experience and skills application, ensuring job-readiness for both blue-collar and white-collar roles.</p>
             </div>
             <div class="step-card">
-              <div class="step-icon">🎯</div>
-              <h3>Clubs And Groups</h3>
-              <p>Our membership management software provides full automation of membership renewals and payments</p>
+              <div class="step-icon">💼</div>
+              <h3>Employment Pipeline</h3>
+              <p>Direct connections to employment opportunities through our industry partnerships, creating a seamless transition from training to sustainable careers.</p>
             </div>
           </div>
         </div>
