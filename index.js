@@ -870,9 +870,9 @@ const getHomePage = () => `
       <section class="hero-section">
         <div class="container">
           <div class="hero-content">
-            <h1>आपका हुनर, आपका भविष्य</h1>
-            <p>Your Skill, Your Future</p>
-            <a href="/courses" class="cta-button">Explore Courses</a>
+            <h1>Lessons and insights <br><span class="highlight">from 8 years</span></h1>
+            <p>Where to grow your business as a photographer: site or social media?</p>
+            <a href="/courses" class="cta-button">Register</a>
           </div>
         </div>
       </section>
