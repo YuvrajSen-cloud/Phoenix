@@ -1957,7 +1957,7 @@ const getCoursesPage = (courses) => `
 
           <div class="course-grid" id="courseGrid">
             ${courses.map(course => `
-              <div class="course-card" data-category="${course.category}" data-type="${course.type}" data-title="${course.title.toLowerCase()}" data-price="${course.price}">
+              <div class="course-card" data-category="${course.category}" data-type="${course.type}" data-title="${course.title.toLowerCase()}" data-price="${course.price}" onclick="window.location.href='/courses/${course.id}'">
                 <div class="course-card-image">
                   ${course.image}
                 </div>
@@ -1969,7 +1969,7 @@ const getCoursesPage = (courses) => `
                     <span class="course-tag ${course.type}">${course.type.replace('-', ' ')}</span>
                     <span class="course-price">${course.price}</span>
                   </div>
-                  <button class="enroll-btn">Enroll Now</button>
+                  <button class="enroll-btn" onclick="event.stopPropagation(); window.location.href='/courses/${course.id}'">View Details</button>
                 </div>
               </div>
             `).join('')}
