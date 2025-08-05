@@ -1009,7 +1009,9 @@ const getHomePage = () => `
           <p class="section-subtitle">High-demand courses designed to bridge the skills gap and create employment opportunities</p>
           <div class="courses-grid">
             <div class="course-card" onclick="window.location.href='/courses/1'">
-              <div class="course-image">🏨</div>
+              <div class="course-image">
+                <img src="https://images.pexels.com/photos/3215519/pexels-photo-3215519.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hotel front desk reception" loading="lazy">
+              </div>
               <div class="course-content">
                 <h3>Hospitality Front Desk Operations</h3>
                 <p>Master guest services, reservation systems, and front office management in the hospitality industry.</p>
@@ -1017,7 +1019,9 @@ const getHomePage = () => `
               </div>
             </div>
             <div class="course-card" onclick="window.location.href='/courses/2'">
-              <div class="course-image">☀️</div>
+              <div class="course-image">
+                <img src="https://images.pexels.com/photos/9875408/pexels-photo-9875408.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Solar panel installation technician" loading="lazy">
+              </div>
               <div class="course-content">
                 <h3>Solar Panel Installation Technician</h3>
                 <p>Learn sustainable energy solutions and become certified in solar panel installation and maintenance.</p>
@@ -1025,7 +1029,9 @@ const getHomePage = () => `
               </div>
             </div>
             <div class="course-card" onclick="window.location.href='/courses/3'">
-              <div class="course-image">📱</div>
+              <div class="course-image">
+                <img src="https://images.pexels.com/photos/1083792/pexels-photo-1083792.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital marketing on laptop" loading="lazy">
+              </div>
               <div class="course-content">
                 <h3>Digital Marketing Assistant</h3>
                 <p>Develop skills in social media marketing, content creation, and online advertising strategies.</p>
@@ -1033,7 +1039,9 @@ const getHomePage = () => `
               </div>
             </div>
             <div class="course-card" onclick="window.location.href='/courses/4'">
-              <div class="course-image">💼</div>
+              <div class="course-image">
+                <img src="https://images.pexels.com/photos/3760072/pexels-photo-3760072.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Business administration meeting" loading="lazy">
+              </div>
               <div class="course-content">
                 <h3>Business Administration Basics</h3>
                 <p>Build foundational knowledge in business operations, management principles, and professional communication.</p>
