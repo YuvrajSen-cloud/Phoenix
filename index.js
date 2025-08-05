@@ -694,61 +694,71 @@ const getHomePage = () => `
 
         /* How it Works Section */
         .how-it-works {
-          padding: 100px 0;
-          background: #f8fafc;
+          padding: 80px 0;
+          background: white;
         }
 
         .section-title {
           text-align: center;
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin-bottom: 3rem;
-          color: #1e293b;
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #374151;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1rem;
+          color: #6b7280;
+          margin-bottom: 4rem;
         }
 
         .steps-container {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 3rem;
+          gap: 2rem;
           margin-top: 4rem;
         }
 
         .step-card {
           background: white;
-          padding: 2.5rem;
-          border-radius: 20px;
+          padding: 2rem;
+          border-radius: 8px;
           text-align: center;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-          transition: transform 0.3s ease;
+          border: 1px solid #f3f4f6;
+          transition: all 0.3s ease;
         }
 
         .step-card:hover {
-          transform: translateY(-5px);
+          border-color: #22c55e;
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
-        .step-number {
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .step-icon {
+          width: 60px;
+          height: 60px;
+          background: #22c55e;
           color: white;
-          border-radius: 50%;
+          border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: 700;
           margin: 0 auto 1.5rem;
         }
 
         .step-card h3 {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #1e293b;
+          color: #374151;
+          font-weight: 600;
         }
 
         .step-card p {
-          color: #64748b;
-          font-size: 1.1rem;
+          color: #6b7280;
+          font-size: 1rem;
+          line-height: 1.6;
         }
 
         /* Featured Courses Section */
