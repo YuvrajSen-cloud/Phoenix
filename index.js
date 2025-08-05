@@ -1188,11 +1188,19 @@ const getCourseDetailsPage = (course) => `
 
         .course-hero-image {
           text-align: center;
-          font-size: 6rem;
           background: rgba(34, 197, 94, 0.1);
           border-radius: 12px;
-          padding: 2rem;
-          color: #22c55e;
+          padding: 1rem;
+          overflow: hidden;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .course-hero-image img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
         }
 
         /* Key Info Section */
