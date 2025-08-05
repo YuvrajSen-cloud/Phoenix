@@ -10,7 +10,7 @@ const coursesData = [
     category: "Hospitality",
     type: "blue-collar",
     price: "₹999",
-    image: "🏨",
+    image: "https://images.pexels.com/photos/3215519/pexels-photo-3215519.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Master guest services, reservation systems, and front office management",
     fullDescription: "This comprehensive course provides you with essential skills for front desk operations in the hospitality industry. Learn guest service excellence, reservation management, and professional communication.",
     duration: "6 weeks",
