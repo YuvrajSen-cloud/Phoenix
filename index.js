@@ -187,7 +187,7 @@ const coursesData = [
     category: "Management",
     type: "white-collar",
     price: "₹1,999",
-    image: "💼",
+    image: "https://images.pexels.com/photos/3760072/pexels-photo-3760072.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Build foundational knowledge in business operations and management",
     fullDescription: "Develop essential business administration skills that are crucial for any professional environment. Learn management principles, business communication, and operational excellence.",
     duration: "12 weeks",
