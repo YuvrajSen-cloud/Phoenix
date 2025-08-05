@@ -1384,9 +1384,9 @@ const getCourseDetailsPage = (course) => `
         /* Educator Bio */
         .educator-card {
           background: white;
-          border-radius: 15px;
+          border-radius: 8px;
           padding: 2rem;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+          border: 1px solid #f3f4f6;
         }
 
         .educator-header {
@@ -1397,10 +1397,10 @@ const getCourseDetailsPage = (course) => `
         }
 
         .educator-avatar {
-          font-size: 3rem;
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          font-size: 2.5rem;
+          width: 70px;
+          height: 70px;
+          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
