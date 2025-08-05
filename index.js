@@ -789,38 +789,39 @@ const getHomePage = () => `
 
         /* Featured Courses Section */
         .featured-courses {
-          padding: 100px 0;
+          padding: 80px 0;
           background: white;
         }
 
         .courses-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 2.5rem;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
           margin-top: 4rem;
         }
 
         .course-card {
           background: white;
-          border-radius: 15px;
+          border-radius: 8px;
           overflow: hidden;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          border: 1px solid #f3f4f6;
           transition: all 0.3s ease;
+          cursor: pointer;
         }
 
         .course-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+          border-color: #22c55e;
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .course-image {
-          height: 200px;
-          background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+          height: 160px;
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 3rem;
-          color: white;
+          font-size: 2.5rem;
+          color: #22c55e;
         }
 
         .course-content {
@@ -828,27 +829,33 @@ const getHomePage = () => `
         }
 
         .course-card h3 {
-          font-size: 1.3rem;
-          margin-bottom: 1rem;
-          color: #1e293b;
+          font-size: 1.2rem;
+          margin-bottom: 0.75rem;
+          color: #374151;
           font-weight: 600;
+        }
+
+        .course-card p {
+          color: #6b7280;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
         }
 
         .learn-more-btn {
           background: #22c55e;
           color: white;
-          padding: 10px 25px;
+          padding: 8px 20px;
           border: none;
-          border-radius: 25px;
-          font-weight: 600;
+          border-radius: 6px;
+          font-weight: 500;
           cursor: pointer;
           transition: all 0.3s ease;
-          width: 100%;
+          font-size: 0.9rem;
         }
 
         .learn-more-btn:hover {
           background: #16a34a;
-          transform: translateY(-1px);
         }
 
         /* Responsive Design */
