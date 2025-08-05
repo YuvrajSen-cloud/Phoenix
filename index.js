@@ -1555,7 +1555,7 @@ const getCourseDetailsPage = (course) => `
               <p class="course-educator">with ${course.educator}</p>
             </div>
             <div class="course-hero-image">
-              ${course.image}
+              <img src="${course.image}" alt="${course.title}" loading="lazy">
             </div>
           </div>
         </div>
