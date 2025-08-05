@@ -1169,27 +1169,29 @@ const getCourseDetailsPage = (course) => `
         .info-item {
           text-align: center;
           padding: 1.5rem;
-          background: #f8fafc;
-          border-radius: 12px;
+          background: white;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
         }
 
         .info-icon {
-          font-size: 2.5rem;
+          font-size: 2rem;
           margin-bottom: 0.5rem;
+          color: #22c55e;
         }
 
         .info-label {
-          font-size: 0.9rem;
-          color: #64748b;
+          font-size: 0.8rem;
+          color: #6b7280;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-bottom: 0.5rem;
         }
 
         .info-value {
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 600;
-          color: #1e293b;
+          color: #374151;
         }
 
         /* Main Content */
