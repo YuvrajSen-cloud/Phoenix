@@ -603,7 +603,7 @@ const getHomePage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #4f46e5;
+          color: #22c55e;
           text-decoration: none;
         }
 
@@ -620,7 +620,7 @@ const getHomePage = () => `
         }
 
         .nav-links a:hover {
-          color: #4f46e5;
+          color: #22c55e;
         }
 
         /* Hero Section */
@@ -799,7 +799,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn {
-          background: #10b981;
+          background: #22c55e;
           color: white;
           padding: 10px 25px;
           border: none;
@@ -811,7 +811,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn:hover {
-          background: #059669;
+          background: #16a34a;
           transform: translateY(-1px);
         }
 
@@ -1001,7 +1001,7 @@ const getCourseDetailsPage = (course) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #4f46e5;
+          color: #22c55e;
           text-decoration: none;
         }
 
@@ -1018,11 +1018,11 @@ const getCourseDetailsPage = (course) => `
         }
 
         .nav-links a:hover {
-          color: #4f46e5;
+          color: #22c55e;
         }
 
         .nav-links a.active {
-          color: #4f46e5;
+          color: #22c55e;
           font-weight: 600;
         }
 
@@ -1042,7 +1042,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .breadcrumb-links a {
-          color: #4f46e5;
+          color: #22c55e;
           text-decoration: none;
         }
 
@@ -1203,7 +1203,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header.active {
-          background: #4f46e5;
+          background: #22c55e;
           color: white;
         }
 
@@ -1446,7 +1446,7 @@ const getCourseDetailsPage = (course) => `
               <div class="info-value">${course.duration}</div>
             </div>
             <div class="info-item">
-              <div class="info-icon">🗣���</div>
+              <div class="info-icon">🗣️</div>
               <div class="info-label">Language</div>
               <div class="info-value">${course.language}</div>
             </div>
@@ -1629,7 +1629,7 @@ const getCoursesPage = (courses) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #4f46e5;
+          color: #22c55e;
           text-decoration: none;
         }
 
@@ -1646,11 +1646,11 @@ const getCoursesPage = (courses) => `
         }
 
         .nav-links a:hover {
-          color: #4f46e5;
+          color: #22c55e;
         }
 
         .nav-links a.active {
-          color: #4f46e5;
+          color: #22c55e;
           font-weight: 600;
         }
 
@@ -1703,7 +1703,7 @@ const getCoursesPage = (courses) => `
 
         .search-input:focus {
           outline: none;
-          border-color: #4f46e5;
+          border-color: #22c55e;
         }
 
         .search-icon {
@@ -1734,9 +1734,9 @@ const getCoursesPage = (courses) => `
 
         .filter-btn:hover,
         .filter-btn.active {
-          background: #4f46e5;
+          background: #22c55e;
           color: white;
-          border-color: #4f46e5;
+          border-color: #22c55e;
         }
 
         /* Course Results Section */
@@ -1808,7 +1808,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-educator {
-          color: #4f46e5;
+          color: #22c55e;
           font-size: 0.9rem;
           margin-bottom: 0.5rem;
           font-weight: 500;
@@ -1855,7 +1855,7 @@ const getCoursesPage = (courses) => `
         .enroll-btn {
           width: 100%;
           padding: 12px;
-          background: #4f46e5;
+          background: #22c55e;
           color: white;
           border: none;
           border-radius: 8px;
@@ -1865,7 +1865,7 @@ const getCoursesPage = (courses) => `
         }
 
         .enroll-btn:hover {
-          background: #3730a3;
+          background: #16a34a;
         }
 
         /* No Results */
