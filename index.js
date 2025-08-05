@@ -553,7 +553,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Kavita Joshi is an experienced office manager with 14 years in administrative roles across various industries. She has streamlined operations for multiple companies and trained 150+ administrative professionals.",
-    educatorImage: "👩‍��"
+    educatorImage: "👩‍💼"
   }
 ];
 
@@ -2035,8 +2035,8 @@ const getCoursesPage = (courses) => `
       <!-- Page Header -->
       <section class="page-header">
         <div class="container">
-          <h1>Course Catalog</h1>
-          <p>Discover skills that shape your future</p>
+          <h1>Skills Training Catalog</h1>
+          <p>Industry-vetted programs for blue-collar and white-collar careers that drive economic mobility</p>
         </div>
       </section>
 
