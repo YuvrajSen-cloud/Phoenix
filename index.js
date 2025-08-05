@@ -1,7 +1,7 @@
 const http = require('http');
 const url = require('url');
 
-// Sample course data
+// Sample course data with detailed information
 const coursesData = [
   {
     id: 1,
@@ -11,7 +11,48 @@ const coursesData = [
     type: "blue-collar",
     price: "₹999",
     image: "🏨",
-    description: "Master guest services, reservation systems, and front office management"
+    description: "Master guest services, reservation systems, and front office management",
+    fullDescription: "This comprehensive course provides you with essential skills for front desk operations in the hospitality industry. Learn guest service excellence, reservation management, and professional communication.",
+    duration: "6 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Guest check-in and check-out procedures",
+      "Reservation system management",
+      "Customer service excellence",
+      "Hotel software operations",
+      "Cash handling and billing",
+      "Guest complaint resolution",
+      "Professional communication skills"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Introduction to Hospitality",
+        lessons: ["Industry overview", "Service standards", "Professional etiquette"]
+      },
+      {
+        module: "Module 2: Front Desk Operations",
+        lessons: ["Check-in procedures", "Check-out processes", "Room assignment strategies"]
+      },
+      {
+        module: "Module 3: Reservation Management",
+        lessons: ["Booking systems", "Rate management", "Overbooking strategies"]
+      },
+      {
+        module: "Module 4: Customer Service Excellence",
+        lessons: ["Guest interaction", "Problem solving", "Cultural sensitivity"]
+      },
+      {
+        module: "Module 5: Technology & Systems",
+        lessons: ["PMS software", "Online booking platforms", "Payment processing"]
+      },
+      {
+        module: "Module 6: Professional Development",
+        lessons: ["Career advancement", "Industry certifications", "Interview preparation"]
+      }
+    ],
+    educatorBio: "Chef Rakesh Meena has over 15 years of experience in luxury hotels and resorts. He holds certifications from leading hospitality institutes and has trained over 500 front desk professionals.",
+    educatorImage: "👨‍💼"
   },
   {
     id: 2,
@@ -21,7 +62,56 @@ const coursesData = [
     type: "blue-collar",
     price: "ISA Available",
     image: "☀️",
-    description: "Learn sustainable energy solutions and solar installation techniques"
+    description: "Learn sustainable energy solutions and solar installation techniques",
+    fullDescription: "Become a certified solar panel installation technician and join the growing renewable energy sector. This hands-on course covers everything from basic electrical principles to advanced installation techniques.",
+    duration: "8 weeks",
+    language: "Hindi",
+    level: "Intermediate",
+    whatYouLearn: [
+      "Solar panel types and specifications",
+      "Electrical safety procedures",
+      "Installation techniques and tools",
+      "System design and sizing",
+      "Maintenance and troubleshooting",
+      "Grid connection procedures",
+      "Safety protocols and certifications"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Solar Energy Fundamentals",
+        lessons: ["Solar energy basics", "Photovoltaic principles", "System components"]
+      },
+      {
+        module: "Module 2: Electrical Safety",
+        lessons: ["Safety protocols", "Electrical hazards", "Personal protective equipment"]
+      },
+      {
+        module: "Module 3: Installation Planning",
+        lessons: ["Site assessment", "System design", "Permit requirements"]
+      },
+      {
+        module: "Module 4: Hands-on Installation",
+        lessons: ["Mounting systems", "Panel placement", "Wiring techniques"]
+      },
+      {
+        module: "Module 5: System Integration",
+        lessons: ["Inverter installation", "Grid connection", "Monitoring systems"]
+      },
+      {
+        module: "Module 6: Maintenance & Troubleshooting",
+        lessons: ["Regular maintenance", "Problem diagnosis", "Performance optimization"]
+      },
+      {
+        module: "Module 7: Business & Certification",
+        lessons: ["Industry certifications", "Starting your business", "Customer relations"]
+      },
+      {
+        module: "Module 8: Advanced Topics",
+        lessons: ["Battery storage", "Smart grid integration", "Future technologies"]
+      }
+    ],
+    educatorBio: "Engineer Priya Sharma is a renewable energy specialist with 12 years of experience in solar installations. She has designed and supervised over 200 solar projects across India.",
+    educatorImage: "👩‍🔬"
   },
   {
     id: 3,
@@ -31,7 +121,64 @@ const coursesData = [
     type: "white-collar",
     price: "₹1,499",
     image: "📱",
-    description: "Develop skills in social media marketing and online advertising"
+    description: "Develop skills in social media marketing and online advertising",
+    fullDescription: "Master digital marketing fundamentals and become a valuable asset to any marketing team. Learn social media strategy, content creation, and digital advertising techniques.",
+    duration: "10 weeks",
+    language: "English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Social media platform management",
+      "Content creation and curation",
+      "Digital advertising campaigns",
+      "Analytics and reporting",
+      "SEO basics and optimization",
+      "Email marketing strategies",
+      "Brand management online"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Digital Marketing Overview",
+        lessons: ["Industry landscape", "Key platforms", "Career opportunities"]
+      },
+      {
+        module: "Module 2: Social Media Fundamentals",
+        lessons: ["Platform-specific strategies", "Content planning", "Community management"]
+      },
+      {
+        module: "Module 3: Content Creation",
+        lessons: ["Visual design basics", "Copywriting", "Video content"]
+      },
+      {
+        module: "Module 4: Paid Advertising",
+        lessons: ["Facebook Ads", "Google Ads", "Campaign optimization"]
+      },
+      {
+        module: "Module 5: Analytics & Measurement",
+        lessons: ["Google Analytics", "Social media metrics", "ROI calculation"]
+      },
+      {
+        module: "Module 6: SEO Basics",
+        lessons: ["Keyword research", "On-page optimization", "Link building"]
+      },
+      {
+        module: "Module 7: Email Marketing",
+        lessons: ["Campaign design", "Automation", "List building"]
+      },
+      {
+        module: "Module 8: Tools & Software",
+        lessons: ["Marketing automation", "Design tools", "Scheduling platforms"]
+      },
+      {
+        module: "Module 9: Strategy Development",
+        lessons: ["Campaign planning", "Budget management", "Brand consistency"]
+      },
+      {
+        module: "Module 10: Career Preparation",
+        lessons: ["Portfolio building", "Interview skills", "Freelancing basics"]
+      }
+    ],
+    educatorBio: "Amit Kumar is a digital marketing expert with 8 years of experience helping brands grow online. He has managed campaigns for Fortune 500 companies and trained over 1000 marketers.",
+    educatorImage: "👨‍💻"
   },
   {
     id: 4,
@@ -41,7 +188,72 @@ const coursesData = [
     type: "white-collar",
     price: "₹1,999",
     image: "💼",
-    description: "Build foundational knowledge in business operations and management"
+    description: "Build foundational knowledge in business operations and management",
+    fullDescription: "Develop essential business administration skills that are crucial for any professional environment. Learn management principles, business communication, and operational excellence.",
+    duration: "12 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Business communication skills",
+      "Project management fundamentals",
+      "Financial basics and budgeting",
+      "Team leadership principles",
+      "Office administration procedures",
+      "Strategic thinking and planning",
+      "Customer relationship management"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Business Fundamentals",
+        lessons: ["Business types", "Organizational structure", "Industry analysis"]
+      },
+      {
+        module: "Module 2: Communication Skills",
+        lessons: ["Professional writing", "Presentation skills", "Meeting management"]
+      },
+      {
+        module: "Module 3: Project Management",
+        lessons: ["Planning techniques", "Resource allocation", "Timeline management"]
+      },
+      {
+        module: "Module 4: Financial Literacy",
+        lessons: ["Budget preparation", "Financial statements", "Cost analysis"]
+      },
+      {
+        module: "Module 5: Leadership Principles",
+        lessons: ["Team dynamics", "Motivation techniques", "Conflict resolution"]
+      },
+      {
+        module: "Module 6: Operations Management",
+        lessons: ["Process optimization", "Quality control", "Efficiency improvement"]
+      },
+      {
+        module: "Module 7: Customer Relations",
+        lessons: ["Customer service", "Relationship building", "Feedback management"]
+      },
+      {
+        module: "Module 8: Technology in Business",
+        lessons: ["Business software", "Digital transformation", "Automation tools"]
+      },
+      {
+        module: "Module 9: Strategic Planning",
+        lessons: ["SWOT analysis", "Goal setting", "Performance measurement"]
+      },
+      {
+        module: "Module 10: Professional Development",
+        lessons: ["Career planning", "Networking", "Continuous learning"]
+      },
+      {
+        module: "Module 11: Ethics & Compliance",
+        lessons: ["Business ethics", "Legal compliance", "Corporate responsibility"]
+      },
+      {
+        module: "Module 12: Capstone Project",
+        lessons: ["Real-world application", "Case studies", "Final presentation"]
+      }
+    ],
+    educatorBio: "Neha Gupta is an MBA consultant with 10 years of experience in business strategy and operations. She has helped over 50 companies optimize their processes and has mentored 300+ professionals.",
+    educatorImage: "👩‍💼"
   },
   {
     id: 5,
@@ -51,7 +263,80 @@ const coursesData = [
     type: "blue-collar",
     price: "₹899",
     image: "⚡",
-    description: "Complete electrical systems installation and maintenance training"
+    description: "Complete electrical systems installation and maintenance training",
+    fullDescription: "Become a certified electrical technician with comprehensive training in electrical systems, safety protocols, and installation techniques. This course prepares you for a rewarding career in electrical work.",
+    duration: "14 weeks",
+    language: "Hindi",
+    level: "Intermediate",
+    whatYouLearn: [
+      "Electrical circuit analysis",
+      "Wiring installation techniques",
+      "Safety protocols and procedures",
+      "Motor control systems",
+      "Troubleshooting and repair",
+      "Electrical code compliance",
+      "Industrial electrical systems"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Electrical Fundamentals",
+        lessons: ["Ohm's law", "AC/DC circuits", "Power calculations"]
+      },
+      {
+        module: "Module 2: Safety First",
+        lessons: ["Electrical hazards", "Safety equipment", "Lockout/tagout procedures"]
+      },
+      {
+        module: "Module 3: Tools and Equipment",
+        lessons: ["Hand tools", "Testing equipment", "Power tools safety"]
+      },
+      {
+        module: "Module 4: Wiring Methods",
+        lessons: ["Conduit installation", "Cable pulling", "Junction boxes"]
+      },
+      {
+        module: "Module 5: Residential Wiring",
+        lessons: ["House wiring", "Panel installation", "GFCI protection"]
+      },
+      {
+        module: "Module 6: Commercial Systems",
+        lessons: ["Three-phase systems", "Lighting controls", "Emergency systems"]
+      },
+      {
+        module: "Module 7: Motor Controls",
+        lessons: ["Motor types", "Starters", "Variable frequency drives"]
+      },
+      {
+        module: "Module 8: Industrial Applications",
+        lessons: ["Control panels", "PLCs basics", "Industrial safety"]
+      },
+      {
+        module: "Module 9: Troubleshooting",
+        lessons: ["Problem diagnosis", "Testing procedures", "Repair techniques"]
+      },
+      {
+        module: "Module 10: Electrical Codes",
+        lessons: ["NEC standards", "Local codes", "Permit requirements"]
+      },
+      {
+        module: "Module 11: Maintenance Procedures",
+        lessons: ["Preventive maintenance", "Equipment testing", "Documentation"]
+      },
+      {
+        module: "Module 12: Advanced Systems",
+        lessons: ["Renewable integration", "Smart systems", "Energy efficiency"]
+      },
+      {
+        module: "Module 13: Business Skills",
+        lessons: ["Customer service", "Pricing", "Business basics"]
+      },
+      {
+        module: "Module 14: Certification Prep",
+        lessons: ["Exam preparation", "Practical assessment", "License application"]
+      }
+    ],
+    educatorBio: "Master Electrician Rajesh Singh has 20 years of experience in electrical installations and has trained over 800 electricians. He holds multiple certifications and specializes in industrial electrical systems.",
+    educatorImage: "👨‍🔧"
   },
   {
     id: 6,
@@ -61,7 +346,88 @@ const coursesData = [
     type: "white-collar",
     price: "₹2,499",
     image: "💻",
-    description: "Learn HTML, CSS, JavaScript and modern web development practices"
+    description: "Learn HTML, CSS, JavaScript and modern web development practices",
+    fullDescription: "Start your journey as a web developer with this comprehensive course covering front-end technologies and modern development practices. Build real projects and create an impressive portfolio.",
+    duration: "16 weeks",
+    language: "English",
+    level: "Beginner",
+    whatYouLearn: [
+      "HTML5 structure and semantics",
+      "CSS3 styling and layouts",
+      "JavaScript programming fundamentals",
+      "Responsive web design",
+      "Version control with Git",
+      "Modern development tools",
+      "Website deployment and hosting"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Web Development Introduction",
+        lessons: ["How the web works", "Development environment", "Career paths"]
+      },
+      {
+        module: "Module 2: HTML Fundamentals",
+        lessons: ["HTML structure", "Tags and elements", "Forms and inputs"]
+      },
+      {
+        module: "Module 3: CSS Basics",
+        lessons: ["Selectors", "Properties", "Box model"]
+      },
+      {
+        module: "Module 4: CSS Layouts",
+        lessons: ["Flexbox", "Grid", "Positioning"]
+      },
+      {
+        module: "Module 5: Responsive Design",
+        lessons: ["Media queries", "Mobile-first approach", "Viewport settings"]
+      },
+      {
+        module: "Module 6: JavaScript Basics",
+        lessons: ["Variables", "Functions", "Control structures"]
+      },
+      {
+        module: "Module 7: DOM Manipulation",
+        lessons: ["Selecting elements", "Event handling", "Dynamic content"]
+      },
+      {
+        module: "Module 8: JavaScript Projects",
+        lessons: ["Calculator app", "To-do list", "Image gallery"]
+      },
+      {
+        module: "Module 9: CSS Frameworks",
+        lessons: ["Bootstrap", "Tailwind CSS", "Component libraries"]
+      },
+      {
+        module: "Module 10: Version Control",
+        lessons: ["Git basics", "GitHub", "Collaboration workflow"]
+      },
+      {
+        module: "Module 11: Build Tools",
+        lessons: ["NPM", "Webpack", "Development servers"]
+      },
+      {
+        module: "Module 12: API Integration",
+        lessons: ["Fetch API", "REST APIs", "JSON handling"]
+      },
+      {
+        module: "Module 13: Modern JavaScript",
+        lessons: ["ES6+ features", "Modules", "Async programming"]
+      },
+      {
+        module: "Module 14: Testing & Debugging",
+        lessons: ["Browser DevTools", "Testing frameworks", "Debugging techniques"]
+      },
+      {
+        module: "Module 15: Deployment",
+        lessons: ["Hosting services", "Domain setup", "Performance optimization"]
+      },
+      {
+        module: "Module 16: Portfolio & Career",
+        lessons: ["Portfolio creation", "Job searching", "Interview preparation"]
+      }
+    ],
+    educatorBio: "Senior Developer Anita Roy has 12 years of experience building web applications for startups and enterprises. She has mentored 200+ developers and contributes to open-source projects.",
+    educatorImage: "👩‍💻"
   },
   {
     id: 7,
@@ -71,7 +437,64 @@ const coursesData = [
     type: "blue-collar",
     price: "₹1,299",
     image: "👨‍🍳",
-    description: "Professional cooking techniques and kitchen management skills"
+    description: "Professional cooking techniques and kitchen management skills",
+    fullDescription: "Master professional cooking techniques and kitchen management skills essential for a successful culinary career. Learn from basic cooking methods to advanced culinary arts and food service management.",
+    duration: "10 weeks",
+    language: "Hindi",
+    level: "Beginner",
+    whatYouLearn: [
+      "Basic cooking techniques and methods",
+      "Food safety and hygiene standards",
+      "Menu planning and costing",
+      "Kitchen equipment operation",
+      "Food presentation and plating",
+      "Inventory management",
+      "Customer service in food service"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Culinary Fundamentals",
+        lessons: ["Cooking basics", "Kitchen safety", "Sanitation principles"]
+      },
+      {
+        module: "Module 2: Knife Skills",
+        lessons: ["Knife types", "Cutting techniques", "Maintenance"]
+      },
+      {
+        module: "Module 3: Cooking Methods",
+        lessons: ["Dry heat cooking", "Moist heat cooking", "Combination methods"]
+      },
+      {
+        module: "Module 4: Indian Cuisine",
+        lessons: ["Regional specialties", "Spice knowledge", "Traditional techniques"]
+      },
+      {
+        module: "Module 5: International Cuisine",
+        lessons: ["Continental dishes", "Asian cuisine", "Fusion cooking"]
+      },
+      {
+        module: "Module 6: Baking & Desserts",
+        lessons: ["Basic baking", "Cake decoration", "Indian sweets"]
+      },
+      {
+        module: "Module 7: Food Safety",
+        lessons: ["HACCP principles", "Food storage", "Contamination prevention"]
+      },
+      {
+        module: "Module 8: Menu Development",
+        lessons: ["Menu design", "Cost calculation", "Nutrition basics"]
+      },
+      {
+        module: "Module 9: Kitchen Management",
+        lessons: ["Workflow optimization", "Team coordination", "Quality control"]
+      },
+      {
+        module: "Module 10: Career Development",
+        lessons: ["Restaurant operations", "Entrepreneurship", "Industry trends"]
+      }
+    ],
+    educatorBio: "Head Chef Suresh Patel has 18 years of experience in fine dining and hotel kitchens. He has won multiple culinary awards and has trained over 400 chefs across India.",
+    educatorImage: "👨‍🍳"
   },
   {
     id: 8,
@@ -81,7 +504,56 @@ const coursesData = [
     type: "white-collar",
     price: "₹799",
     image: "📊",
-    description: "Master office software, data management, and administrative procedures"
+    description: "Master office software, data management, and administrative procedures",
+    fullDescription: "Develop essential office administration skills including data entry, document management, and professional communication. Perfect for starting a career in administrative roles.",
+    duration: "8 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Microsoft Office suite mastery",
+      "Data entry accuracy and speed",
+      "File organization systems",
+      "Professional email communication",
+      "Meeting coordination and scheduling",
+      "Customer service phone skills",
+      "Basic accounting and bookkeeping"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Office Fundamentals",
+        lessons: ["Office environment", "Professional etiquette", "Communication basics"]
+      },
+      {
+        module: "Module 2: Microsoft Word",
+        lessons: ["Document creation", "Formatting", "Templates and mail merge"]
+      },
+      {
+        module: "Module 3: Microsoft Excel",
+        lessons: ["Spreadsheet basics", "Formulas", "Data analysis"]
+      },
+      {
+        module: "Module 4: Microsoft PowerPoint",
+        lessons: ["Presentation design", "Slide animations", "Professional templates"]
+      },
+      {
+        module: "Module 5: Data Entry Skills",
+        lessons: ["Typing accuracy", "Speed development", "Data validation"]
+      },
+      {
+        module: "Module 6: File Management",
+        lessons: ["Digital filing", "Document control", "Backup procedures"]
+      },
+      {
+        module: "Module 7: Communication Skills",
+        lessons: ["Email etiquette", "Phone skills", "Meeting minutes"]
+      },
+      {
+        module: "Module 8: Administrative Tasks",
+        lessons: ["Scheduling", "Travel arrangements", "Expense reporting"]
+      }
+    ],
+    educatorBio: "Kavita Joshi is an experienced office manager with 14 years in administrative roles across various industries. She has streamlined operations for multiple companies and trained 150+ administrative professionals.",
+    educatorImage: "👩‍💼"
   }
 ];
 
