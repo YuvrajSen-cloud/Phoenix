@@ -913,9 +913,9 @@ const getHomePage = () => `
       <section class="hero-section">
         <div class="container">
           <div class="hero-content">
-            <h1>Lessons and insights <br><span class="highlight">from 8 years</span></h1>
-            <p>Where to grow your business as a photographer: site or social media?</p>
-            <a href="/courses" class="cta-button">Register</a>
+            <h1>Bridging India's <br><span class="highlight">Skills Gap</span></h1>
+            <p>Empowering underprivileged youth through industry-vetted training for high-demand blue-collar and white-collar jobs. Creating a direct pipeline from learning to employment.</p>
+            <a href="/courses" class="cta-button">Start Your Journey</a>
           </div>
         </div>
       </section>
@@ -1508,7 +1508,7 @@ const getCourseDetailsPage = (course) => `
         <div class="container">
           <div class="key-info-grid">
             <div class="info-item">
-              <div class="info-icon">���️</div>
+              <div class="info-icon">⏱️</div>
               <div class="info-label">Duration</div>
               <div class="info-value">${course.duration}</div>
             </div>
