@@ -625,50 +625,71 @@ const getHomePage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 156, 84, 0.9)),
-                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0f9ff" width="1200" height="800"/><circle fill="%23ddd6fe" cx="200" cy="200" r="50"/><circle fill="%23fed7d7" cx="800" cy="150" r="30"/><circle fill="%23c6f6d5" cx="1000" cy="300" r="40"/><circle fill="%23fef3c7" cx="300" cy="500" r="35"/><circle fill="%23bfdbfe" cx="900" cy="600" r="45"/><path fill="%23a78bfa" d="M100,400 Q200,350 300,400 T500,400"/></svg>');
-          background-size: cover;
-          background-position: center;
-          min-height: 100vh;
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          min-height: 90vh;
           display: flex;
           align-items: center;
           justify-content: center;
-          text-align: center;
-          color: white;
           position: relative;
           margin-top: 80px;
+          overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 100%;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2322c55e;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%2316a34a;stop-opacity:0.2" /></linearGradient></defs><rect width="600" height="600" fill="url(%23grad1)"/><circle cx="450" cy="150" r="80" fill="%2322c55e" opacity="0.1"/><circle cx="500" cy="300" r="60" fill="%2316a34a" opacity="0.15"/><circle cx="350" cy="450" r="100" fill="%2315803d" opacity="0.1"/><path d="M300,200 Q400,150 500,200 T700,200" stroke="%2322c55e" stroke-width="3" fill="none" opacity="0.3"/></svg>') no-repeat center;
+          background-size: contain;
+          z-index: 1;
+        }
+
+        .hero-content {
+          text-align: left;
+          max-width: 600px;
+          z-index: 2;
+          position: relative;
         }
 
         .hero-content h1 {
           font-size: 3.5rem;
           font-weight: 700;
-          margin-bottom: 1rem;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          margin-bottom: 1.5rem;
+          color: #1f2937;
+          line-height: 1.1;
+        }
+
+        .hero-content .highlight {
+          color: #22c55e;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
-          margin-bottom: 2rem;
-          opacity: 0.95;
+          font-size: 1.2rem;
+          margin-bottom: 2.5rem;
+          color: #6b7280;
+          line-height: 1.6;
         }
 
         .cta-button {
           display: inline-block;
-          background: #4f46e5;
+          background: #22c55e;
           color: white;
-          padding: 15px 40px;
-          font-size: 1.2rem;
+          padding: 16px 32px;
+          font-size: 1.1rem;
           font-weight: 600;
           text-decoration: none;
-          border-radius: 50px;
+          border-radius: 8px;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+          box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
         }
 
         .cta-button:hover {
-          background: #3730a3;
+          background: #16a34a;
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+          box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
         }
 
         /* How it Works Section */
@@ -1425,7 +1446,7 @@ const getCourseDetailsPage = (course) => `
               <div class="info-value">${course.duration}</div>
             </div>
             <div class="info-item">
-              <div class="info-icon">🗣️</div>
+              <div class="info-icon">🗣���</div>
               <div class="info-label">Language</div>
               <div class="info-value">${course.language}</div>
             </div>
