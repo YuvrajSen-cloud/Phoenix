@@ -1358,21 +1358,22 @@ const getCourseDetailsPage = (course) => `
 
         .enroll-btn {
           width: 100%;
-          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          background: #22c55e;
           color: white;
           padding: 1rem 2rem;
-          font-size: 1.1rem;
-          font-weight: 600;
+          font-size: 1rem;
+          font-weight: 500;
           border: none;
-          border-radius: 12px;
+          border-radius: 8px;
           cursor: pointer;
           transition: all 0.3s ease;
           margin-bottom: 1rem;
         }
 
         .enroll-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+          background: #16a34a;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
         .money-back {
