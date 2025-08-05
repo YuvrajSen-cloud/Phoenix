@@ -2071,19 +2071,10 @@ const getCoursesPage = (courses) => `
           }
         }
 
-        // Enroll button functionality
-        document.querySelectorAll('.enroll-btn').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            alert('Enrollment feature coming soon! We will notify you when it becomes available.');
-          });
-        });
-
-        // Course card click functionality
+        // Course card hover effect enhancement
         allCourses.forEach(card => {
-          card.addEventListener('click', () => {
-            const title = card.querySelector('.course-title').textContent;
-            alert(\`Course details for "\${title}" coming soon!\`);
+          card.addEventListener('mouseenter', () => {
+            card.style.cursor = 'pointer';
           });
         });
       </script>
