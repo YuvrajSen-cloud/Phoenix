@@ -336,7 +336,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Master Electrician Rajesh Singh has 20 years of experience in electrical installations and has trained over 800 electricians. He holds multiple certifications and specializes in industrial electrical systems.",
-    educatorImage: "👨‍���"
+    educatorImage: "👨‍🔧"
   },
   {
     id: 6,
@@ -553,7 +553,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Kavita Joshi is an experienced office manager with 14 years in administrative roles across various industries. She has streamlined operations for multiple companies and trained 150+ administrative professionals.",
-    educatorImage: "👩‍💼"
+    educatorImage: "👩‍��"
   }
 ];
 
@@ -992,7 +992,8 @@ const getHomePage = () => `
       <!-- Featured Courses Section -->
       <section class="featured-courses" id="courses">
         <div class="container">
-          <h2 class="section-title">Featured Courses</h2>
+          <h2 class="section-title">Industry-Vetted Training Programs</h2>
+          <p class="section-subtitle">High-demand courses designed to bridge the skills gap and create employment opportunities</p>
           <div class="courses-grid">
             <div class="course-card" onclick="window.location.href='/courses/1'">
               <div class="course-image">🏨</div>
