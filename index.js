@@ -262,7 +262,7 @@ const coursesData = [
     category: "Technical",
     type: "blue-collar",
     price: "₹899",
-    image: "⚡",
+    image: "https://images.pexels.com/photos/7286015/pexels-photo-7286015.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Complete electrical systems installation and maintenance training",
     fullDescription: "Become a certified electrical technician with comprehensive training in electrical systems, safety protocols, and installation techniques. This course prepares you for a rewarding career in electrical work.",
     duration: "14 weeks",
