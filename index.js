@@ -120,7 +120,7 @@ const coursesData = [
     category: "IT",
     type: "white-collar",
     price: "₹1,499",
-    image: "📱",
+    image: "https://images.pexels.com/photos/1083792/pexels-photo-1083792.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Develop skills in social media marketing and online advertising",
     fullDescription: "Master digital marketing fundamentals and become a valuable asset to any marketing team. Learn social media strategy, content creation, and digital advertising techniques.",
     duration: "10 weeks",
