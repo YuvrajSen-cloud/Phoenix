@@ -1717,20 +1717,21 @@ const getCoursesPage = (courses) => `
         /* Header Section */
         .page-header {
           padding: 120px 0 60px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          color: #374151;
           text-align: center;
         }
 
         .page-header h1 {
-          font-size: 3rem;
-          font-weight: 700;
+          font-size: 2.5rem;
+          font-weight: 600;
           margin-bottom: 1rem;
+          color: #1f2937;
         }
 
         .page-header p {
-          font-size: 1.2rem;
-          opacity: 0.9;
+          font-size: 1.1rem;
+          color: #6b7280;
         }
 
         /* Search and Filter Section */
