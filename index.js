@@ -1352,7 +1352,7 @@ const getCourseDetailsPage = (course) => `
 
         .enrollment-features li::before {
           content: "✓";
-          color: #059669;
+          color: #22c55e;
           font-weight: bold;
         }
 
@@ -1508,7 +1508,7 @@ const getCourseDetailsPage = (course) => `
         <div class="container">
           <div class="key-info-grid">
             <div class="info-item">
-              <div class="info-icon">⏱️</div>
+              <div class="info-icon">���️</div>
               <div class="info-label">Duration</div>
               <div class="info-value">${course.duration}</div>
             </div>
