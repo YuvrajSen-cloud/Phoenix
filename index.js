@@ -503,7 +503,7 @@ const coursesData = [
     category: "Administrative",
     type: "white-collar",
     price: "₹799",
-    image: "📊",
+    image: "https://images.pexels.com/photos/5060979/pexels-photo-5060979.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Master office software, data management, and administrative procedures",
     fullDescription: "Develop essential office administration skills including data entry, document management, and professional communication. Perfect for starting a career in administrative roles.",
     duration: "8 weeks",
