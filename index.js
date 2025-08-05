@@ -345,7 +345,7 @@ const coursesData = [
     category: "IT",
     type: "white-collar",
     price: "₹2,499",
-    image: "💻",
+    image: "https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Learn HTML, CSS, JavaScript and modern web development practices",
     fullDescription: "Start your journey as a web developer with this comprehensive course covering front-end technologies and modern development practices. Build real projects and create an impressive portfolio.",
     duration: "16 weeks",
