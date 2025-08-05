@@ -1125,21 +1125,23 @@ const getCourseDetailsPage = (course) => `
         }
 
         .course-title {
-          font-size: 2.5rem;
-          font-weight: 700;
+          font-size: 2.2rem;
+          font-weight: 600;
           margin-bottom: 1rem;
+          color: #1f2937;
         }
 
         .course-subtitle {
-          font-size: 1.2rem;
-          opacity: 0.9;
+          font-size: 1.1rem;
+          color: #6b7280;
           margin-bottom: 1.5rem;
         }
 
         .course-educator {
-          font-size: 1.1rem;
-          color: #a7f3d0;
+          font-size: 1rem;
+          color: #22c55e;
           margin-bottom: 2rem;
+          font-weight: 500;
         }
 
         .course-hero-image {
