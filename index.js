@@ -1907,6 +1907,18 @@ const getCoursesPage = (courses) => `
           font-size: 3rem;
           color: #22c55e;
           position: relative;
+          overflow: hidden;
+        }
+
+        .course-card-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .course-card:hover .course-card-image img {
+          transform: scale(1.05);
         }
 
         .course-card-content {
