@@ -885,36 +885,36 @@ const getHomePage = () => `
         <div class="container">
           <h2 class="section-title">Featured Courses</h2>
           <div class="courses-grid">
-            <div class="course-card">
+            <div class="course-card" onclick="window.location.href='/courses/1'">
               <div class="course-image">🏨</div>
               <div class="course-content">
                 <h3>Hospitality Front Desk Operations</h3>
                 <p>Master guest services, reservation systems, and front office management in the hospitality industry.</p>
-                <button class="learn-more-btn">Learn More</button>
+                <button class="learn-more-btn" onclick="event.stopPropagation(); window.location.href='/courses/1'">Learn More</button>
               </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" onclick="window.location.href='/courses/2'">
               <div class="course-image">☀️</div>
               <div class="course-content">
                 <h3>Solar Panel Installation Technician</h3>
                 <p>Learn sustainable energy solutions and become certified in solar panel installation and maintenance.</p>
-                <button class="learn-more-btn">Learn More</button>
+                <button class="learn-more-btn" onclick="event.stopPropagation(); window.location.href='/courses/2'">Learn More</button>
               </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" onclick="window.location.href='/courses/3'">
               <div class="course-image">📱</div>
               <div class="course-content">
                 <h3>Digital Marketing Assistant</h3>
                 <p>Develop skills in social media marketing, content creation, and online advertising strategies.</p>
-                <button class="learn-more-btn">Learn More</button>
+                <button class="learn-more-btn" onclick="event.stopPropagation(); window.location.href='/courses/3'">Learn More</button>
               </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" onclick="window.location.href='/courses/4'">
               <div class="course-image">💼</div>
               <div class="course-content">
                 <h3>Business Administration Basics</h3>
                 <p>Build foundational knowledge in business operations, management principles, and professional communication.</p>
-                <button class="learn-more-btn">Learn More</button>
+                <button class="learn-more-btn" onclick="event.stopPropagation(); window.location.href='/courses/4'">Learn More</button>
               </div>
             </div>
           </div>
