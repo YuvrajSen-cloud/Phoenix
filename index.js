@@ -436,7 +436,7 @@ const coursesData = [
     category: "Hospitality",
     type: "blue-collar",
     price: "₹1,299",
-    image: "👨‍🍳",
+    image: "https://images.pexels.com/photos/33310413/pexels-photo-33310413.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "Professional cooking techniques and kitchen management skills",
     fullDescription: "Master professional cooking techniques and kitchen management skills essential for a successful culinary career. Learn from basic cooking methods to advanced culinary arts and food service management.",
     duration: "10 weeks",
