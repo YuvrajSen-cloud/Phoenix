@@ -2121,7 +2121,7 @@ const getCoursesPage = (courses) => `
             ${courses.map(course => `
               <div class="course-card" data-category="${course.category}" data-type="${course.type}" data-title="${course.title.toLowerCase()}" data-price="${course.price}" onclick="window.location.href='/courses/${course.id}'">
                 <div class="course-card-image">
-                  ${course.image}
+                  <img src="${course.image}" alt="${course.title}" loading="lazy">
                 </div>
                 <div class="course-card-content">
                   <h3 class="course-title">${course.title}</h3>
