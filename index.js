@@ -1765,6 +1765,7 @@ const getCoursesPage = (courses) => `
         .search-input:focus {
           outline: none;
           border-color: #22c55e;
+          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
         }
 
         .search-icon {
@@ -1772,7 +1773,7 @@ const getCoursesPage = (courses) => `
           right: 20px;
           top: 50%;
           transform: translateY(-50%);
-          color: #64748b;
+          color: #6b7280;
           font-size: 1.2rem;
         }
 
@@ -1780,17 +1781,18 @@ const getCoursesPage = (courses) => `
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .filter-btn {
-          padding: 10px 20px;
-          border: 2px solid #e2e8f0;
+          padding: 8px 16px;
+          border: 1px solid #e5e7eb;
           background: white;
-          border-radius: 25px;
+          border-radius: 6px;
           cursor: pointer;
           transition: all 0.3s ease;
           font-weight: 500;
+          font-size: 0.9rem;
         }
 
         .filter-btn:hover,
@@ -1798,6 +1800,7 @@ const getCoursesPage = (courses) => `
           background: #22c55e;
           color: white;
           border-color: #22c55e;
+          box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
         }
 
         /* Course Results Section */
