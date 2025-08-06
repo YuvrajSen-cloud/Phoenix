@@ -2816,6 +2816,21 @@ const getContactPage = () => `
           align-items: start;
         }
 
+        .contact-hero-image {
+          width: 100%;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+
+        .contact-hero-image img {
+          width: 100%;
+          max-width: 600px;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
         /* Contact Form */
         .contact-form {
           background: white;
