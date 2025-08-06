@@ -337,7 +337,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Master Electrician Rajesh Singh has 20 years of experience in electrical installations and has trained over 800 electricians. He holds multiple certifications and specializes in industrial electrical systems.",
-    educatorImage: "👨‍🔧"
+    educatorImage: "��‍🔧"
   },
   {
     id: 6,
@@ -1149,47 +1149,81 @@ const getHomePage = () => `
       </section>
 
       <script>
-        // Theme Toggle Functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const themeDropdown = document.getElementById('themeDropdown');
-        const themeOptions = document.querySelectorAll('.theme-option');
+        // Theme Cycling Functionality
+        const themes = [
+          { name: '', display: 'Blue Theme' },
+          { name: 'green', display: 'Green Theme' },
+          { name: 'purple', display: 'Purple Theme' },
+          { name: 'dark', display: 'Dark Theme' }
+        ];
+
+        let currentThemeIndex = 0;
+
+        // Create theme indicator and hint elements
+        function createThemeElements() {
+          // Theme indicator
+          const indicator = document.createElement('div');
+          indicator.id = 'themeIndicator';
+          indicator.className = 'theme-indicator';
+          indicator.textContent = 'Blue Theme';
+          document.body.appendChild(indicator);
+
+          // Click hint
+          const hint = document.createElement('div');
+          hint.className = 'click-hint';
+          hint.textContent = 'Click anywhere to change theme 🎨';
+          document.body.appendChild(hint);
+
+          // Hide hint after 5 seconds
+          setTimeout(() => {
+            hint.style.display = 'none';
+          }, 5000);
+        }
 
         // Load saved theme
-        const savedTheme = localStorage.getItem('phoenix-theme') || '';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateActiveTheme(savedTheme);
-
-        // Toggle dropdown
-        themeToggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          themeDropdown.classList.toggle('show');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-          themeDropdown.classList.remove('show');
-        });
-
-        // Theme selection
-        themeOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const theme = option.getAttribute('data-theme');
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('phoenix-theme', theme);
-            updateActiveTheme(theme);
-            themeDropdown.classList.remove('show');
-          });
-        });
-
-        function updateActiveTheme(theme) {
-          themeOptions.forEach(opt => opt.classList.remove('active'));
-          const activeOption = document.querySelector('[data-theme="' + theme + '"]');
-          if (activeOption) activeOption.classList.add('active');
+        function loadSavedTheme() {
+          const savedTheme = localStorage.getItem('phoenix-theme') || '';
+          const savedIndex = themes.findIndex(theme => theme.name === savedTheme);
+          if (savedIndex !== -1) {
+            currentThemeIndex = savedIndex;
+          }
+          document.documentElement.setAttribute('data-theme', themes[currentThemeIndex].name);
+          updateThemeIndicator();
         }
+
+        // Update theme indicator
+        function updateThemeIndicator() {
+          const indicator = document.getElementById('themeIndicator');
+          if (indicator) {
+            indicator.textContent = themes[currentThemeIndex].display;
+            indicator.classList.add('show');
+            setTimeout(() => indicator.classList.remove('show'), 2000);
+          }
+        }
+
+        // Cycle to next theme
+        function cycleTheme() {
+          currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+          const newTheme = themes[currentThemeIndex];
+
+          document.documentElement.setAttribute('data-theme', newTheme.name);
+          localStorage.setItem('phoenix-theme', newTheme.name);
+          updateThemeIndicator();
+        }
+
+        // Click anywhere to cycle theme
+        document.addEventListener('click', cycleTheme);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+          createThemeElements();
+          loadSavedTheme();
+        });
 
         // Add interactive hover effects
         document.querySelectorAll('.learn-more-btn').forEach(btn => {
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent theme change on button click
             window.location.href = '/courses';
           });
         });
