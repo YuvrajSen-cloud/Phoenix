@@ -1582,7 +1582,7 @@ const getCourseDetailsPage = (course) => `
               <div class="info-value">${course.level}</div>
             </div>
             <div class="info-item">
-              <div class="info-icon">����️</div>
+              <div class="info-icon">🏷️</div>
               <div class="info-label">Category</div>
               <div class="info-value">${course.category}</div>
             </div>
@@ -3075,6 +3075,8 @@ const getContactPage = () => `
                 ✅ Thank you for your message! We'll get back to you within 24 hours.
               </div>
               <form id="contactForm" action="https://formspree.io/f/xpwzgodo" method="POST">
+                <input type="hidden" name="_next" value="/contact?success=true">
+                <input type="hidden" name="_subject" value="New Contact Form Submission from Phoenix">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="firstName">First Name *</label>
