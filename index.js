@@ -3081,6 +3081,9 @@ const getContactPage = () => `
       <!-- Main Content -->
       <section class="main-content">
         <div class="container">
+          <div class="contact-hero-image">
+            <img src="https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg" alt="Modern office space with professional environment" loading="lazy">
+          </div>
           <div class="contact-grid">
             <!-- Contact Form -->
             <div class="contact-form">
