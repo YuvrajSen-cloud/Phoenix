@@ -1526,8 +1526,8 @@ const getCourseDetailsPage = (course) => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses" class="active">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
@@ -2067,8 +2067,8 @@ const getCoursesPage = (courses) => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses" class="active">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
