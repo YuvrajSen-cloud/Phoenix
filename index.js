@@ -668,6 +668,79 @@ const getHomePage = () => `
           color: #2563eb;
         }
 
+        /* Theme Toggle */
+        .theme-toggle {
+          position: relative;
+          margin-left: 1rem;
+        }
+
+        .theme-btn {
+          background: none;
+          border: 2px solid #2563eb;
+          color: #2563eb;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          font-size: 1.2rem;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .theme-btn:hover {
+          background: #2563eb;
+          color: white;
+        }
+
+        .theme-dropdown {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          min-width: 120px;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+          z-index: 1000;
+        }
+
+        .theme-dropdown.show {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        .theme-option {
+          padding: 12px 16px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          font-weight: 500;
+          color: #374151;
+        }
+
+        .theme-option:hover {
+          background: #f3f4f6;
+        }
+
+        .theme-option.active {
+          background: #2563eb;
+          color: white;
+        }
+
+        .theme-option:first-child {
+          border-radius: 8px 8px 0 0;
+        }
+
+        .theme-option:last-child {
+          border-radius: 0 0 8px 8px;
+        }
+
         /* Hero Section */
         .hero-section {
           background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
