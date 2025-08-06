@@ -809,13 +809,13 @@ const getHomePage = () => `
           text-decoration: none;
           border-radius: 8px;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+          box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
         }
 
         .cta-button:hover {
           background: var(--primary-dark);
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+          box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
         }
 
         /* How it Works Section */
@@ -857,7 +857,7 @@ const getHomePage = () => `
 
         .step-card:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .step-icon {
@@ -909,7 +909,7 @@ const getHomePage = () => `
 
         .impact-stat:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .stat-number {
@@ -955,7 +955,7 @@ const getHomePage = () => `
 
         .course-card:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .course-image {
@@ -2084,7 +2084,7 @@ const getCoursesPage = (courses) => `
 
         .course-card:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .course-card-image {
@@ -2602,7 +2602,7 @@ const getAboutPage = () => `
 
         .mission-card:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .mission-icon {
@@ -2647,7 +2647,7 @@ const getAboutPage = () => `
 
         .team-card:hover {
           border-color: var(--primary-color);
-          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .team-avatar {
