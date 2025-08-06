@@ -1,5 +1,6 @@
 const http = require('http');
 const url = require('url');
+const querystring = require('querystring');
 
 // Sample course data with detailed information
 const coursesData = [
@@ -571,10 +572,74 @@ const getHomePage = () => `
           box-sizing: border-box;
         }
 
+        /* CSS Custom Properties for Theme Switching */
+        :root {
+          /* Blue Theme (Default) */
+          --primary-color: #2563eb;
+          --primary-dark: #1d4ed8;
+          --primary-light: #eff6ff;
+          --primary-medium: #dbeafe;
+          --primary-bright: #bfdbfe;
+          --text-primary: #111827;
+          --text-secondary: #6b7280;
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8fafc;
+          --bg-accent: #f9fafb;
+          --primary-rgb: 37, 99, 235;
+          --primary-light-rgb: 239, 246, 255;
+        }
+
+        [data-theme="green"] {
+          --primary-color: #22c55e;
+          --primary-dark: #16a34a;
+          --primary-light: #f0fdf4;
+          --primary-medium: #dcfce7;
+          --primary-bright: #bbf7d0;
+          --primary-rgb: 34, 197, 94;
+          --primary-light-rgb: 240, 253, 244;
+        }
+
+        [data-theme="purple"] {
+          --primary-color: #7c3aed;
+          --primary-dark: #6d28d9;
+          --primary-light: #faf5ff;
+          --primary-medium: #ede9fe;
+          --primary-bright: #ddd6fe;
+          --primary-rgb: 124, 58, 237;
+          --primary-light-rgb: 250, 245, 255;
+        }
+
+        [data-theme="dark"] {
+          --primary-color: #3b82f6;
+          --primary-dark: #2563eb;
+          --primary-light: #1f2937;
+          --primary-medium: #374151;
+          --primary-bright: #4b5563;
+          --text-primary: #ffffff;
+          --text-secondary: #d1d5db;
+          --bg-primary: #111827;
+          --bg-secondary: #1f2937;
+          --bg-accent: #374151;
+          --primary-rgb: 59, 130, 246;
+          --primary-light-rgb: 31, 41, 55;
+        }
+
         body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=16') 8 8, auto;
+          transition: transform 0.1s ease;
+        }
+
+        /* Click animation */
+        body.clicking {
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=20') 10 10, auto;
+        }
+
+        /* Special cursor for interactive elements */
+        a, button, .learn-more-btn, .nav-links a, .enroll-btn, .filter-btn {
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2Fd24d163b182d4116b49a79755d91d56f?format=webp&width=16') 8 8, pointer;
         }
 
         .container {
@@ -585,7 +650,7 @@ const getHomePage = () => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -603,7 +668,7 @@ const getHomePage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -620,12 +685,33 @@ const getHomePage = () => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: var(--primary-color);
+        }
+
+
+        /* Click Hint */
+        .click-hint {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0,0,0,0.8);
+          color: var(--bg-primary);
+          padding: 12px 16px;
+          border-radius: 8px;
+          font-size: 0.9rem;
+          z-index: 1000;
+          opacity: 0.7;
+          animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 1; }
         }
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
           min-height: 90vh;
           display: flex;
           align-items: center;
@@ -658,24 +744,24 @@ const getHomePage = () => `
           font-size: 3.5rem;
           font-weight: 700;
           margin-bottom: 1.5rem;
-          color: #1f2937;
+          color: var(--text-primary);
           line-height: 1.1;
         }
 
         .hero-content .highlight {
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         .hero-content p {
           font-size: 1.2rem;
           margin-bottom: 2.5rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         .cta-button {
           display: inline-block;
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
           padding: 16px 32px;
           font-size: 1.1rem;
@@ -683,19 +769,19 @@ const getHomePage = () => `
           text-decoration: none;
           border-radius: 8px;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+          box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
         }
 
         .cta-button:hover {
-          background: #16a34a;
+          background: var(--primary-dark);
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+          box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
         }
 
         /* How it Works Section */
         .how-it-works {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .section-title {
@@ -703,13 +789,13 @@ const getHomePage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #374151;
+          color: var(--text-primary);
         }
 
         .section-subtitle {
           text-align: center;
           font-size: 1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 4rem;
         }
 
@@ -721,7 +807,7 @@ const getHomePage = () => `
         }
 
         .step-card {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           text-align: center;
@@ -730,14 +816,14 @@ const getHomePage = () => `
         }
 
         .step-card:hover {
-          border-color: #22c55e;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .step-icon {
           width: 60px;
           height: 60px;
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
           border-radius: 8px;
           display: flex;
@@ -751,12 +837,12 @@ const getHomePage = () => `
         .step-card h3 {
           font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #374151;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
         .step-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 1rem;
           line-height: 1.6;
         }
@@ -774,7 +860,7 @@ const getHomePage = () => `
         .impact-stat {
           text-align: center;
           padding: 1.5rem;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           border: 1px solid #f3f4f6;
           min-width: 150px;
@@ -782,33 +868,33 @@ const getHomePage = () => `
         }
 
         .impact-stat:hover {
-          border-color: #22c55e;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .stat-number {
           font-size: 2rem;
           font-weight: 700;
-          color: #22c55e;
+          color: var(--primary-color);
           margin-bottom: 0.5rem;
         }
 
         .stat-label {
           font-size: 0.9rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
         /* Services Section */
         .services-section {
           padding: 80px 0;
-          background: #f9fafb;
+          background: var(--bg-accent);
         }
 
         /* Featured Courses Section */
         .featured-courses {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .courses-grid {
@@ -819,7 +905,7 @@ const getHomePage = () => `
         }
 
         .course-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           overflow: hidden;
           border: 1px solid #f3f4f6;
@@ -828,18 +914,18 @@ const getHomePage = () => `
         }
 
         .course-card:hover {
-          border-color: #22c55e;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .course-image {
           height: 160px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 2.5rem;
-          color: #22c55e;
+          color: var(--primary-color);
           overflow: hidden;
           position: relative;
         }
@@ -862,19 +948,19 @@ const getHomePage = () => `
         .course-card h3 {
           font-size: 1.2rem;
           margin-bottom: 0.75rem;
-          color: #374151;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
         .course-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.9rem;
           line-height: 1.5;
           margin-bottom: 1.5rem;
         }
 
         .learn-more-btn {
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
           padding: 8px 20px;
           border: none;
@@ -886,7 +972,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn:hover {
-          background: #16a34a;
+          background: var(--primary-dark);
         }
 
         /* Responsive Design */
@@ -933,8 +1019,8 @@ const getHomePage = () => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
@@ -1053,10 +1139,88 @@ const getHomePage = () => `
       </section>
 
       <script>
+        // Theme Cycling Functionality
+        const themes = [
+          { name: '', display: 'Blue Theme' },
+          { name: 'green', display: 'Green Theme' },
+          { name: 'purple', display: 'Purple Theme' },
+          { name: 'dark', display: 'Dark Theme' }
+        ];
+
+        let currentThemeIndex = 0;
+
+        // Create theme hint element only
+        function createThemeElements() {
+          // Click hint
+          const hint = document.createElement('div');
+          hint.className = 'click-hint';
+          hint.textContent = 'Click anywhere to change theme 🎨';
+          document.body.appendChild(hint);
+
+          // Hide hint after 3 seconds
+          setTimeout(() => {
+            hint.style.display = 'none';
+          }, 3000);
+        }
+
+        // Load saved theme
+        function loadSavedTheme() {
+          const savedTheme = localStorage.getItem('phoenix-theme') || '';
+          const savedIndex = themes.findIndex(theme => theme.name === savedTheme);
+          if (savedIndex !== -1) {
+            currentThemeIndex = savedIndex;
+          }
+          document.documentElement.setAttribute('data-theme', themes[currentThemeIndex].name);
+          updateThemeIndicator();
+        }
+
+        // Update theme indicator (disabled - no text shown)
+        function updateThemeIndicator() {
+          // Theme indicator text removed per user request
+        }
+
+        // Cycle to next theme
+        function cycleTheme() {
+          currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+          const newTheme = themes[currentThemeIndex];
+
+          document.documentElement.setAttribute('data-theme', newTheme.name);
+          localStorage.setItem('phoenix-theme', newTheme.name);
+          updateThemeIndicator();
+        }
+
+        // Click animation for cursor
+        function animateCursor() {
+          document.body.classList.add('clicking');
+          setTimeout(() => {
+            document.body.classList.remove('clicking');
+          }, 150);
+        }
+
+        // Click anywhere to cycle theme with animation
+        document.addEventListener('click', (e) => {
+          animateCursor();
+          cycleTheme();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+          createThemeElements();
+          loadSavedTheme();
+        });
+
         // Add interactive hover effects
         document.querySelectorAll('.learn-more-btn').forEach(btn => {
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent theme change and cursor animation on button click
             window.location.href = '/courses';
+          });
+        });
+
+        // Prevent theme change on navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent theme change on navigation
           });
         });
       </script>
@@ -1078,11 +1242,63 @@ const getCourseDetailsPage = (course) => `
           box-sizing: border-box;
         }
 
+        /* CSS Custom Properties for Theme Switching */
+        :root {
+          /* Blue Theme (Default) */
+          --primary-color: #2563eb;
+          --primary-dark: #1d4ed8;
+          --primary-light: #eff6ff;
+          --primary-medium: #dbeafe;
+          --primary-bright: #bfdbfe;
+          --text-primary: #111827;
+          --text-secondary: #6b7280;
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8fafc;
+          --bg-accent: #f9fafb;
+          --primary-rgb: 37, 99, 235;
+          --primary-light-rgb: 239, 246, 255;
+        }
+
+        [data-theme="green"] {
+          --primary-color: #22c55e;
+          --primary-dark: #16a34a;
+          --primary-light: #f0fdf4;
+          --primary-medium: #dcfce7;
+          --primary-bright: #bbf7d0;
+          --primary-rgb: 34, 197, 94;
+          --primary-light-rgb: 240, 253, 244;
+        }
+
+        [data-theme="purple"] {
+          --primary-color: #7c3aed;
+          --primary-dark: #6d28d9;
+          --primary-light: #faf5ff;
+          --primary-medium: #ede9fe;
+          --primary-bright: #ddd6fe;
+          --primary-rgb: 124, 58, 237;
+          --primary-light-rgb: 250, 245, 255;
+        }
+
+        [data-theme="dark"] {
+          --primary-color: #3b82f6;
+          --primary-dark: #2563eb;
+          --primary-light: #1f2937;
+          --primary-medium: #374151;
+          --primary-bright: #4b5563;
+          --text-primary: #ffffff;
+          --text-secondary: #d1d5db;
+          --bg-primary: #111827;
+          --bg-secondary: #1f2937;
+          --bg-accent: #374151;
+          --primary-rgb: 59, 130, 246;
+          --primary-light-rgb: 31, 41, 55;
+        }
+
         body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -1093,7 +1309,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -1111,7 +1327,7 @@ const getCourseDetailsPage = (course) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1128,17 +1344,17 @@ const getCourseDetailsPage = (course) => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
         /* Breadcrumb */
         .breadcrumb {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           margin-top: 80px;
           border-bottom: 1px solid #e2e8f0;
@@ -1152,7 +1368,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .breadcrumb-links a {
-          color: #22c55e;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1162,8 +1378,8 @@ const getCourseDetailsPage = (course) => `
 
         /* Course Header */
         .course-header {
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
-          color: #374151;
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
+          color: var(--text-primary);
           padding: 3rem 0;
         }
 
@@ -1178,25 +1394,25 @@ const getCourseDetailsPage = (course) => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #1f2937;
+          color: var(--text-primary);
         }
 
         .course-subtitle {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 1.5rem;
         }
 
         .course-educator {
           font-size: 1rem;
-          color: #22c55e;
+          color: var(--primary-color);
           margin-bottom: 2rem;
           font-weight: 500;
         }
 
         .course-hero-image {
           text-align: center;
-          background: rgba(34, 197, 94, 0.1);
+          background: rgba(37, 99, 235, 0.1);
           border-radius: 12px;
           padding: 1rem;
           overflow: hidden;
@@ -1213,7 +1429,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Key Info Section */
         .key-info-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem 0;
           border-bottom: 1px solid #e2e8f0;
         }
@@ -1227,7 +1443,7 @@ const getCourseDetailsPage = (course) => `
         .info-item {
           text-align: center;
           padding: 1.5rem;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           border: 1px solid #f3f4f6;
         }
@@ -1235,12 +1451,12 @@ const getCourseDetailsPage = (course) => `
         .info-icon {
           font-size: 2rem;
           margin-bottom: 0.5rem;
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         .info-label {
           font-size: 0.8rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-bottom: 0.5rem;
@@ -1249,7 +1465,7 @@ const getCourseDetailsPage = (course) => `
         .info-value {
           font-size: 1rem;
           font-weight: 600;
-          color: #374151;
+          color: var(--text-primary);
         }
 
         /* Main Content */
@@ -1261,7 +1477,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .content-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -1271,7 +1487,7 @@ const getCourseDetailsPage = (course) => `
         .section-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #374151;
+          color: var(--text-primary);
           margin-bottom: 1.5rem;
           display: flex;
           align-items: center;
@@ -1280,7 +1496,7 @@ const getCourseDetailsPage = (course) => `
 
         .section-icon {
           font-size: 1.3rem;
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         /* What You'll Learn */
@@ -1294,7 +1510,7 @@ const getCourseDetailsPage = (course) => `
           gap: 0.75rem;
           margin-bottom: 1rem;
           padding: 0.75rem;
-          background: #f8fafc;
+          background: var(--bg-secondary);
           border-radius: 8px;
         }
 
@@ -1313,7 +1529,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header {
-          background: #f8fafc;
+          background: var(--bg-secondary);
           padding: 1rem 1.5rem;
           cursor: pointer;
           display: flex;
@@ -1327,7 +1543,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header.active {
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
         }
 
@@ -1379,7 +1595,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .enrollment-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           padding: 2rem;
           border: 1px solid #f3f4f6;
@@ -1390,7 +1606,7 @@ const getCourseDetailsPage = (course) => `
         .price-display {
           font-size: 2.2rem;
           font-weight: 600;
-          color: #22c55e;
+          color: var(--primary-color);
           margin-bottom: 1rem;
         }
 
@@ -1410,13 +1626,13 @@ const getCourseDetailsPage = (course) => `
 
         .enrollment-features li::before {
           content: "✓";
-          color: #22c55e;
+          color: var(--primary-color);
           font-weight: bold;
         }
 
         .enroll-btn {
           width: 100%;
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
           padding: 1rem 2rem;
           font-size: 1rem;
@@ -1429,9 +1645,9 @@ const getCourseDetailsPage = (course) => `
         }
 
         .enroll-btn:hover {
-          background: #16a34a;
+          background: var(--primary-dark);
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .money-back {
@@ -1441,7 +1657,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Educator Bio */
         .educator-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           padding: 2rem;
           border: 1px solid #f3f4f6;
@@ -1458,7 +1674,7 @@ const getCourseDetailsPage = (course) => `
           font-size: 2.5rem;
           width: 70px;
           height: 70px;
-          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -1468,16 +1684,16 @@ const getCourseDetailsPage = (course) => `
         .educator-name {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #374151;
+          color: var(--text-primary);
         }
 
         .educator-title {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.85rem;
         }
 
         .educator-bio {
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -1525,8 +1741,8 @@ const getCourseDetailsPage = (course) => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses" class="active">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
@@ -1725,7 +1941,7 @@ const getCoursesPage = (courses) => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -1736,7 +1952,7 @@ const getCoursesPage = (courses) => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -1754,7 +1970,7 @@ const getCoursesPage = (courses) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1771,19 +1987,19 @@ const getCoursesPage = (courses) => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
         /* Header Section */
         .page-header {
           padding: 120px 0 60px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
-          color: #374151;
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
+          color: var(--text-primary);
           text-align: center;
         }
 
@@ -1791,17 +2007,17 @@ const getCoursesPage = (courses) => `
           font-size: 2.5rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #1f2937;
+          color: var(--text-primary);
         }
 
         .page-header p {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
         }
 
         /* Search and Filter Section */
         .search-filter-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem 0;
           border-bottom: 1px solid #e2e8f0;
         }
@@ -1829,8 +2045,8 @@ const getCoursesPage = (courses) => `
 
         .search-input:focus {
           outline: none;
-          border-color: #22c55e;
-          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .search-icon {
@@ -1838,7 +2054,7 @@ const getCoursesPage = (courses) => `
           right: 20px;
           top: 50%;
           transform: translateY(-50%);
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 1.2rem;
         }
 
@@ -1852,7 +2068,7 @@ const getCoursesPage = (courses) => `
         .filter-btn {
           padding: 8px 16px;
           border: 1px solid #e5e7eb;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 6px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -1862,10 +2078,10 @@ const getCoursesPage = (courses) => `
 
         .filter-btn:hover,
         .filter-btn.active {
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
-          border-color: #22c55e;
-          box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+          border-color: var(--primary-color);
+          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
 
         /* Course Results Section */
@@ -1889,7 +2105,7 @@ const getCoursesPage = (courses) => `
           padding: 10px 15px;
           border: 1px solid #e2e8f0;
           border-radius: 8px;
-          background: white;
+          background: var(--bg-primary);
           cursor: pointer;
         }
 
@@ -1901,7 +2117,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           overflow: hidden;
           border: 1px solid #f3f4f6;
@@ -1910,18 +2126,18 @@ const getCoursesPage = (courses) => `
         }
 
         .course-card:hover {
-          border-color: #22c55e;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
         }
 
         .course-card-image {
           height: 160px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 3rem;
-          color: #22c55e;
+          color: var(--primary-color);
           position: relative;
           overflow: hidden;
         }
@@ -1945,18 +2161,18 @@ const getCoursesPage = (courses) => `
           font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #374151;
+          color: var(--text-primary);
         }
 
         .course-educator {
-          color: #22c55e;
+          color: var(--primary-color);
           font-size: 0.85rem;
           margin-bottom: 0.75rem;
           font-weight: 500;
         }
 
         .course-description {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.9rem;
           margin-bottom: 1rem;
           line-height: 1.5;
@@ -1990,13 +2206,13 @@ const getCoursesPage = (courses) => `
         .course-price {
           font-size: 1rem;
           font-weight: 600;
-          color: #22c55e;
+          color: var(--primary-color);
         }
 
         .enroll-btn {
           width: 100%;
           padding: 12px;
-          background: #22c55e;
+          background: var(--primary-color);
           color: white;
           border: none;
           border-radius: 8px;
@@ -2006,7 +2222,7 @@ const getCoursesPage = (courses) => `
         }
 
         .enroll-btn:hover {
-          background: #16a34a;
+          background: var(--primary-dark);
         }
 
         /* No Results */
@@ -2066,8 +2282,8 @@ const getCoursesPage = (courses) => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses" class="active">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
@@ -2244,6 +2460,1046 @@ const getCoursesPage = (courses) => `
     </html>
 `;
 
+const getAboutPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Phoenix - Bridging India's Skills Gap</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: var(--bg-secondary);
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: var(--bg-primary);
+          padding: 1rem 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: var(--primary-color);
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(219, 234, 254, 0.9) 50%, rgba(191, 219, 254, 0.9) 100%), url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg') center/cover;
+          min-height: 60vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 80px;
+          text-align: center;
+          position: relative;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(219, 234, 254, 0.85) 50%, rgba(191, 219, 254, 0.85) 100%);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-content h1 {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        .hero-content .highlight {
+          color: var(--primary-color);
+        }
+
+        .hero-content p {
+          font-size: 1.2rem;
+          color: var(--text-secondary);
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: 80px 0;
+          background: var(--bg-primary);
+        }
+
+        .content-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+          margin-bottom: 4rem;
+        }
+
+        .content-block h2 {
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        .content-block p {
+          font-size: 1.1rem;
+          color: var(--text-secondary);
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+        }
+
+        .content-image {
+          text-align: center;
+          background: #eff6ff;
+          border-radius: 12px;
+          padding: 1rem;
+          overflow: hidden;
+        }
+
+        .content-image img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+        /* Mission Section */
+        .mission-section {
+          background: var(--bg-accent);
+          padding: 80px 0;
+        }
+
+        .mission-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .mission-card {
+          background: var(--bg-primary);
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
+        }
+
+        .mission-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          color: var(--primary-color);
+        }
+
+        .mission-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        .mission-card p {
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-section {
+          padding: 80px 0;
+          background: var(--bg-primary);
+        }
+
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .team-card {
+          background: var(--bg-primary);
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
+        }
+
+        .team-avatar {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          margin: 0 auto 1rem;
+          overflow: hidden;
+        }
+
+        .team-avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .team-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        .team-card .role {
+          color: var(--primary-color);
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+
+        .team-card p {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        /* Section Title */
+        .section-title {
+          text-align: center;
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1rem;
+          color: var(--text-secondary);
+          margin-bottom: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2.5rem;
+          }
+
+          .content-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .content-image {
+            order: -1;
+          }
+
+          .mission-grid,
+          .team-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about" class="active">About</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Empowering Dreams, <br><span class="highlight">Creating Futures</span></h1>
+            <p>Phoenix is bridging India's skills gap by providing accessible, industry-vetted training that creates direct pathways from learning to meaningful employment opportunities.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container">
+          <div class="content-grid">
+            <div class="content-block">
+              <h2>Our Mission</h2>
+              <p>To bridge the gap between education and opportunity, empowering every individual with dignity and skills that lead to sustainable economic mobility.</p>
+              <p>We believe that quality skills training should be accessible to everyone, regardless of their background or financial situation. Through our platform, we're creating a direct pipeline between learners and industries that need skilled workers.</p>
+            </div>
+            <div class="content-image">
+              <img src="https://images.pexels.com/photos/21696/pexels-photo.jpg" alt="Success and motivation - skills training leads to achievement" loading="lazy">
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-image">
+              <img src="https://images.pexels.com/photos/12199101/pexels-photo-12199101.jpeg" alt="Indian students engaged in classroom learning environment" loading="lazy">
+            </div>
+            <div class="content-block">
+              <h2>The Problem We're Solving</h2>
+              <p>Rajasthan faces a significant skills gap challenge. Despite having a young, eager workforce, many individuals lack access to industry-relevant training that leads to meaningful employment.</p>
+              <p>Traditional education systems often fail to provide practical, job-ready skills. We're changing this by partnering directly with industries to understand their needs and design training programs that guarantee employment opportunities.</p>
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-block">
+              <h2>Our Solution</h2>
+              <p>Phoenix combines the accessibility of mobile learning with hands-on practical training to create a comprehensive skills development ecosystem.</p>
+              <p>Our hybrid approach ensures learners get both theoretical knowledge and real-world application, while our industry partnerships guarantee direct employment pathways upon successful completion.</p>
+            </div>
+            <div class="content-image">
+              <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Business partnership and collaboration - handshake over coffee" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission-section">
+        <div class="container">
+          <h2 class="section-title">Our Values</h2>
+          <p class="section-subtitle">The principles that guide everything we do</p>
+          <div class="mission-grid">
+            <div class="mission-card">
+              <div class="mission-icon">🤝</div>
+              <h3>Dignity Through Skills</h3>
+              <p>We believe everyone deserves access to quality education and meaningful work opportunities that provide economic dignity.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🌍</div>
+              <h3>Industry Relevance</h3>
+              <p>Our courses are designed in partnership with employers to ensure they meet real market demands and lead to actual jobs.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">📱</div>
+              <h3>Accessible Technology</h3>
+              <p>We use mobile-first technology to make learning accessible to everyone, regardless of location or socioeconomic background.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🎯</div>
+              <h3>Results-Driven</h3>
+              <p>Success is measured by employment outcomes, not just course completion. We're committed to real economic impact.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <div class="container">
+          <h2 class="section-title">Our Founding Team</h2>
+          <p class="section-subtitle">Passionate individuals committed to creating systemic change</p>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar">👨‍💼</div>
+              <h3>Founder & CEO</h3>
+              <p class="role">Strategic Vision</p>
+              <p>Leading the mission to bridge India's skills gap through innovative education-to-employment pathways and sustainable economic mobility solutions.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👩‍💻</div>
+              <h3>Co-Founder & CTO</h3>
+              <p class="role">Technology Leadership</p>
+              <p>Building scalable technology solutions that make quality skills training accessible to underserved communities across India.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👨‍🏫</div>
+              <h3>Head of Curriculum</h3>
+              <p class="role">Educational Excellence</p>
+              <p>Designing industry-vetted training programs that combine practical skills with employment readiness for maximum impact.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👩‍🤝‍👨</div>
+              <h3>Partnerships Director</h3>
+              <p class="role">Industry Relations</p>
+              <p>Building strategic partnerships with employers and industry leaders to create direct employment pathways for our learners.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+    </html>
+`;
+
+const getContactPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact Phoenix - Get in Touch</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: var(--bg-secondary);
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: var(--bg-primary);
+          padding: 1rem 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: var(--primary-color);
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(219, 234, 254, 0.9) 50%, rgba(191, 219, 254, 0.9) 100%), url('https://images.pexels.com/photos/7709255/pexels-photo-7709255.jpeg') center/cover;
+          padding: 120px 0 60px;
+          text-align: center;
+          position: relative;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(219, 234, 254, 0.85) 50%, rgba(191, 219, 254, 0.85) 100%);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-content h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        .hero-content .highlight {
+          color: var(--primary-color);
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+          color: var(--text-secondary);
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: 80px 0;
+          background: var(--bg-primary);
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: start;
+        }
+
+
+        /* Contact Form */
+        .contact-form {
+          background: var(--bg-primary);
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        .form-group {
+          margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          width: 100%;
+          padding: 12px 15px;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+          font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .submit-btn {
+          background: var(--primary-color);
+          color: white;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          width: 100%;
+        }
+
+        .submit-btn:hover {
+          background: var(--primary-dark);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .submit-btn:disabled {
+          background: #9ca3af;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
+        }
+
+        /* Contact Info */
+        .contact-info {
+          padding: 2rem;
+        }
+
+        .contact-info h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        .info-cards {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .info-card {
+          background: var(--bg-accent);
+          padding: 1.5rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+        }
+
+        .info-card .icon {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          color: var(--primary-color);
+        }
+
+        .info-card h3 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        .info-card p {
+          color: var(--text-secondary);
+          margin-bottom: 0.5rem;
+        }
+
+        .info-card a {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        .info-card a:hover {
+          text-decoration: underline;
+        }
+
+        /* Success Message */
+        .success-message {
+          background: #d1fae5;
+          border: 1px solid #a7f3d0;
+          color: #065f46;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          display: none;
+        }
+
+        .success-message.show {
+          display: block;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+          background: var(--bg-accent);
+          padding: 80px 0;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1rem;
+          color: var(--text-secondary);
+          margin-bottom: 4rem;
+        }
+
+        .faq-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+        }
+
+        .faq-card {
+          background: var(--bg-primary);
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+        }
+
+        .faq-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        .faq-card p {
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2.2rem;
+          }
+
+          .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+
+          .faq-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about">About</a>
+              <a href="/contact" class="active">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Get in <span class="highlight">Touch</span></h1>
+            <p>Have questions about our programs? Interested in partnering with us? We'd love to hear from you and help you take the next step in your skills journey.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+              <h2>Send us a Message</h2>
+              <div class="success-message" id="successMessage">
+                ✅ Thank you for your message! We'll get back to you within 24 hours.
+              </div>
+              <form id="contactForm" action="https://formspree.io/f/mzzvjypr" method="POST">
+                <input type="hidden" name="_next" value="/contact?success=true">
+                <input type="hidden" name="_subject" value="New Contact Form Submission from Phoenix">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="first_name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="last_name" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                  <label for="inquiryType">Type of Inquiry *</label>
+                  <select id="inquiryType" name="inquiry_type" required>
+                    <option value="">Select an option</option>
+                    <option value="course-info">Course Information</option>
+                    <option value="enrollment">Enrollment Questions</option>
+                    <option value="partnership">Partnership Opportunities</option>
+                    <option value="employer">Employer/Hiring Partner</option>
+                    <option value="media">Media Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <h2>Contact Information</h2>
+              <div class="info-cards">
+                <div class="info-card">
+                  <div class="icon">📧</div>
+                  <h3>Email Us</h3>
+                  <p>For general inquiries:</p>
+                  <a href="mailto:info@phoenix-skills.com">info@phoenix-skills.com</a>
+                  <p>For partnerships:</p>
+                  <a href="mailto:partnerships@phoenix-skills.com">partnerships@phoenix-skills.com</a>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">📱</div>
+                  <h3>Call Us</h3>
+                  <p>Student Support Helpline:</p>
+                  <a href="tel:+911234567890">+91 12345 67890</a>
+                  <p>Partnership Inquiries:</p>
+                  <a href="tel:+911234567891">+91 12345 67891</a>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">📍</div>
+                  <h3>Visit Us</h3>
+                  <p>Phoenix Skills Development Center<br>
+                  Udaipur, Rajasthan 313001<br>
+                  India</p>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">🕒</div>
+                  <h3>Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM IST<br>
+                  Saturday: 10:00 AM - 4:00 PM IST<br>
+                  Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Quick answers to common questions</p>
+          <div class="faq-grid">
+            <div class="faq-card">
+              <h3>How do I enroll in a course?</h3>
+              <p>Browse our course catalog, select a program that interests you, and click "Enroll Now". You'll be guided through the registration process step by step.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Are there any prerequisites?</h3>
+              <p>Most of our courses are designed for beginners. Specific prerequisites, if any, are listed on each course page. We believe in making skills training accessible to everyone.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Do you offer job placement assistance?</h3>
+              <p>Yes! We have partnerships with over 50 companies and provide direct employment pathways for successful course completers. Our goal is employment, not just education.</p>
+            </div>
+            <div class="faq-card">
+              <h3>What devices do I need for online learning?</h3>
+              <p>Our platform works on smartphones, tablets, and computers. Most courses can be completed using just a mobile phone, making learning accessible anywhere.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Is financial assistance available?</h3>
+              <p>We offer Income Share Agreements (ISAs) for qualifying programs, meaning you pay nothing upfront and only pay after you get a job. Contact us to learn more.</p>
+            </div>
+            <div class="faq-card">
+              <h3>How can my organization partner with Phoenix?</h3>
+              <p>We're always looking for industry partners, educational institutions, and employers. Email partnerships@phoenix-skills.com to discuss collaboration opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Contact form handling with Formspree
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          const submitBtn = document.getElementById('submitBtn');
+          const successMessage = document.getElementById('successMessage');
+
+          // Disable submit button and show loading state
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+
+          // Let the form submit naturally to Formspree
+          // Success handling will be done by Formspree's redirect or AJAX response
+        });
+
+        // Check if we're returning from a successful Formspree submission
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+          document.getElementById('successMessage').classList.add('show');
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            document.getElementById('successMessage').classList.remove('show');
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }, 5000);
+        }
+
+        // Auto-populate subject based on inquiry type
+        document.getElementById('inquiryType').addEventListener('change', function() {
+          const subjectField = document.getElementById('subject');
+          const inquiryType = this.value;
+
+          const subjectMappings = {
+            'course-info': 'Course Information Request',
+            'enrollment': 'Enrollment Question',
+            'partnership': 'Partnership Opportunity',
+            'employer': 'Employer/Hiring Partner Inquiry',
+            'media': 'Media Inquiry',
+            'support': 'Technical Support Request',
+            'other': ''
+          };
+
+          if (subjectMappings[inquiryType] !== undefined) {
+            subjectField.value = subjectMappings[inquiryType];
+          }
+        });
+
+        // Form validation enhancements
+        const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+
+        requiredFields.forEach(field => {
+          field.addEventListener('blur', function() {
+            if (!this.value.trim()) {
+              this.style.borderColor = '#ef4444';
+            } else {
+              this.style.borderColor = '#2563eb';
+            }
+          });
+
+          field.addEventListener('input', function() {
+            if (this.value.trim()) {
+              this.style.borderColor = '#2563eb';
+            }
+          });
+        });
+
+        // Email validation
+        document.getElementById('email').addEventListener('input', function() {
+          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+          if (this.value && !emailRegex.test(this.value)) {
+            this.style.borderColor = '#ef4444';
+          } else if (this.value) {
+            this.style.borderColor = '#2563eb';
+          }
+        });
+      </script>
+    </body>
+    </html>
+`;
+
 const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
@@ -2254,6 +3510,10 @@ const server = http.createServer((req, res) => {
     res.end(getHomePage());
   } else if (pathname === '/courses') {
     res.end(getCoursesPage(coursesData));
+  } else if (pathname === '/about') {
+    res.end(getAboutPage());
+  } else if (pathname === '/contact') {
+    res.end(getContactPage());
   } else if (pathname.startsWith('/courses/')) {
     // Extract course ID from URL
     const courseId = parseInt(pathname.split('/')[2]);
@@ -2279,7 +3539,7 @@ const server = http.createServer((req, res) => {
         </head>
         <body>
           <div class="container">
-            <h1>📚 Course Not Found</h1>
+            <h1>��� Course Not Found</h1>
             <p>The course you're looking for doesn't exist or has been moved.</p>
             <a href="/courses">← Browse All Courses</a>
           </div>
