@@ -3080,7 +3080,7 @@ const getContactPage = () => `
                 <div class="form-row">
                   <div class="form-group">
                     <label for="firstName">First Name *</label>
-                    <input type="text" id="firstName" name="firstName" required>
+                    <input type="text" id="firstName" name="first_name" required>
                   </div>
                   <div class="form-group">
                     <label for="lastName">Last Name *</label>
