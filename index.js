@@ -3100,7 +3100,7 @@ const getContactPage = () => `
 
                 <div class="form-group">
                   <label for="inquiryType">Type of Inquiry *</label>
-                  <select id="inquiryType" name="inquiryType" required>
+                  <select id="inquiryType" name="inquiry_type" required>
                     <option value="">Select an option</option>
                     <option value="course-info">Course Information</option>
                     <option value="enrollment">Enrollment Questions</option>
