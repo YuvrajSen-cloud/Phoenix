@@ -3215,6 +3215,10 @@ const server = http.createServer((req, res) => {
 
   if (pathname === '/' || pathname === '/index.html') {
     res.end(getHomePage());
+  } else if (pathname === '/about') {
+    res.end(getAboutPage());
+  } else if (pathname === '/contact') {
+    res.end(getContactPage());
   } else if (pathname === '/courses') {
     res.end(getCoursesPage(coursesData));
   } else if (pathname.startsWith('/courses/')) {
