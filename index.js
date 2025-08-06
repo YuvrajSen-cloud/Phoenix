@@ -628,18 +628,18 @@ const getHomePage = () => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=32') 16 16, auto;
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=20') 10 10, auto;
           transition: transform 0.1s ease;
         }
 
         /* Click animation */
         body.clicking {
-          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=40') 20 20, auto;
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2F7ba441afce7c4b0892f6512c53da6c0c?format=webp&width=24') 12 12, auto;
         }
 
         /* Special cursor for interactive elements */
-        a, button, .learn-more-btn, .nav-links a {
-          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2Fd24d163b182d4116b49a79755d91d56f?format=webp&width=32') 16 16, pointer;
+        a, button, .learn-more-btn, .nav-links a, .enroll-btn, .filter-btn {
+          cursor: url('https://cdn.builder.io/api/v1/image/assets%2F2ac028268d0a425085f87821d101bd67%2Fd24d163b182d4116b49a79755d91d56f?format=webp&width=20') 10 10, pointer;
         }
 
         .container {
