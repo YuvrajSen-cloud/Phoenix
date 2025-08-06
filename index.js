@@ -1558,7 +1558,7 @@ const getAboutPage = () => `
               <p>Phoenix is more than just a training platform – we're building a movement that transforms lives, strengthens communities, and drives India's economic growth through skilled workforce development.</p>
             </div>
             <div class="visual-content">
-              <div class="visual-icon">🎯</div>
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Students learning technology skills" class="visual-image" loading="lazy">
               <h3 style="color: #2196f3; margin-bottom: 1rem;">Vision 2030</h3>
               <p style="color: #e3f2fd;">To become India's leading skills-to-employment ecosystem, reaching 100,000+ learners across Rajasthan and beyond.</p>
             </div>
