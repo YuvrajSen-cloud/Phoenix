@@ -595,6 +595,8 @@ const getHomePage = () => `
           --primary-light: #f0fdf4;
           --primary-medium: #dcfce7;
           --primary-bright: #bbf7d0;
+          --primary-rgb: 34, 197, 94;
+          --primary-light-rgb: 240, 253, 244;
         }
 
         [data-theme="purple"] {
@@ -603,6 +605,8 @@ const getHomePage = () => `
           --primary-light: #faf5ff;
           --primary-medium: #ede9fe;
           --primary-bright: #ddd6fe;
+          --primary-rgb: 124, 58, 237;
+          --primary-light-rgb: 250, 245, 255;
         }
 
         [data-theme="dark"] {
@@ -616,6 +620,8 @@ const getHomePage = () => `
           --bg-primary: #111827;
           --bg-secondary: #1f2937;
           --bg-accent: #374151;
+          --primary-rgb: 59, 130, 246;
+          --primary-light-rgb: 31, 41, 55;
         }
 
         body {
