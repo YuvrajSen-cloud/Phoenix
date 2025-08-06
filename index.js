@@ -337,7 +337,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Master Electrician Rajesh Singh has 20 years of experience in electrical installations and has trained over 800 electricians. He holds multiple certifications and specializes in industrial electrical systems.",
-    educatorImage: "👨‍����"
+    educatorImage: "👨‍🔧"
   },
   {
     id: 6,
@@ -934,8 +934,8 @@ const getHomePage = () => `
             <div class="nav-links">
               <a href="/">Home</a>
               <a href="/courses">Courses</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
         </div>
