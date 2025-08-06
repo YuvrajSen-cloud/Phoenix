@@ -1572,7 +1572,7 @@ const getAboutPage = () => `
           <h2 class="section-title">The Challenge We're Solving</h2>
           <div class="section-content">
             <div class="visual-content">
-              <div class="visual-icon">⚡</div>
+              <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Skills gap challenge in India" class="visual-image" loading="lazy">
               <h3 style="color: #2196f3; margin-bottom: 1rem;">Skills Gap Crisis</h3>
               <p style="color: #e3f2fd;">Millions of young Indians lack access to industry-relevant training, while employers struggle to find skilled workers.</p>
             </div>
