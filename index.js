@@ -628,12 +628,12 @@ const getHomePage = () => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="%23ffffff" stroke="%23000000" stroke-width="2"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23000000" stroke-width="1"/><circle cx="16" cy="16" r="4" fill="%23000000"/></svg>') 16 16, pointer;
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%23333333" stroke-width="1.5"/><circle cx="12" cy="12" r="6" fill="none" stroke="%23333333" stroke-width="1"/><circle cx="12" cy="12" r="2" fill="%23333333"/><text x="12" y="5" text-anchor="middle" font-size="8" fill="%23333333">🎨</text></svg>') 12 12, auto;
         }
 
         /* Special cursor for interactive elements */
         a, button, .learn-more-btn, .nav-links a {
-          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="%23ffffff" stroke="%232563eb" stroke-width="2"/><circle cx="16" cy="16" r="8" fill="none" stroke="%232563eb" stroke-width="1"/><circle cx="16" cy="16" r="3" fill="%232563eb"/></svg>') 16 16, pointer;
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%232563eb" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="%232563eb" stroke-width="1"/><circle cx="12" cy="12" r="2" fill="%232563eb"/><text x="12" y="5" text-anchor="middle" font-size="6" fill="%232563eb">👆</text></svg>') 12 12, pointer;
         }
 
         .container {
