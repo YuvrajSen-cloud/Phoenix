@@ -1242,6 +1242,58 @@ const getCourseDetailsPage = (course) => `
           box-sizing: border-box;
         }
 
+        /* CSS Custom Properties for Theme Switching */
+        :root {
+          /* Blue Theme (Default) */
+          --primary-color: #2563eb;
+          --primary-dark: #1d4ed8;
+          --primary-light: #eff6ff;
+          --primary-medium: #dbeafe;
+          --primary-bright: #bfdbfe;
+          --text-primary: #111827;
+          --text-secondary: #6b7280;
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8fafc;
+          --bg-accent: #f9fafb;
+          --primary-rgb: 37, 99, 235;
+          --primary-light-rgb: 239, 246, 255;
+        }
+
+        [data-theme="green"] {
+          --primary-color: #22c55e;
+          --primary-dark: #16a34a;
+          --primary-light: #f0fdf4;
+          --primary-medium: #dcfce7;
+          --primary-bright: #bbf7d0;
+          --primary-rgb: 34, 197, 94;
+          --primary-light-rgb: 240, 253, 244;
+        }
+
+        [data-theme="purple"] {
+          --primary-color: #7c3aed;
+          --primary-dark: #6d28d9;
+          --primary-light: #faf5ff;
+          --primary-medium: #ede9fe;
+          --primary-bright: #ddd6fe;
+          --primary-rgb: 124, 58, 237;
+          --primary-light-rgb: 250, 245, 255;
+        }
+
+        [data-theme="dark"] {
+          --primary-color: #3b82f6;
+          --primary-dark: #2563eb;
+          --primary-light: #1f2937;
+          --primary-medium: #374151;
+          --primary-bright: #4b5563;
+          --text-primary: #ffffff;
+          --text-secondary: #d1d5db;
+          --bg-primary: #111827;
+          --bg-secondary: #1f2937;
+          --bg-accent: #374151;
+          --primary-rgb: 59, 130, 246;
+          --primary-light-rgb: 31, 41, 55;
+        }
+
         body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
