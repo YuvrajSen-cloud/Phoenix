@@ -682,28 +682,6 @@ const getHomePage = () => `
           color: var(--primary-color);
         }
 
-        /* Theme Indicator */
-        .theme-indicator {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background: var(--primary-color);
-          color: var(--bg-primary);
-          padding: 8px 16px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          z-index: 1000;
-          opacity: 0;
-          transform: translateY(-10px);
-          transition: all 0.3s ease;
-          pointer-events: none;
-        }
-
-        .theme-indicator.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
 
         /* Click Hint */
         .click-hint {
@@ -2826,7 +2804,7 @@ const getAboutPage = () => `
               <p>Leading the mission to bridge India's skills gap through innovative education-to-employment pathways and sustainable economic mobility solutions.</p>
             </div>
             <div class="team-card">
-              <div class="team-avatar">👩���💻</div>
+              <div class="team-avatar">👩‍💻</div>
               <h3>Co-Founder & CTO</h3>
               <p class="role">Technology Leadership</p>
               <p>Building scalable technology solutions that make quality skills training accessible to underserved communities across India.</p>
