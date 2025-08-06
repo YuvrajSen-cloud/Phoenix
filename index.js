@@ -2763,9 +2763,26 @@ const getContactPage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          background: linear-gradient(135deg, rgba(240, 253, 244, 0.9) 0%, rgba(220, 252, 231, 0.9) 50%, rgba(187, 247, 208, 0.9) 100%), url('https://images.pexels.com/photos/7709255/pexels-photo-7709255.jpeg') center/cover;
           padding: 120px 0 60px;
           text-align: center;
+          position: relative;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(240, 253, 244, 0.85) 0%, rgba(220, 252, 231, 0.85) 50%, rgba(187, 247, 208, 0.85) 100%);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
         }
 
         .hero-content h1 {
