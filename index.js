@@ -572,6 +572,50 @@ const getHomePage = () => `
           box-sizing: border-box;
         }
 
+        /* CSS Custom Properties for Theme Switching */
+        :root {
+          /* Blue Theme (Default) */
+          --primary-color: #2563eb;
+          --primary-dark: #1d4ed8;
+          --primary-light: #eff6ff;
+          --primary-medium: #dbeafe;
+          --primary-bright: #bfdbfe;
+          --text-primary: #111827;
+          --text-secondary: #6b7280;
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8fafc;
+          --bg-accent: #f9fafb;
+        }
+
+        [data-theme="green"] {
+          --primary-color: #22c55e;
+          --primary-dark: #16a34a;
+          --primary-light: #f0fdf4;
+          --primary-medium: #dcfce7;
+          --primary-bright: #bbf7d0;
+        }
+
+        [data-theme="purple"] {
+          --primary-color: #7c3aed;
+          --primary-dark: #6d28d9;
+          --primary-light: #faf5ff;
+          --primary-medium: #ede9fe;
+          --primary-bright: #ddd6fe;
+        }
+
+        [data-theme="dark"] {
+          --primary-color: #3b82f6;
+          --primary-dark: #2563eb;
+          --primary-light: #1f2937;
+          --primary-medium: #374151;
+          --primary-bright: #4b5563;
+          --text-primary: #ffffff;
+          --text-secondary: #d1d5db;
+          --bg-primary: #111827;
+          --bg-secondary: #1f2937;
+          --bg-accent: #374151;
+        }
+
         body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
