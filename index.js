@@ -1534,7 +1534,9 @@ const getHomePage = () => `
         body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
-          color: #333;
+          color: #ffffff;
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0d47a1 100%);
+          min-height: 100vh;
         }
 
         .container {
