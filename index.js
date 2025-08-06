@@ -626,7 +626,7 @@ const getHomePage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
           min-height: 90vh;
           display: flex;
           align-items: center;
@@ -835,7 +835,7 @@ const getHomePage = () => `
 
         .course-image {
           height: 160px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1163,7 +1163,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Course Header */
         .course-header {
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
           color: #374151;
           padding: 3rem 0;
         }
@@ -1783,7 +1783,7 @@ const getCoursesPage = (courses) => `
         /* Header Section */
         .page-header {
           padding: 120px 0 60px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
           color: #374151;
           text-align: center;
         }
@@ -1917,7 +1917,7 @@ const getCoursesPage = (courses) => `
 
         .course-card-image {
           height: 160px;
-          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2393,7 +2393,7 @@ const getAboutPage = () => `
 
         .content-image {
           text-align: center;
-          background: #f0fdf4;
+          background: #eff6ff;
           border-radius: 12px;
           padding: 1rem;
           overflow: hidden;
