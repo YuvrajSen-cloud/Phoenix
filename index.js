@@ -558,6 +558,965 @@ const coursesData = [
   }
 ];
 
+const getAboutPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Phoenix - Bridging India's Skills Gap</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #ffffff;
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0d47a1 100%);
+          min-height: 100vh;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: rgba(0, 0, 0, 0.95);
+          padding: 1rem 0;
+          box-shadow: 0 2px 20px rgba(13, 71, 161, 0.3);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #2196f3;
+          text-decoration: none;
+          text-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #ffffff;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .nav-links a:hover {
+          color: #2196f3;
+          text-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+        }
+
+        .nav-links a.active {
+          color: #2196f3;
+          font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #2196f3, #1976d2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+          padding: 120px 0 80px;
+          text-align: center;
+          background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(13,71,161,0.6) 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%232196f3;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%230d47a1;stop-opacity:0.3" /></radialGradient></defs><circle cx="200" cy="300" r="150" fill="url(%23grad)"/><circle cx="800" cy="200" r="100" fill="url(%23grad)"/><circle cx="600" cy="700" r="200" fill="url(%23grad)"/></svg>') no-repeat center;
+          background-size: cover;
+          opacity: 0.3;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(45deg, #2196f3, #64b5f6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 0 30px rgba(33, 150, 243, 0.5);
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+          color: #e3f2fd;
+          margin-bottom: 3rem;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+          padding: 80px 0;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+          margin: 40px 0;
+          border-radius: 20px;
+          border: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: 600;
+          margin-bottom: 2rem;
+          text-align: center;
+          color: #2196f3;
+          text-shadow: 0 0 20px rgba(33, 150, 243, 0.4);
+        }
+
+        .section-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+        }
+
+        .text-content {
+          color: #e3f2fd;
+          font-size: 1.1rem;
+          line-height: 1.8;
+        }
+
+        .text-content h3 {
+          color: #2196f3;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+
+        .text-content p {
+          margin-bottom: 1.5rem;
+        }
+
+        .visual-content {
+          text-align: center;
+          padding: 2rem;
+          background: rgba(33, 150, 243, 0.1);
+          border-radius: 15px;
+          border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .visual-icon {
+          font-size: 4rem;
+          margin-bottom: 1rem;
+          color: #2196f3;
+          text-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
+        }
+
+        /* Stats Section */
+        .stats-section {
+          padding: 80px 0;
+          background: linear-gradient(135deg, rgba(13, 71, 161, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+          border-radius: 20px;
+          margin: 40px 0;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .stat-card {
+          text-align: center;
+          padding: 2rem;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 15px;
+          border: 1px solid rgba(33, 150, 243, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+          border-color: #2196f3;
+        }
+
+        .stat-number {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #2196f3;
+          margin-bottom: 0.5rem;
+          text-shadow: 0 0 15px rgba(33, 150, 243, 0.5);
+        }
+
+        .stat-label {
+          color: #e3f2fd;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        /* Team Section */
+        .team-section {
+          padding: 80px 0;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 20px;
+          margin: 40px 0;
+        }
+
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .team-card {
+          background: rgba(0, 0, 0, 0.7);
+          padding: 2rem;
+          border-radius: 15px;
+          text-align: center;
+          border: 1px solid rgba(33, 150, 243, 0.2);
+          transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(33, 150, 243, 0.2);
+          border-color: #2196f3;
+        }
+
+        .team-avatar {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, #2196f3, #1976d2);
+          border-radius: 50%;
+          margin: 0 auto 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          box-shadow: 0 0 20px rgba(33, 150, 243, 0.4);
+        }
+
+        .team-name {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #2196f3;
+          margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+          color: #90caf9;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .team-bio {
+          color: #e3f2fd;
+          line-height: 1.6;
+          font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 2.5rem;
+          }
+
+          .section-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .stats-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .team-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about" class="active">About</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">About Phoenix</h1>
+            <p class="hero-subtitle">Empowering India's youth through dignity, skills, and sustainable career opportunities</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="content-section">
+        <div class="container">
+          <h2 class="section-title">Our Mission</h2>
+          <div class="section-content">
+            <div class="text-content">
+              <h3>Bridging the Gap Between Education and Opportunity</h3>
+              <p>To empower every individual with dignity and skills, creating a direct pipeline from learning to meaningful employment. We believe that everyone deserves access to quality training that leads to sustainable careers and economic mobility.</p>
+              <p>Phoenix is more than just a training platform – we're building a movement that transforms lives, strengthens communities, and drives India's economic growth through skilled workforce development.</p>
+            </div>
+            <div class="visual-content">
+              <div class="visual-icon">🎯</div>
+              <h3 style="color: #2196f3; margin-bottom: 1rem;">Vision 2030</h3>
+              <p style="color: #e3f2fd;">To become India's leading skills-to-employment ecosystem, reaching 100,000+ learners across Rajasthan and beyond.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem Section -->
+      <section class="content-section">
+        <div class="container">
+          <h2 class="section-title">The Challenge We're Solving</h2>
+          <div class="section-content">
+            <div class="visual-content">
+              <div class="visual-icon">⚡</div>
+              <h3 style="color: #2196f3; margin-bottom: 1rem;">Skills Gap Crisis</h3>
+              <p style="color: #e3f2fd;">Millions of young Indians lack access to industry-relevant training, while employers struggle to find skilled workers.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rajasthan's Skills Gap Challenge</h3>
+              <p>Despite being India's largest state, Rajasthan faces significant challenges in workforce development. Traditional education systems often fail to provide practical, industry-relevant skills needed for today's job market.</p>
+              <p>Key challenges include:</p>
+              <ul style="color: #90caf9; margin: 1rem 0; padding-left: 2rem;">
+                <li>Limited access to quality vocational training</li>
+                <li>Disconnect between education and industry needs</li>
+                <li>Lack of employment support after training</li>
+                <li>Geographic barriers to skill development opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solution Section -->
+      <section class="content-section">
+        <div class="container">
+          <h2 class="section-title">Our Hybrid Learning Solution</h2>
+          <div class="section-content">
+            <div class="text-content">
+              <h3>Mobile-First Platform + Hands-on Training</h3>
+              <p>Phoenix combines the accessibility of digital learning with the effectiveness of practical, hands-on training. Our approach ensures learners gain both theoretical knowledge and real-world skills.</p>
+              <h3>Industry-Vetted Programs</h3>
+              <p>Every course is designed in partnership with industry experts and employers, ensuring our graduates have the exact skills needed for in-demand jobs in both blue-collar and white-collar sectors.</p>
+              <h3>Employment Pipeline</h3>
+              <p>We don't just train – we connect. Our extensive network of industry partners provides direct pathways to employment, internships, and career advancement opportunities.</p>
+            </div>
+            <div class="visual-content">
+              <div class="visual-icon">🚀</div>
+              <h3 style="color: #2196f3; margin-bottom: 1rem;">Complete Ecosystem</h3>
+              <p style="color: #e3f2fd;">From skill assessment to job placement, we support learners throughout their entire career journey.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Stats -->
+      <section class="stats-section">
+        <div class="container">
+          <h2 class="section-title">Our Growing Impact</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Youth Trained</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">85%</div>
+              <div class="stat-label">Employment Success Rate</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Industry Partners</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">8</div>
+              <div class="stat-label">Training Programs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <div class="container">
+          <h2 class="section-title">Meet Our Team</h2>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar">👨‍💼</div>
+              <div class="team-name">Yuvraj Sen</div>
+              <div class="team-role">Founder & CEO</div>
+              <div class="team-bio">Passionate about bridging India's skills gap through innovative training solutions. Background in business strategy and social impact.</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👩‍🎓</div>
+              <div class="team-name">Dr. Priya Sharma</div>
+              <div class="team-role">Head of Curriculum</div>
+              <div class="team-bio">Former professor with 15+ years in vocational education. Specializes in industry-aligned curriculum development.</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👨‍💻</div>
+              <div class="team-name">Rajesh Kumar</div>
+              <div class="team-role">Technology Lead</div>
+              <div class="team-bio">Expert in mobile-first learning platforms. Previously worked with EdTech startups across India.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Add smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content-section, .stats-section, .team-section').forEach(section => {
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(30px)';
+          section.style.transition = 'all 0.6s ease';
+          observer.observe(section);
+        });
+      </script>
+    </body>
+    </html>
+`;
+
+const getContactPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact Phoenix - Get in Touch</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #ffffff;
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0d47a1 100%);
+          min-height: 100vh;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: rgba(0, 0, 0, 0.95);
+          padding: 1rem 0;
+          box-shadow: 0 2px 20px rgba(13, 71, 161, 0.3);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #2196f3;
+          text-decoration: none;
+          text-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #ffffff;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .nav-links a:hover {
+          color: #2196f3;
+          text-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+        }
+
+        .nav-links a.active {
+          color: #2196f3;
+          font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #2196f3, #1976d2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+          padding: 120px 0 80px;
+          text-align: center;
+          background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(13,71,161,0.6) 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(45deg, #2196f3, #64b5f6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+          color: #e3f2fd;
+          margin-bottom: 3rem;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Main Content */
+        .main-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          padding: 80px 0;
+          align-items: start;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+          background: rgba(0, 0, 0, 0.6);
+          padding: 3rem;
+          border-radius: 20px;
+          border: 1px solid rgba(33, 150, 243, 0.3);
+          backdrop-filter: blur(10px);
+        }
+
+        .form-title {
+          font-size: 2rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          color: #2196f3;
+          text-align: center;
+        }
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .form-label {
+          color: #e3f2fd;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+          padding: 15px;
+          border: 2px solid rgba(33, 150, 243, 0.3);
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.5);
+          color: #ffffff;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+          outline: none;
+          border-color: #2196f3;
+          box-shadow: 0 0 15px rgba(33, 150, 243, 0.3);
+          background: rgba(0, 0, 0, 0.7);
+        }
+
+        .form-textarea {
+          min-height: 120px;
+          resize: vertical;
+        }
+
+        .form-select {
+          cursor: pointer;
+        }
+
+        .form-select option {
+          background: #1a1a1a;
+          color: #ffffff;
+        }
+
+        .submit-btn {
+          padding: 15px 30px;
+          background: linear-gradient(45deg, #2196f3, #1976d2);
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .submit-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+          background: linear-gradient(45deg, #1976d2, #1565c0);
+        }
+
+        /* Contact Info */
+        .contact-info-section {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .contact-card {
+          background: rgba(0, 0, 0, 0.6);
+          padding: 2rem;
+          border-radius: 15px;
+          border: 1px solid rgba(33, 150, 243, 0.3);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(33, 150, 243, 0.2);
+          border-color: #2196f3;
+        }
+
+        .contact-icon {
+          font-size: 2.5rem;
+          color: #2196f3;
+          margin-bottom: 1rem;
+        }
+
+        .contact-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #2196f3;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-details {
+          color: #e3f2fd;
+          line-height: 1.6;
+        }
+
+        .contact-link {
+          color: #64b5f6;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+          color: #2196f3;
+        }
+
+        /* Success Message */
+        .success-message {
+          background: linear-gradient(45deg, #4caf50, #2e7d32);
+          color: white;
+          padding: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          margin-bottom: 1rem;
+          display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .main-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .hero-title {
+            font-size: 2.5rem;
+          }
+
+          .contact-form-section {
+            padding: 2rem;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about">About</a>
+              <a href="/contact" class="active">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-subtitle">Ready to start your learning journey? Have questions about our programs? We're here to help you succeed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container" style="max-width: none; display: contents;">
+          <!-- Contact Form -->
+          <div class="contact-form-section">
+            <h2 class="form-title">Send Us a Message</h2>
+            <div id="successMessage" class="success-message">
+              Thank you for your message! We'll get back to you within 24 hours.
+            </div>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <select id="subject" name="subject" class="form-select" required>
+                  <option value="">Select a topic</option>
+                  <option value="course-inquiry">Course Inquiry</option>
+                  <option value="enrollment">Enrollment Support</option>
+                  <option value="partnership">Partnership Opportunities</option>
+                  <option value="technical-support">Technical Support</option>
+                  <option value="career-guidance">Career Guidance</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us how we can help you..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-info-section">
+            <div class="contact-card">
+              <div class="contact-icon">📧</div>
+              <div class="contact-title">Email Us</div>
+              <div class="contact-details">
+                <a href="mailto:hello@phoenix-skills.com" class="contact-link">hello@phoenix-skills.com</a><br>
+                <a href="mailto:support@phoenix-skills.com" class="contact-link">support@phoenix-skills.com</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">📱</div>
+              <div class="contact-title">Call Us</div>
+              <div class="contact-details">
+                <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a><br>
+                <span style="color: #90caf9; font-size: 0.9rem;">Mon-Fri: 9:00 AM - 6:00 PM IST</span>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">📍</div>
+              <div class="contact-title">Visit Us</div>
+              <div class="contact-details">
+                Phoenix Skills Center<br>
+                Sector 11, Udaipur<br>
+                Rajasthan 313001, India
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">🌐</div>
+              <div class="contact-title">Follow Us</div>
+              <div class="contact-details">
+                <a href="#" class="contact-link">LinkedIn</a> |
+                <a href="#" class="contact-link">Twitter</a> |
+                <a href="#" class="contact-link">Instagram</a><br>
+                <span style="color: #90caf9; font-size: 0.9rem;">Stay updated with our latest programs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Simulate form submission
+          const submitBtn = document.querySelector('.submit-btn');
+          const originalText = submitBtn.textContent;
+
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+
+          setTimeout(() => {
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Reset form
+            this.reset();
+
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+          }, 1500);
+        });
+      </script>
+    </body>
+    </html>
+`;
+
 const getHomePage = () => `
     <!DOCTYPE html>
     <html lang="hi">
