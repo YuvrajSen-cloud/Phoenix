@@ -1438,6 +1438,67 @@ const getAboutPage = () => `
           text-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
         }
 
+        /* Programs Showcase */
+        .programs-showcase {
+          margin-top: 3rem;
+        }
+
+        .program-image-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .program-item {
+          position: relative;
+          border-radius: 15px;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.7);
+          border: 1px solid rgba(33, 150, 243, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .program-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(33, 150, 243, 0.3);
+          border-color: #2196f3;
+        }
+
+        .program-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .program-item:hover .program-img {
+          transform: scale(1.05);
+        }
+
+        .program-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0,0,0,0.9));
+          padding: 2rem 1.5rem 1.5rem;
+          color: white;
+        }
+
+        .program-overlay h4 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #2196f3;
+          margin-bottom: 0.5rem;
+        }
+
+        .program-overlay p {
+          font-size: 0.9rem;
+          color: #e3f2fd;
+          line-height: 1.4;
+        }
+
         /* Team Section */
         .team-section {
           padding: 80px 0;
