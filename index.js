@@ -1328,9 +1328,26 @@ const getAboutPage = () => `
         .hero-section {
           padding: 120px 0 80px;
           text-align: center;
-          background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(13,71,161,0.6) 100%);
+          background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(13,71,161,0.5) 100%),
+                      url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
           position: relative;
           overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(13,71,161,0.4) 100%);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
         }
 
         .hero-title {
