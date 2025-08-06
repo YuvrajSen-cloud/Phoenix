@@ -554,7 +554,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Kavita Joshi is an experienced office manager with 14 years in administrative roles across various industries. She has streamlined operations for multiple companies and trained 150+ administrative professionals.",
-    educatorImage: "👩���💼"
+    educatorImage: "👩‍💼"
   }
 ];
 
@@ -630,7 +630,7 @@ const getHomePage = () => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -698,7 +698,7 @@ const getHomePage = () => `
           position: absolute;
           top: 50px;
           right: 0;
-          background: white;
+          background: var(--bg-primary);
           border: 1px solid #e5e7eb;
           border-radius: 8px;
           box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -787,7 +787,7 @@ const getHomePage = () => `
         .hero-content p {
           font-size: 1.2rem;
           margin-bottom: 2.5rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -813,7 +813,7 @@ const getHomePage = () => `
         /* How it Works Section */
         .how-it-works {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .section-title {
@@ -827,7 +827,7 @@ const getHomePage = () => `
         .section-subtitle {
           text-align: center;
           font-size: 1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 4rem;
         }
 
@@ -839,7 +839,7 @@ const getHomePage = () => `
         }
 
         .step-card {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           text-align: center;
@@ -874,7 +874,7 @@ const getHomePage = () => `
         }
 
         .step-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 1rem;
           line-height: 1.6;
         }
@@ -892,7 +892,7 @@ const getHomePage = () => `
         .impact-stat {
           text-align: center;
           padding: 1.5rem;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           border: 1px solid #f3f4f6;
           min-width: 150px;
@@ -913,20 +913,20 @@ const getHomePage = () => `
 
         .stat-label {
           font-size: 0.9rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
         /* Services Section */
         .services-section {
           padding: 80px 0;
-          background: #f9fafb;
+          background: var(--bg-accent);
         }
 
         /* Featured Courses Section */
         .featured-courses {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .courses-grid {
@@ -937,7 +937,7 @@ const getHomePage = () => `
         }
 
         .course-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           overflow: hidden;
           border: 1px solid #f3f4f6;
@@ -985,7 +985,7 @@ const getHomePage = () => `
         }
 
         .course-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.9rem;
           line-height: 1.5;
           margin-bottom: 1.5rem;
@@ -1247,7 +1247,7 @@ const getCourseDetailsPage = (course) => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -1258,7 +1258,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -1303,7 +1303,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Breadcrumb */
         .breadcrumb {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           margin-top: 80px;
           border-bottom: 1px solid #e2e8f0;
@@ -1348,7 +1348,7 @@ const getCourseDetailsPage = (course) => `
 
         .course-subtitle {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 1.5rem;
         }
 
@@ -1378,7 +1378,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Key Info Section */
         .key-info-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem 0;
           border-bottom: 1px solid #e2e8f0;
         }
@@ -1392,7 +1392,7 @@ const getCourseDetailsPage = (course) => `
         .info-item {
           text-align: center;
           padding: 1.5rem;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           border: 1px solid #f3f4f6;
         }
@@ -1405,7 +1405,7 @@ const getCourseDetailsPage = (course) => `
 
         .info-label {
           font-size: 0.8rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-bottom: 0.5rem;
@@ -1426,7 +1426,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .content-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -1459,7 +1459,7 @@ const getCourseDetailsPage = (course) => `
           gap: 0.75rem;
           margin-bottom: 1rem;
           padding: 0.75rem;
-          background: #f8fafc;
+          background: var(--bg-secondary);
           border-radius: 8px;
         }
 
@@ -1478,7 +1478,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header {
-          background: #f8fafc;
+          background: var(--bg-secondary);
           padding: 1rem 1.5rem;
           cursor: pointer;
           display: flex;
@@ -1544,7 +1544,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .enrollment-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           padding: 2rem;
           border: 1px solid #f3f4f6;
@@ -1606,7 +1606,7 @@ const getCourseDetailsPage = (course) => `
 
         /* Educator Bio */
         .educator-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           padding: 2rem;
           border: 1px solid #f3f4f6;
@@ -1637,12 +1637,12 @@ const getCourseDetailsPage = (course) => `
         }
 
         .educator-title {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.85rem;
         }
 
         .educator-bio {
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -1890,7 +1890,7 @@ const getCoursesPage = (courses) => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -1901,7 +1901,7 @@ const getCoursesPage = (courses) => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -1961,12 +1961,12 @@ const getCoursesPage = (courses) => `
 
         .page-header p {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
         }
 
         /* Search and Filter Section */
         .search-filter-section {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem 0;
           border-bottom: 1px solid #e2e8f0;
         }
@@ -2003,7 +2003,7 @@ const getCoursesPage = (courses) => `
           right: 20px;
           top: 50%;
           transform: translateY(-50%);
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 1.2rem;
         }
 
@@ -2017,7 +2017,7 @@ const getCoursesPage = (courses) => `
         .filter-btn {
           padding: 8px 16px;
           border: 1px solid #e5e7eb;
-          background: white;
+          background: var(--bg-primary);
           border-radius: 6px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -2054,7 +2054,7 @@ const getCoursesPage = (courses) => `
           padding: 10px 15px;
           border: 1px solid #e2e8f0;
           border-radius: 8px;
-          background: white;
+          background: var(--bg-primary);
           cursor: pointer;
         }
 
@@ -2066,7 +2066,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-card {
-          background: white;
+          background: var(--bg-primary);
           border-radius: 8px;
           overflow: hidden;
           border: 1px solid #f3f4f6;
@@ -2121,7 +2121,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-description {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.9rem;
           margin-bottom: 1rem;
           line-height: 1.5;
@@ -2427,7 +2427,7 @@ const getAboutPage = () => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -2438,7 +2438,7 @@ const getAboutPage = () => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -2522,7 +2522,7 @@ const getAboutPage = () => `
 
         .hero-content p {
           font-size: 1.2rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
         }
@@ -2530,7 +2530,7 @@ const getAboutPage = () => `
         /* Main Content */
         .main-content {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .content-grid {
@@ -2550,7 +2550,7 @@ const getAboutPage = () => `
 
         .content-block p {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.8;
           margin-bottom: 1.5rem;
         }
@@ -2572,7 +2572,7 @@ const getAboutPage = () => `
 
         /* Mission Section */
         .mission-section {
-          background: #f9fafb;
+          background: var(--bg-accent);
           padding: 80px 0;
         }
 
@@ -2584,7 +2584,7 @@ const getAboutPage = () => `
         }
 
         .mission-card {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -2611,14 +2611,14 @@ const getAboutPage = () => `
         }
 
         .mission-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         /* Team Section */
         .team-section {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .team-grid {
@@ -2629,7 +2629,7 @@ const getAboutPage = () => `
         }
 
         .team-card {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -2675,7 +2675,7 @@ const getAboutPage = () => `
         }
 
         .team-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           font-size: 0.9rem;
           line-height: 1.5;
         }
@@ -2692,7 +2692,7 @@ const getAboutPage = () => `
         .section-subtitle {
           text-align: center;
           font-size: 1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 4rem;
         }
 
@@ -2871,7 +2871,7 @@ const getContactPage = () => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
-          background: #f8fafc;
+          background: var(--bg-secondary);
         }
 
         .container {
@@ -2882,7 +2882,7 @@ const getContactPage = () => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: var(--bg-primary);
           padding: 1rem 0;
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           position: fixed;
@@ -2962,7 +2962,7 @@ const getContactPage = () => `
 
         .hero-content p {
           font-size: 1.1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
         }
@@ -2970,7 +2970,7 @@ const getContactPage = () => `
         /* Main Content */
         .main-content {
           padding: 80px 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .contact-grid {
@@ -2983,7 +2983,7 @@ const getContactPage = () => `
 
         /* Contact Form */
         .contact-form {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -3082,7 +3082,7 @@ const getContactPage = () => `
         }
 
         .info-card {
-          background: #f9fafb;
+          background: var(--bg-accent);
           padding: 1.5rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -3102,7 +3102,7 @@ const getContactPage = () => `
         }
 
         .info-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 0.5rem;
         }
 
@@ -3133,7 +3133,7 @@ const getContactPage = () => `
 
         /* FAQ Section */
         .faq-section {
-          background: #f9fafb;
+          background: var(--bg-accent);
           padding: 80px 0;
         }
 
@@ -3148,7 +3148,7 @@ const getContactPage = () => `
         .section-subtitle {
           text-align: center;
           font-size: 1rem;
-          color: #6b7280;
+          color: var(--text-secondary);
           margin-bottom: 4rem;
         }
 
@@ -3159,7 +3159,7 @@ const getContactPage = () => `
         }
 
         .faq-card {
-          background: white;
+          background: var(--bg-primary);
           padding: 2rem;
           border-radius: 8px;
           border: 1px solid #f3f4f6;
@@ -3173,7 +3173,7 @@ const getContactPage = () => `
         }
 
         .faq-card p {
-          color: #6b7280;
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
