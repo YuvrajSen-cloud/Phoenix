@@ -1582,7 +1582,7 @@ const getCourseDetailsPage = (course) => `
               <div class="info-value">${course.level}</div>
             </div>
             <div class="info-item">
-              <div class="info-icon">🏷️</div>
+              <div class="info-icon">����️</div>
               <div class="info-label">Category</div>
               <div class="info-value">${course.category}</div>
             </div>
@@ -2816,20 +2816,6 @@ const getContactPage = () => `
           align-items: start;
         }
 
-        .contact-hero-image {
-          width: 100%;
-          margin-bottom: 2rem;
-          text-align: center;
-        }
-
-        .contact-hero-image img {
-          width: 100%;
-          max-width: 600px;
-          height: 300px;
-          object-fit: cover;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
 
         /* Contact Form */
         .contact-form {
@@ -3081,9 +3067,6 @@ const getContactPage = () => `
       <!-- Main Content -->
       <section class="main-content">
         <div class="container">
-          <div class="contact-hero-image">
-            <img src="https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg" alt="Modern office space with professional environment" loading="lazy">
-          </div>
           <div class="contact-grid">
             <!-- Contact Form -->
             <div class="contact-form">
@@ -3091,7 +3074,7 @@ const getContactPage = () => `
               <div class="success-message" id="successMessage">
                 ✅ Thank you for your message! We'll get back to you within 24 hours.
               </div>
-              <form id="contactForm">
+              <form id="contactForm" action="https://formspree.io/f/xpwzgodo" method="POST">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="firstName">First Name *</label>
@@ -3221,10 +3204,8 @@ const getContactPage = () => `
       </section>
 
       <script>
-        // Contact form handling
+        // Contact form handling with Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-
           const submitBtn = document.getElementById('submitBtn');
           const successMessage = document.getElementById('successMessage');
 
@@ -3232,27 +3213,22 @@ const getContactPage = () => `
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending...';
 
-          // Simulate form submission (replace with actual form handling)
-          setTimeout(() => {
-            // Show success message
-            successMessage.classList.add('show');
-
-            // Reset form
-            this.reset();
-
-            // Reset button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-              successMessage.classList.remove('show');
-            }, 5000);
-
-            // Scroll to top of form to show success message
-            successMessage.scrollIntoView({ behavior: 'smooth' });
-          }, 2000);
+          // Let the form submit naturally to Formspree
+          // Success handling will be done by Formspree's redirect or AJAX response
         });
+
+        // Check if we're returning from a successful Formspree submission
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+          document.getElementById('successMessage').classList.add('show');
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            document.getElementById('successMessage').classList.remove('show');
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }, 5000);
+        }
 
         // Auto-populate subject based on inquiry type
         document.getElementById('inquiryType').addEventListener('change', function() {
