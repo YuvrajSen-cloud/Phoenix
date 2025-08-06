@@ -554,7 +554,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Kavita Joshi is an experienced office manager with 14 years in administrative roles across various industries. She has streamlined operations for multiple companies and trained 150+ administrative professionals.",
-    educatorImage: "👩‍💼"
+    educatorImage: "👩���💼"
   }
 ];
 
@@ -648,7 +648,7 @@ const getHomePage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -665,7 +665,7 @@ const getHomePage = () => `
         }
 
         .nav-links a:hover {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         /* Theme Toggle */
@@ -677,7 +677,7 @@ const getHomePage = () => `
         .theme-btn {
           background: none;
           border: 2px solid #2563eb;
-          color: #2563eb;
+          color: var(--primary-color);
           border-radius: 50%;
           width: 40px;
           height: 40px;
@@ -690,7 +690,7 @@ const getHomePage = () => `
         }
 
         .theme-btn:hover {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
         }
 
@@ -729,7 +729,7 @@ const getHomePage = () => `
         }
 
         .theme-option.active {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
         }
 
@@ -743,7 +743,7 @@ const getHomePage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
           min-height: 90vh;
           display: flex;
           align-items: center;
@@ -776,12 +776,12 @@ const getHomePage = () => `
           font-size: 3.5rem;
           font-weight: 700;
           margin-bottom: 1.5rem;
-          color: #111827;
+          color: var(--text-primary);
           line-height: 1.1;
         }
 
         .hero-content .highlight {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .hero-content p {
@@ -793,7 +793,7 @@ const getHomePage = () => `
 
         .cta-button {
           display: inline-block;
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           padding: 16px 32px;
           font-size: 1.1rem;
@@ -805,7 +805,7 @@ const getHomePage = () => `
         }
 
         .cta-button:hover {
-          background: #1d4ed8;
+          background: var(--primary-dark);
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
@@ -821,7 +821,7 @@ const getHomePage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -848,14 +848,14 @@ const getHomePage = () => `
         }
 
         .step-card:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .step-icon {
           width: 60px;
           height: 60px;
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           border-radius: 8px;
           display: flex;
@@ -869,7 +869,7 @@ const getHomePage = () => `
         .step-card h3 {
           font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
@@ -900,14 +900,14 @@ const getHomePage = () => `
         }
 
         .impact-stat:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .stat-number {
           font-size: 2rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           margin-bottom: 0.5rem;
         }
 
@@ -946,7 +946,7 @@ const getHomePage = () => `
         }
 
         .course-card:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
@@ -957,7 +957,7 @@ const getHomePage = () => `
           align-items: center;
           justify-content: center;
           font-size: 2.5rem;
-          color: #2563eb;
+          color: var(--primary-color);
           overflow: hidden;
           position: relative;
         }
@@ -980,7 +980,7 @@ const getHomePage = () => `
         .course-card h3 {
           font-size: 1.2rem;
           margin-bottom: 0.75rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
@@ -992,7 +992,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           padding: 8px 20px;
           border: none;
@@ -1004,7 +1004,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn:hover {
-          background: #1d4ed8;
+          background: var(--primary-dark);
         }
 
         /* Responsive Design */
@@ -1276,7 +1276,7 @@ const getCourseDetailsPage = (course) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1293,11 +1293,11 @@ const getCourseDetailsPage = (course) => `
         }
 
         .nav-links a:hover {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
@@ -1317,7 +1317,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .breadcrumb-links a {
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1327,8 +1327,8 @@ const getCourseDetailsPage = (course) => `
 
         /* Course Header */
         .course-header {
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
-          color: #111827;
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
+          color: var(--text-primary);
           padding: 3rem 0;
         }
 
@@ -1343,7 +1343,7 @@ const getCourseDetailsPage = (course) => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .course-subtitle {
@@ -1354,7 +1354,7 @@ const getCourseDetailsPage = (course) => `
 
         .course-educator {
           font-size: 1rem;
-          color: #2563eb;
+          color: var(--primary-color);
           margin-bottom: 2rem;
           font-weight: 500;
         }
@@ -1400,7 +1400,7 @@ const getCourseDetailsPage = (course) => `
         .info-icon {
           font-size: 2rem;
           margin-bottom: 0.5rem;
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .info-label {
@@ -1414,7 +1414,7 @@ const getCourseDetailsPage = (course) => `
         .info-value {
           font-size: 1rem;
           font-weight: 600;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         /* Main Content */
@@ -1436,7 +1436,7 @@ const getCourseDetailsPage = (course) => `
         .section-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #111827;
+          color: var(--text-primary);
           margin-bottom: 1.5rem;
           display: flex;
           align-items: center;
@@ -1445,7 +1445,7 @@ const getCourseDetailsPage = (course) => `
 
         .section-icon {
           font-size: 1.3rem;
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         /* What You'll Learn */
@@ -1492,7 +1492,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header.active {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
         }
 
@@ -1555,7 +1555,7 @@ const getCourseDetailsPage = (course) => `
         .price-display {
           font-size: 2.2rem;
           font-weight: 600;
-          color: #2563eb;
+          color: var(--primary-color);
           margin-bottom: 1rem;
         }
 
@@ -1575,13 +1575,13 @@ const getCourseDetailsPage = (course) => `
 
         .enrollment-features li::before {
           content: "✓";
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: bold;
         }
 
         .enroll-btn {
           width: 100%;
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           padding: 1rem 2rem;
           font-size: 1rem;
@@ -1594,7 +1594,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .enroll-btn:hover {
-          background: #1d4ed8;
+          background: var(--primary-dark);
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
@@ -1633,7 +1633,7 @@ const getCourseDetailsPage = (course) => `
         .educator-name {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .educator-title {
@@ -1919,7 +1919,7 @@ const getCoursesPage = (courses) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -1936,19 +1936,19 @@ const getCoursesPage = (courses) => `
         }
 
         .nav-links a:hover {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
         /* Header Section */
         .page-header {
           padding: 120px 0 60px;
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
-          color: #111827;
+          background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 50%, var(--primary-bright) 100%);
+          color: var(--text-primary);
           text-align: center;
         }
 
@@ -1956,7 +1956,7 @@ const getCoursesPage = (courses) => `
           font-size: 2.5rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .page-header p {
@@ -1994,7 +1994,7 @@ const getCoursesPage = (courses) => `
 
         .search-input:focus {
           outline: none;
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
@@ -2027,9 +2027,9 @@ const getCoursesPage = (courses) => `
 
         .filter-btn:hover,
         .filter-btn.active {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
 
@@ -2075,7 +2075,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-card:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
@@ -2086,7 +2086,7 @@ const getCoursesPage = (courses) => `
           align-items: center;
           justify-content: center;
           font-size: 3rem;
-          color: #2563eb;
+          color: var(--primary-color);
           position: relative;
           overflow: hidden;
         }
@@ -2110,11 +2110,11 @@ const getCoursesPage = (courses) => `
           font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .course-educator {
-          color: #2563eb;
+          color: var(--primary-color);
           font-size: 0.85rem;
           margin-bottom: 0.75rem;
           font-weight: 500;
@@ -2155,13 +2155,13 @@ const getCoursesPage = (courses) => `
         .course-price {
           font-size: 1rem;
           font-weight: 600;
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .enroll-btn {
           width: 100%;
           padding: 12px;
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           border: none;
           border-radius: 8px;
@@ -2171,7 +2171,7 @@ const getCoursesPage = (courses) => `
         }
 
         .enroll-btn:hover {
-          background: #1d4ed8;
+          background: var(--primary-dark);
         }
 
         /* No Results */
@@ -2456,7 +2456,7 @@ const getAboutPage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -2473,11 +2473,11 @@ const getAboutPage = () => `
         }
 
         .nav-links a:hover {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
@@ -2513,11 +2513,11 @@ const getAboutPage = () => `
           font-size: 3.5rem;
           font-weight: 700;
           margin-bottom: 1.5rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .hero-content .highlight {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .hero-content p {
@@ -2545,7 +2545,7 @@ const getAboutPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1.5rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .content-block p {
@@ -2593,20 +2593,20 @@ const getAboutPage = () => `
         }
 
         .mission-card:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .mission-icon {
           font-size: 3rem;
           margin-bottom: 1rem;
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .mission-card h3 {
           font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
@@ -2638,7 +2638,7 @@ const getAboutPage = () => `
         }
 
         .team-card:hover {
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
@@ -2664,12 +2664,12 @@ const getAboutPage = () => `
         .team-card h3 {
           font-size: 1.2rem;
           margin-bottom: 0.5rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
         .team-card .role {
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: 500;
           margin-bottom: 1rem;
         }
@@ -2686,7 +2686,7 @@ const getAboutPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -2900,7 +2900,7 @@ const getContactPage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
         }
 
@@ -2917,11 +2917,11 @@ const getContactPage = () => `
         }
 
         .nav-links a:hover {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .nav-links a.active {
-          color: #2563eb;
+          color: var(--primary-color);
           font-weight: 600;
         }
 
@@ -2953,11 +2953,11 @@ const getContactPage = () => `
           font-size: 3rem;
           font-weight: 700;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .hero-content .highlight {
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .hero-content p {
@@ -2993,7 +2993,7 @@ const getContactPage = () => `
         .contact-form h2 {
           font-size: 1.8rem;
           margin-bottom: 1.5rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .form-group {
@@ -3004,7 +3004,7 @@ const getContactPage = () => `
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 500;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .form-group input,
@@ -3023,7 +3023,7 @@ const getContactPage = () => `
         .form-group select:focus,
         .form-group textarea:focus {
           outline: none;
-          border-color: #2563eb;
+          border-color: var(--primary-color);
           box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
@@ -3039,7 +3039,7 @@ const getContactPage = () => `
         }
 
         .submit-btn {
-          background: #2563eb;
+          background: var(--primary-color);
           color: white;
           padding: 15px 30px;
           border: none;
@@ -3052,7 +3052,7 @@ const getContactPage = () => `
         }
 
         .submit-btn:hover {
-          background: #1d4ed8;
+          background: var(--primary-dark);
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
@@ -3072,7 +3072,7 @@ const getContactPage = () => `
         .contact-info h2 {
           font-size: 1.8rem;
           margin-bottom: 1.5rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .info-cards {
@@ -3091,13 +3091,13 @@ const getContactPage = () => `
         .info-card .icon {
           font-size: 2rem;
           margin-bottom: 1rem;
-          color: #2563eb;
+          color: var(--primary-color);
         }
 
         .info-card h3 {
           font-size: 1.1rem;
           margin-bottom: 0.5rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
@@ -3107,7 +3107,7 @@ const getContactPage = () => `
         }
 
         .info-card a {
-          color: #2563eb;
+          color: var(--primary-color);
           text-decoration: none;
           font-weight: 500;
         }
@@ -3142,7 +3142,7 @@ const getContactPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
         }
 
         .section-subtitle {
@@ -3168,7 +3168,7 @@ const getContactPage = () => `
         .faq-card h3 {
           font-size: 1.2rem;
           margin-bottom: 1rem;
-          color: #111827;
+          color: var(--text-primary);
           font-weight: 600;
         }
 
