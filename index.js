@@ -585,6 +585,8 @@ const getHomePage = () => `
           --bg-primary: #ffffff;
           --bg-secondary: #f8fafc;
           --bg-accent: #f9fafb;
+          --primary-rgb: 37, 99, 235;
+          --primary-light-rgb: 239, 246, 255;
         }
 
         [data-theme="green"] {
