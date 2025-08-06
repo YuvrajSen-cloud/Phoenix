@@ -1706,19 +1706,25 @@ const getAboutPage = () => `
           <h2 class="section-title">Meet Our Team</h2>
           <div class="team-grid">
             <div class="team-card">
-              <div class="team-avatar">👨‍💼</div>
+              <div class="team-avatar">
+                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Yuvraj Sen - Founder & CEO" loading="lazy">
+              </div>
               <div class="team-name">Yuvraj Sen</div>
               <div class="team-role">Founder & CEO</div>
               <div class="team-bio">Passionate about bridging India's skills gap through innovative training solutions. Background in business strategy and social impact.</div>
             </div>
             <div class="team-card">
-              <div class="team-avatar">👩‍🎓</div>
+              <div class="team-avatar">
+                <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dr. Priya Sharma - Head of Curriculum" loading="lazy">
+              </div>
               <div class="team-name">Dr. Priya Sharma</div>
               <div class="team-role">Head of Curriculum</div>
               <div class="team-bio">Former professor with 15+ years in vocational education. Specializes in industry-aligned curriculum development.</div>
             </div>
             <div class="team-card">
-              <div class="team-avatar">👨‍💻</div>
+              <div class="team-avatar">
+                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Rajesh Kumar - Technology Lead" loading="lazy">
+              </div>
               <div class="team-name">Rajesh Kumar</div>
               <div class="team-role">Technology Lead</div>
               <div class="team-bio">Expert in mobile-first learning platforms. Previously worked with EdTech startups across India.</div>
