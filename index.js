@@ -3074,7 +3074,7 @@ const getContactPage = () => `
               <div class="success-message" id="successMessage">
                 ✅ Thank you for your message! We'll get back to you within 24 hours.
               </div>
-              <form id="contactForm" action="https://formspree.io/f/xpwzgodo" method="POST">
+              <form id="contactForm" action="https://formspree.io/f/mzzvjypr" method="POST">
                 <input type="hidden" name="_next" value="/contact?success=true">
                 <input type="hidden" name="_subject" value="New Contact Form Submission from Phoenix">
                 <div class="form-row">
