@@ -1212,8 +1212,15 @@ const getHomePage = () => `
         // Add interactive hover effects
         document.querySelectorAll('.learn-more-btn').forEach(btn => {
           btn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent theme change on button click
+            e.stopPropagation(); // Prevent theme change and cursor animation on button click
             window.location.href = '/courses';
+          });
+        });
+
+        // Prevent theme change on navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent theme change on navigation
           });
         });
       </script>
@@ -1766,7 +1773,7 @@ const getCourseDetailsPage = (course) => `
             <!-- Curriculum -->
             <div class="content-section">
               <h2 class="section-title">
-                <span class="section-icon">📚</span>
+                <span class="section-icon">��</span>
                 Course Curriculum
               </h2>
               <div class="curriculum-accordion">
