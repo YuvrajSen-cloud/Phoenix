@@ -1061,15 +1061,6 @@ const getHomePage = () => `
               <a href="/courses">Courses</a>
               <a href="/about">About</a>
               <a href="/contact">Contact</a>
-              <div class="theme-toggle">
-                <button id="themeToggle" class="theme-btn">🎨</button>
-                <div class="theme-dropdown" id="themeDropdown">
-                  <div class="theme-option" data-theme="">Blue</div>
-                  <div class="theme-option" data-theme="green">Green</div>
-                  <div class="theme-option" data-theme="purple">Purple</div>
-                  <div class="theme-option" data-theme="dark">Dark</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -3496,7 +3487,7 @@ const server = http.createServer((req, res) => {
         </head>
         <body>
           <div class="container">
-            <h1>📚 Course Not Found</h1>
+            <h1>��� Course Not Found</h1>
             <p>The course you're looking for doesn't exist or has been moved.</p>
             <a href="/courses">← Browse All Courses</a>
           </div>
