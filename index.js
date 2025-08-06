@@ -2378,9 +2378,15 @@ const getAboutPage = () => `
           text-align: center;
           background: #f0fdf4;
           border-radius: 12px;
-          padding: 2rem;
-          font-size: 4rem;
-          color: #22c55e;
+          padding: 1rem;
+          overflow: hidden;
+        }
+
+        .content-image img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 8px;
         }
 
         /* Mission Section */
@@ -2564,13 +2570,13 @@ const getAboutPage = () => `
               <p>We believe that quality skills training should be accessible to everyone, regardless of their background or financial situation. Through our platform, we're creating a direct pipeline between learners and industries that need skilled workers.</p>
             </div>
             <div class="content-image">
-              🎯
+              <img src="https://images.pexels.com/photos/21696/pexels-photo.jpg" alt="Success and motivation - skills training leads to achievement" loading="lazy">
             </div>
           </div>
 
           <div class="content-grid">
             <div class="content-image">
-              📊
+              <img src="https://images.pexels.com/photos/12199101/pexels-photo-12199101.jpeg" alt="Indian students engaged in classroom learning environment" loading="lazy">
             </div>
             <div class="content-block">
               <h2>The Problem We're Solving</h2>
@@ -2586,7 +2592,7 @@ const getAboutPage = () => `
               <p>Our hybrid approach ensures learners get both theoretical knowledge and real-world application, while our industry partnerships guarantee direct employment pathways upon successful completion.</p>
             </div>
             <div class="content-image">
-              💡
+              <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Business partnership and collaboration - handshake over coffee" loading="lazy">
             </div>
           </div>
         </div>
