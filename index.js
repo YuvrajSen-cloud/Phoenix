@@ -1,5 +1,6 @@
 const http = require('http');
 const url = require('url');
+const fs = require('fs');
 
 // Sample course data with detailed information
 const coursesData = [
