@@ -604,7 +604,7 @@ const getHomePage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -621,7 +621,7 @@ const getHomePage = () => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         /* Hero Section */
@@ -664,7 +664,7 @@ const getHomePage = () => `
         }
 
         .hero-content .highlight {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .hero-content p {
@@ -676,7 +676,7 @@ const getHomePage = () => `
 
         .cta-button {
           display: inline-block;
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           padding: 16px 32px;
           font-size: 1.1rem;
@@ -688,7 +688,7 @@ const getHomePage = () => `
         }
 
         .cta-button:hover {
-          background: #16a34a;
+          background: #1d4ed8;
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
         }
@@ -731,14 +731,14 @@ const getHomePage = () => `
         }
 
         .step-card:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .step-icon {
           width: 60px;
           height: 60px;
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           border-radius: 8px;
           display: flex;
@@ -783,14 +783,14 @@ const getHomePage = () => `
         }
 
         .impact-stat:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .stat-number {
           font-size: 2rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           margin-bottom: 0.5rem;
         }
 
@@ -829,7 +829,7 @@ const getHomePage = () => `
         }
 
         .course-card:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
@@ -840,7 +840,7 @@ const getHomePage = () => `
           align-items: center;
           justify-content: center;
           font-size: 2.5rem;
-          color: #22c55e;
+          color: #2563eb;
           overflow: hidden;
           position: relative;
         }
@@ -875,7 +875,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn {
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           padding: 8px 20px;
           border: none;
@@ -887,7 +887,7 @@ const getHomePage = () => `
         }
 
         .learn-more-btn:hover {
-          background: #16a34a;
+          background: #1d4ed8;
         }
 
         /* Responsive Design */
@@ -1112,7 +1112,7 @@ const getCourseDetailsPage = (course) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -1129,11 +1129,11 @@ const getCourseDetailsPage = (course) => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: #2563eb;
           font-weight: 600;
         }
 
@@ -1153,7 +1153,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .breadcrumb-links a {
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -1190,7 +1190,7 @@ const getCourseDetailsPage = (course) => `
 
         .course-educator {
           font-size: 1rem;
-          color: #22c55e;
+          color: #2563eb;
           margin-bottom: 2rem;
           font-weight: 500;
         }
@@ -1236,7 +1236,7 @@ const getCourseDetailsPage = (course) => `
         .info-icon {
           font-size: 2rem;
           margin-bottom: 0.5rem;
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .info-label {
@@ -1281,7 +1281,7 @@ const getCourseDetailsPage = (course) => `
 
         .section-icon {
           font-size: 1.3rem;
-          color: #22c55e;
+          color: #2563eb;
         }
 
         /* What You'll Learn */
@@ -1328,7 +1328,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .curriculum-header.active {
-          background: #22c55e;
+          background: #2563eb;
           color: white;
         }
 
@@ -1391,7 +1391,7 @@ const getCourseDetailsPage = (course) => `
         .price-display {
           font-size: 2.2rem;
           font-weight: 600;
-          color: #22c55e;
+          color: #2563eb;
           margin-bottom: 1rem;
         }
 
@@ -1411,13 +1411,13 @@ const getCourseDetailsPage = (course) => `
 
         .enrollment-features li::before {
           content: "✓";
-          color: #22c55e;
+          color: #2563eb;
           font-weight: bold;
         }
 
         .enroll-btn {
           width: 100%;
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           padding: 1rem 2rem;
           font-size: 1rem;
@@ -1430,7 +1430,7 @@ const getCourseDetailsPage = (course) => `
         }
 
         .enroll-btn:hover {
-          background: #16a34a;
+          background: #1d4ed8;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
@@ -1459,7 +1459,7 @@ const getCourseDetailsPage = (course) => `
           font-size: 2.5rem;
           width: 70px;
           height: 70px;
-          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -1755,7 +1755,7 @@ const getCoursesPage = (courses) => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -1772,11 +1772,11 @@ const getCoursesPage = (courses) => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: #2563eb;
           font-weight: 600;
         }
 
@@ -1830,7 +1830,7 @@ const getCoursesPage = (courses) => `
 
         .search-input:focus {
           outline: none;
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
         }
 
@@ -1863,9 +1863,9 @@ const getCoursesPage = (courses) => `
 
         .filter-btn:hover,
         .filter-btn.active {
-          background: #22c55e;
+          background: #2563eb;
           color: white;
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
         }
 
@@ -1911,7 +1911,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-card:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
@@ -1922,7 +1922,7 @@ const getCoursesPage = (courses) => `
           align-items: center;
           justify-content: center;
           font-size: 3rem;
-          color: #22c55e;
+          color: #2563eb;
           position: relative;
           overflow: hidden;
         }
@@ -1950,7 +1950,7 @@ const getCoursesPage = (courses) => `
         }
 
         .course-educator {
-          color: #22c55e;
+          color: #2563eb;
           font-size: 0.85rem;
           margin-bottom: 0.75rem;
           font-weight: 500;
@@ -1991,13 +1991,13 @@ const getCoursesPage = (courses) => `
         .course-price {
           font-size: 1rem;
           font-weight: 600;
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .enroll-btn {
           width: 100%;
           padding: 12px;
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           border: none;
           border-radius: 8px;
@@ -2007,7 +2007,7 @@ const getCoursesPage = (courses) => `
         }
 
         .enroll-btn:hover {
-          background: #16a34a;
+          background: #1d4ed8;
         }
 
         /* No Results */
@@ -2292,7 +2292,7 @@ const getAboutPage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -2309,11 +2309,11 @@ const getAboutPage = () => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: #2563eb;
           font-weight: 600;
         }
 
@@ -2353,7 +2353,7 @@ const getAboutPage = () => `
         }
 
         .hero-content .highlight {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .hero-content p {
@@ -2429,14 +2429,14 @@ const getAboutPage = () => `
         }
 
         .mission-card:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .mission-icon {
           font-size: 3rem;
           margin-bottom: 1rem;
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .mission-card h3 {
@@ -2474,14 +2474,14 @@ const getAboutPage = () => `
         }
 
         .team-card:hover {
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
         }
 
         .team-avatar {
           width: 80px;
           height: 80px;
-          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -2505,7 +2505,7 @@ const getAboutPage = () => `
         }
 
         .team-card .role {
-          color: #22c55e;
+          color: #2563eb;
           font-weight: 500;
           margin-bottom: 1rem;
         }
@@ -2736,7 +2736,7 @@ const getContactPage = () => `
         .logo {
           font-size: 1.8rem;
           font-weight: 700;
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
         }
 
@@ -2753,11 +2753,11 @@ const getContactPage = () => `
         }
 
         .nav-links a:hover {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .nav-links a.active {
-          color: #22c55e;
+          color: #2563eb;
           font-weight: 600;
         }
 
@@ -2793,7 +2793,7 @@ const getContactPage = () => `
         }
 
         .hero-content .highlight {
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .hero-content p {
@@ -2859,7 +2859,7 @@ const getContactPage = () => `
         .form-group select:focus,
         .form-group textarea:focus {
           outline: none;
-          border-color: #22c55e;
+          border-color: #2563eb;
           box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
         }
 
@@ -2875,7 +2875,7 @@ const getContactPage = () => `
         }
 
         .submit-btn {
-          background: #22c55e;
+          background: #2563eb;
           color: white;
           padding: 15px 30px;
           border: none;
@@ -2888,7 +2888,7 @@ const getContactPage = () => `
         }
 
         .submit-btn:hover {
-          background: #16a34a;
+          background: #1d4ed8;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
@@ -2927,7 +2927,7 @@ const getContactPage = () => `
         .info-card .icon {
           font-size: 2rem;
           margin-bottom: 1rem;
-          color: #22c55e;
+          color: #2563eb;
         }
 
         .info-card h3 {
@@ -2943,7 +2943,7 @@ const getContactPage = () => `
         }
 
         .info-card a {
-          color: #22c55e;
+          color: #2563eb;
           text-decoration: none;
           font-weight: 500;
         }
@@ -3260,13 +3260,13 @@ const getContactPage = () => `
             if (!this.value.trim()) {
               this.style.borderColor = '#ef4444';
             } else {
-              this.style.borderColor = '#22c55e';
+              this.style.borderColor = '#2563eb';
             }
           });
 
           field.addEventListener('input', function() {
             if (this.value.trim()) {
-              this.style.borderColor = '#22c55e';
+              this.style.borderColor = '#2563eb';
             }
           });
         });
@@ -3277,7 +3277,7 @@ const getContactPage = () => `
           if (this.value && !emailRegex.test(this.value)) {
             this.style.borderColor = '#ef4444';
           } else if (this.value) {
-            this.style.borderColor = '#22c55e';
+            this.style.borderColor = '#2563eb';
           }
         });
       </script>
