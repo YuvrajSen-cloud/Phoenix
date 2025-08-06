@@ -1547,13 +1547,14 @@ const getHomePage = () => `
 
         /* Navigation */
         .navbar {
-          background: white;
+          background: rgba(0, 0, 0, 0.95);
           padding: 1rem 0;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 20px rgba(13, 71, 161, 0.3);
           position: fixed;
           width: 100%;
           top: 0;
           z-index: 1000;
+          backdrop-filter: blur(10px);
         }
 
         .nav-content {
@@ -3049,7 +3050,7 @@ const getCoursesPage = (courses) => `
           <div class="search-filter-container">
             <div class="search-bar">
               <input type="text" class="search-input" placeholder="Search courses..." id="searchInput">
-              <span class="search-icon">🔍</span>
+              <span class="search-icon">���</span>
             </div>
             <div class="filter-buttons">
               <button class="filter-btn active" data-category="all">All Courses</button>
