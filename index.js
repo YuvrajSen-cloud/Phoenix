@@ -1530,8 +1530,8 @@ const getAboutPage = () => `
         }
 
         .team-avatar {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
           background: linear-gradient(135deg, #2196f3, #1976d2);
           border-radius: 50%;
           margin: 0 auto 1rem;
@@ -1540,6 +1540,15 @@ const getAboutPage = () => `
           justify-content: center;
           font-size: 2rem;
           box-shadow: 0 0 20px rgba(33, 150, 243, 0.4);
+          overflow: hidden;
+          border: 3px solid rgba(33, 150, 243, 0.5);
+        }
+
+        .team-avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
         }
 
         .team-name {
