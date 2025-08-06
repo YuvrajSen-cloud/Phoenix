@@ -1189,8 +1189,19 @@ const getHomePage = () => `
           updateThemeIndicator();
         }
 
-        // Click anywhere to cycle theme
-        document.addEventListener('click', cycleTheme);
+        // Click animation for cursor
+        function animateCursor() {
+          document.body.classList.add('clicking');
+          setTimeout(() => {
+            document.body.classList.remove('clicking');
+          }, 150);
+        }
+
+        // Click anywhere to cycle theme with animation
+        document.addEventListener('click', (e) => {
+          animateCursor();
+          cycleTheme();
+        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
