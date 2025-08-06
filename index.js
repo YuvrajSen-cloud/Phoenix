@@ -1159,25 +1159,18 @@ const getHomePage = () => `
 
         let currentThemeIndex = 0;
 
-        // Create theme indicator and hint elements
+        // Create theme hint element only
         function createThemeElements() {
-          // Theme indicator
-          const indicator = document.createElement('div');
-          indicator.id = 'themeIndicator';
-          indicator.className = 'theme-indicator';
-          indicator.textContent = 'Blue Theme';
-          document.body.appendChild(indicator);
-
           // Click hint
           const hint = document.createElement('div');
           hint.className = 'click-hint';
           hint.textContent = 'Click anywhere to change theme 🎨';
           document.body.appendChild(hint);
 
-          // Hide hint after 5 seconds
+          // Hide hint after 3 seconds
           setTimeout(() => {
             hint.style.display = 'none';
-          }, 5000);
+          }, 3000);
         }
 
         // Load saved theme
