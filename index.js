@@ -337,7 +337,7 @@ const coursesData = [
       }
     ],
     educatorBio: "Master Electrician Rajesh Singh has 20 years of experience in electrical installations and has trained over 800 electricians. He holds multiple certifications and specializes in industrial electrical systems.",
-    educatorImage: "👨‍🔧"
+    educatorImage: "👨‍����"
   },
   {
     id: 6,
@@ -3252,6 +3252,10 @@ const server = http.createServer((req, res) => {
     res.end(getHomePage());
   } else if (pathname === '/courses') {
     res.end(getCoursesPage(coursesData));
+  } else if (pathname === '/about') {
+    res.end(getAboutPage());
+  } else if (pathname === '/contact') {
+    res.end(getContactPage());
   } else if (pathname.startsWith('/courses/')) {
     // Extract course ID from URL
     const courseId = parseInt(pathname.split('/')[2]);
