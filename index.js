@@ -1591,6 +1591,45 @@ const getAboutPage = () => `
         </div>
       </section>
 
+      <!-- Our Programs Section -->
+      <section class="content-section">
+        <div class="container">
+          <h2 class="section-title">Our Training Programs in Action</h2>
+          <div class="programs-showcase">
+            <div class="program-image-grid">
+              <div class="program-item">
+                <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Students in technical training" class="program-img" loading="lazy">
+                <div class="program-overlay">
+                  <h4>Hands-on Technical Training</h4>
+                  <p>Practical skills development in real-world environments</p>
+                </div>
+              </div>
+              <div class="program-item">
+                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital skills workshop" class="program-img" loading="lazy">
+                <div class="program-overlay">
+                  <h4>Digital Skills Workshop</h4>
+                  <p>Modern technology training for the digital economy</p>
+                </div>
+              </div>
+              <div class="program-item">
+                <img src="https://images.pexels.com/photos/3184187/pexels-photo-3184187.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Industry partnerships" class="program-img" loading="lazy">
+                <div class="program-overlay">
+                  <h4>Industry Partnerships</h4>
+                  <p>Direct connections with leading employers</p>
+                </div>
+              </div>
+              <div class="program-item">
+                <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Career counseling" class="program-img" loading="lazy">
+                <div class="program-overlay">
+                  <h4>Career Guidance</h4>
+                  <p>Personalized career counseling and job placement support</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Team Section -->
       <section class="team-section">
         <div class="container">
