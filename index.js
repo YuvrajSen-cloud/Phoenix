@@ -1418,6 +1418,17 @@ const getAboutPage = () => `
           background: rgba(33, 150, 243, 0.1);
           border-radius: 15px;
           border: 1px solid rgba(33, 150, 243, 0.3);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .visual-image {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-bottom: 1.5rem;
+          filter: brightness(0.8) saturate(1.2);
         }
 
         .visual-icon {
