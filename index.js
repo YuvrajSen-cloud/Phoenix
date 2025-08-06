@@ -659,7 +659,7 @@ const getHomePage = () => `
           font-size: 3.5rem;
           font-weight: 700;
           margin-bottom: 1.5rem;
-          color: #1f2937;
+          color: #111827;
           line-height: 1.1;
         }
 
@@ -704,7 +704,7 @@ const getHomePage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
         }
 
         .section-subtitle {
@@ -752,7 +752,7 @@ const getHomePage = () => `
         .step-card h3 {
           font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
@@ -863,7 +863,7 @@ const getHomePage = () => `
         .course-card h3 {
           font-size: 1.2rem;
           margin-bottom: 0.75rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
@@ -1164,7 +1164,7 @@ const getCourseDetailsPage = (course) => `
         /* Course Header */
         .course-header {
           background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
-          color: #374151;
+          color: #111827;
           padding: 3rem 0;
         }
 
@@ -1179,7 +1179,7 @@ const getCourseDetailsPage = (course) => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #1f2937;
+          color: #111827;
         }
 
         .course-subtitle {
@@ -1250,7 +1250,7 @@ const getCourseDetailsPage = (course) => `
         .info-value {
           font-size: 1rem;
           font-weight: 600;
-          color: #374151;
+          color: #111827;
         }
 
         /* Main Content */
@@ -1272,7 +1272,7 @@ const getCourseDetailsPage = (course) => `
         .section-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #374151;
+          color: #111827;
           margin-bottom: 1.5rem;
           display: flex;
           align-items: center;
@@ -1469,7 +1469,7 @@ const getCourseDetailsPage = (course) => `
         .educator-name {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #374151;
+          color: #111827;
         }
 
         .educator-title {
@@ -1784,7 +1784,7 @@ const getCoursesPage = (courses) => `
         .page-header {
           padding: 120px 0 60px;
           background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
-          color: #374151;
+          color: #111827;
           text-align: center;
         }
 
@@ -1792,7 +1792,7 @@ const getCoursesPage = (courses) => `
           font-size: 2.5rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #1f2937;
+          color: #111827;
         }
 
         .page-header p {
@@ -1946,7 +1946,7 @@ const getCoursesPage = (courses) => `
           font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #374151;
+          color: #111827;
         }
 
         .course-educator {
@@ -2349,7 +2349,7 @@ const getAboutPage = () => `
           font-size: 3.5rem;
           font-weight: 700;
           margin-bottom: 1.5rem;
-          color: #1f2937;
+          color: #111827;
         }
 
         .hero-content .highlight {
@@ -2381,7 +2381,7 @@ const getAboutPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1.5rem;
-          color: #374151;
+          color: #111827;
         }
 
         .content-block p {
@@ -2442,7 +2442,7 @@ const getAboutPage = () => `
         .mission-card h3 {
           font-size: 1.3rem;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
@@ -2500,7 +2500,7 @@ const getAboutPage = () => `
         .team-card h3 {
           font-size: 1.2rem;
           margin-bottom: 0.5rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
@@ -2522,7 +2522,7 @@ const getAboutPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
         }
 
         .section-subtitle {
@@ -2789,7 +2789,7 @@ const getContactPage = () => `
           font-size: 3rem;
           font-weight: 700;
           margin-bottom: 1rem;
-          color: #1f2937;
+          color: #111827;
         }
 
         .hero-content .highlight {
@@ -2829,7 +2829,7 @@ const getContactPage = () => `
         .contact-form h2 {
           font-size: 1.8rem;
           margin-bottom: 1.5rem;
-          color: #374151;
+          color: #111827;
         }
 
         .form-group {
@@ -2840,7 +2840,7 @@ const getContactPage = () => `
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 500;
-          color: #374151;
+          color: #111827;
         }
 
         .form-group input,
@@ -2908,7 +2908,7 @@ const getContactPage = () => `
         .contact-info h2 {
           font-size: 1.8rem;
           margin-bottom: 1.5rem;
-          color: #374151;
+          color: #111827;
         }
 
         .info-cards {
@@ -2933,7 +2933,7 @@ const getContactPage = () => `
         .info-card h3 {
           font-size: 1.1rem;
           margin-bottom: 0.5rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
@@ -2978,7 +2978,7 @@ const getContactPage = () => `
           font-size: 2.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
         }
 
         .section-subtitle {
@@ -3004,7 +3004,7 @@ const getContactPage = () => `
         .faq-card h3 {
           font-size: 1.2rem;
           margin-bottom: 1rem;
-          color: #374151;
+          color: #111827;
           font-weight: 600;
         }
 
