@@ -676,77 +676,47 @@ const getHomePage = () => `
           color: var(--primary-color);
         }
 
-        /* Theme Toggle */
-        .theme-toggle {
-          position: relative;
-          margin-left: 1rem;
-        }
-
-        .theme-btn {
-          background: none;
-          border: 2px solid #2563eb;
-          color: var(--primary-color);
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          cursor: pointer;
-          font-size: 1.2rem;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .theme-btn:hover {
+        /* Theme Indicator */
+        .theme-indicator {
+          position: fixed;
+          top: 20px;
+          right: 20px;
           background: var(--primary-color);
-          color: white;
-        }
-
-        .theme-dropdown {
-          position: absolute;
-          top: 50px;
-          right: 0;
-          background: var(--bg-primary);
-          border: 1px solid #e5e7eb;
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-          min-width: 120px;
+          color: var(--bg-primary);
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          z-index: 1000;
           opacity: 0;
-          visibility: hidden;
           transform: translateY(-10px);
           transition: all 0.3s ease;
-          z-index: 1000;
+          pointer-events: none;
         }
 
-        .theme-dropdown.show {
+        .theme-indicator.show {
           opacity: 1;
-          visibility: visible;
           transform: translateY(0);
         }
 
-        .theme-option {
+        /* Click Hint */
+        .click-hint {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0,0,0,0.8);
+          color: var(--bg-primary);
           padding: 12px 16px;
-          cursor: pointer;
-          transition: background 0.3s ease;
-          font-weight: 500;
-          color: #374151;
+          border-radius: 8px;
+          font-size: 0.9rem;
+          z-index: 1000;
+          opacity: 0.7;
+          animation: pulse 2s infinite;
         }
 
-        .theme-option:hover {
-          background: #f3f4f6;
-        }
-
-        .theme-option.active {
-          background: var(--primary-color);
-          color: white;
-        }
-
-        .theme-option:first-child {
-          border-radius: 8px 8px 0 0;
-        }
-
-        .theme-option:last-child {
-          border-radius: 0 0 8px 8px;
+        @keyframes pulse {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 1; }
         }
 
         /* Hero Section */
