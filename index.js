@@ -3084,7 +3084,7 @@ const getContactPage = () => `
                   </div>
                   <div class="form-group">
                     <label for="lastName">Last Name *</label>
-                    <input type="text" id="lastName" name="lastName" required>
+                    <input type="text" id="lastName" name="last_name" required>
                   </div>
                 </div>
 
