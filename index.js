@@ -255,6 +255,430 @@ const coursesData = [
     ],
     educatorBio: "Neha Gupta is an MBA consultant with 10 years of experience in business strategy and operations. She has helped over 50 companies optimize their processes and has mentored 300+ professionals.",
     educatorImage: "👩‍💼"
+  },
+  {
+    id: 5,
+    title: "Mobile App Development Fundamentals",
+    educator: "Tech Lead Rohit Singh",
+    category: "Technology",
+    type: "white-collar",
+    price: "₹2,999",
+    image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Learn to build mobile apps for Android and iOS platforms",
+    fullDescription: "Master mobile app development using React Native and Flutter. Build real-world applications and prepare for a career in the booming mobile development industry.",
+    duration: "16 weeks",
+    language: "English",
+    level: "Intermediate",
+    whatYouLearn: [
+      "React Native fundamentals",
+      "Flutter development basics",
+      "Mobile UI/UX design principles",
+      "API integration and data management",
+      "App store deployment process",
+      "Performance optimization techniques",
+      "Cross-platform development strategies"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Mobile Development Overview",
+        lessons: ["Platform comparison", "Development environment setup", "Market analysis"]
+      },
+      {
+        module: "Module 2: React Native Basics",
+        lessons: ["Components and props", "State management", "Navigation patterns"]
+      },
+      {
+        module: "Module 3: Flutter Introduction",
+        lessons: ["Dart programming", "Widget system", "Layout building"]
+      },
+      {
+        module: "Module 4: Mobile UI Design",
+        lessons: ["Design systems", "Responsive layouts", "User experience principles"]
+      },
+      {
+        module: "Module 5: Data & APIs",
+        lessons: ["REST API integration", "Local storage", "State management solutions"]
+      },
+      {
+        module: "Module 6: App Deployment",
+        lessons: ["Google Play Store", "Apple App Store", "Beta testing"]
+      }
+    ],
+    educatorBio: "Rohit Singh is a senior mobile developer with 10+ years building apps for startups and enterprises. His apps have been downloaded over 5 million times.",
+    educatorImage: "👨‍💻"
+  },
+  {
+    id: 6,
+    title: "Automotive Technician Certification",
+    educator: "Master Mechanic Vikram Patel",
+    category: "Automotive",
+    type: "blue-collar",
+    price: "₹1,599",
+    image: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Complete automotive repair and maintenance training",
+    fullDescription: "Become a certified automotive technician with comprehensive training in modern vehicle systems, diagnostics, and repair techniques. High demand for skilled mechanics in India's growing automotive sector.",
+    duration: "20 weeks",
+    language: "Hindi",
+    level: "Beginner",
+    whatYouLearn: [
+      "Engine diagnostics and repair",
+      "Electrical system troubleshooting",
+      "Brake and suspension systems",
+      "Modern vehicle electronics",
+      "Preventive maintenance procedures",
+      "Customer service and estimation",
+      "Workshop safety protocols"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Automotive Fundamentals",
+        lessons: ["Vehicle systems overview", "Engine principles", "Safety procedures"]
+      },
+      {
+        module: "Module 2: Engine Systems",
+        lessons: ["Internal combustion engines", "Fuel injection systems", "Cooling systems"]
+      },
+      {
+        module: "Module 3: Electrical Systems",
+        lessons: ["Wiring diagrams", "Battery and charging", "Electronic control units"]
+      },
+      {
+        module: "Module 4: Drivetrain & Transmission",
+        lessons: ["Manual transmissions", "Automatic systems", "Differential repair"]
+      },
+      {
+        module: "Module 5: Brake & Suspension",
+        lessons: ["Brake system components", "Hydraulic principles", "Suspension geometry"]
+      },
+      {
+        module: "Module 6: Diagnostic Tools",
+        lessons: ["OBD scanners", "Multimeter usage", "Oscilloscope basics"]
+      },
+      {
+        module: "Module 7: Business Skills",
+        lessons: ["Customer communication", "Shop management", "Pricing strategies"]
+      }
+    ],
+    educatorBio: "Vikram Patel has 18 years of experience in automotive repair and has certified over 800 technicians. He specializes in modern vehicle diagnostics and hybrid systems.",
+    educatorImage: "👨‍🔧"
+  },
+  {
+    id: 7,
+    title: "Healthcare Assistant & Patient Care",
+    educator: "Dr. Meera Jain",
+    category: "Healthcare",
+    type: "blue-collar",
+    price: "₹1,299",
+    image: "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Essential skills for healthcare support and patient assistance",
+    fullDescription: "Train to become a healthcare assistant with skills in patient care, medical administration, and healthcare support. Address the growing demand for healthcare workers in India.",
+    duration: "14 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Patient care fundamentals",
+      "Medical terminology and documentation",
+      "Infection control procedures",
+      "Vital signs measurement",
+      "Emergency response basics",
+      "Medical equipment handling",
+      "Healthcare communication skills"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Healthcare Fundamentals",
+        lessons: ["Healthcare system overview", "Professional ethics", "Patient rights"]
+      },
+      {
+        module: "Module 2: Patient Care Basics",
+        lessons: ["Personal hygiene assistance", "Mobility support", "Comfort measures"]
+      },
+      {
+        module: "Module 3: Medical Terminology",
+        lessons: ["Anatomical terms", "Medical abbreviations", "Documentation standards"]
+      },
+      {
+        module: "Module 4: Infection Control",
+        lessons: ["Sterilization techniques", "Personal protective equipment", "Isolation procedures"]
+      },
+      {
+        module: "Module 5: Vital Signs & Monitoring",
+        lessons: ["Blood pressure measurement", "Temperature monitoring", "Pulse assessment"]
+      },
+      {
+        module: "Module 6: Emergency Procedures",
+        lessons: ["CPR basics", "First aid", "Emergency protocols"]
+      },
+      {
+        module: "Module 7: Communication & Documentation",
+        lessons: ["Patient interaction", "Medical records", "Team communication"]
+      }
+    ],
+    educatorBio: "Dr. Meera Jain is a healthcare administrator with 15 years of experience in patient care and medical training. She has developed training programs for over 500 healthcare assistants.",
+    educatorImage: "👩‍⚕️"
+  },
+  {
+    id: 8,
+    title: "E-commerce & Online Business",
+    educator: "Business Coach Arjun Sharma",
+    category: "Business",
+    type: "white-collar",
+    price: "₹1,799",
+    image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Start and scale your online business in the digital economy",
+    fullDescription: "Learn to build and grow an e-commerce business from scratch. Understand online marketplaces, digital payments, logistics, and customer acquisition in India's booming e-commerce sector.",
+    duration: "12 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "E-commerce platform selection",
+      "Product sourcing and inventory management",
+      "Digital marketing for e-commerce",
+      "Payment gateway integration",
+      "Supply chain and logistics",
+      "Customer service and retention",
+      "Legal and compliance requirements"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: E-commerce Fundamentals",
+        lessons: ["Market research", "Business model selection", "Platform comparison"]
+      },
+      {
+        module: "Module 2: Product & Inventory",
+        lessons: ["Product sourcing", "Supplier relations", "Inventory management"]
+      },
+      {
+        module: "Module 3: Online Store Setup",
+        lessons: ["Website creation", "Product listings", "Payment integration"]
+      },
+      {
+        module: "Module 4: Digital Marketing",
+        lessons: ["SEO for e-commerce", "Social media marketing", "Paid advertising"]
+      },
+      {
+        module: "Module 5: Operations & Fulfillment",
+        lessons: ["Order processing", "Shipping solutions", "Returns management"]
+      },
+      {
+        module: "Module 6: Growth & Scaling",
+        lessons: ["Analytics and optimization", "Expansion strategies", "Team building"]
+      }
+    ],
+    educatorBio: "Arjun Sharma is an e-commerce expert who has helped launch over 200 online businesses. His clients have generated ₹50+ crores in online sales.",
+    educatorImage: "👨‍💼"
+  },
+  {
+    id: 9,
+    title: "Heavy Equipment Operation",
+    educator: "Operator Ravi Kumar",
+    category: "Construction",
+    type: "blue-collar",
+    price: "₹2,199",
+    image: "https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Professional training for construction equipment operation",
+    fullDescription: "Master the operation of heavy construction equipment including excavators, bulldozers, and cranes. Meet the high demand for skilled operators in India's infrastructure boom.",
+    duration: "8 weeks",
+    language: "Hindi",
+    level: "Intermediate",
+    whatYouLearn: [
+      "Equipment operation fundamentals",
+      "Safety protocols and procedures",
+      "Maintenance and pre-operation checks",
+      "Load calculations and site planning",
+      "Equipment-specific operations",
+      "Workplace communication and teamwork",
+      "Industry regulations and compliance"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Safety & Regulations",
+        lessons: ["OSHA standards", "Site safety", "Personal protective equipment"]
+      },
+      {
+        module: "Module 2: Equipment Fundamentals",
+        lessons: ["Hydraulic systems", "Engine basics", "Control systems"]
+      },
+      {
+        module: "Module 3: Excavator Operation",
+        lessons: ["Basic controls", "Digging techniques", "Load handling"]
+      },
+      {
+        module: "Module 4: Bulldozer & Grader",
+        lessons: ["Earthmoving operations", "Grading techniques", "Blade control"]
+      },
+      {
+        module: "Module 5: Crane Operation",
+        lessons: ["Load charts", "Rigging basics", "Signaling systems"]
+      },
+      {
+        module: "Module 6: Maintenance & Troubleshooting",
+        lessons: ["Daily inspections", "Basic repairs", "Service schedules"]
+      }
+    ],
+    educatorBio: "Ravi Kumar has 20+ years of heavy equipment operation experience and has trained over 1000 operators for major construction projects across India.",
+    educatorImage: "👨‍🏭"
+  },
+  {
+    id: 10,
+    title: "Financial Services & Banking",
+    educator: "Banking Expert Kavita Agarwal",
+    category: "Finance",
+    type: "white-collar",
+    price: "₹1,699",
+    image: "https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Banking operations, financial products, and customer service",
+    fullDescription: "Prepare for a career in banking and financial services with comprehensive training in banking operations, financial products, and customer relationship management.",
+    duration: "10 weeks",
+    language: "Hindi & English",
+    level: "Beginner",
+    whatYouLearn: [
+      "Banking fundamentals and regulations",
+      "Customer account management",
+      "Loan processing and credit analysis",
+      "Investment and insurance products",
+      "Digital banking systems",
+      "Compliance and risk management",
+      "Sales and customer service skills"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Banking Fundamentals",
+        lessons: ["Banking system overview", "RBI regulations", "Types of banks"]
+      },
+      {
+        module: "Module 2: Account Operations",
+        lessons: ["Account opening", "Transaction processing", "KYC procedures"]
+      },
+      {
+        module: "Module 3: Credit & Loans",
+        lessons: ["Loan types", "Credit assessment", "Documentation"]
+      },
+      {
+        module: "Module 4: Investment Products",
+        lessons: ["Mutual funds", "Insurance products", "Fixed deposits"]
+      },
+      {
+        module: "Module 5: Digital Banking",
+        lessons: ["Core banking systems", "Mobile banking", "Digital payments"]
+      },
+      {
+        module: "Module 6: Customer Service",
+        lessons: ["Communication skills", "Problem resolution", "Sales techniques"]
+      },
+      {
+        module: "Module 7: Compliance & Risk",
+        lessons: ["Anti-money laundering", "Fraud prevention", "Audit procedures"]
+      }
+    ],
+    educatorBio: "Kavita Agarwal is a banking professional with 16 years of experience in retail and corporate banking. She has managed teams across multiple branches and trained 300+ banking professionals.",
+    educatorImage: "👩‍💼"
+  },
+  {
+    id: 11,
+    title: "Food Production & Commercial Cooking",
+    educator: "Executive Chef Sunil Reddy",
+    category: "Hospitality",
+    type: "blue-collar",
+    price: "₹1,399",
+    image: "https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Professional commercial kitchen operations and food production",
+    fullDescription: "Master commercial food production techniques for restaurants, hotels, and catering operations. Learn large-scale cooking, kitchen management, and food safety standards.",
+    duration: "12 weeks",
+    language: "Hindi",
+    level: "Intermediate",
+    whatYouLearn: [
+      "Large-scale food preparation techniques",
+      "Kitchen equipment operation and maintenance",
+      "Food safety and HACCP principles",
+      "Menu planning and cost control",
+      "Team leadership and kitchen management",
+      "International cuisine preparation",
+      "Inventory and supply chain management"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Commercial Kitchen Basics",
+        lessons: ["Kitchen hierarchy", "Equipment overview", "Safety protocols"]
+      },
+      {
+        module: "Module 2: Food Safety & Hygiene",
+        lessons: ["HACCP principles", "Food storage", "Contamination prevention"]
+      },
+      {
+        module: "Module 3: Cooking Techniques",
+        lessons: ["Bulk cooking methods", "Sauce preparation", "Protein cookery"]
+      },
+      {
+        module: "Module 4: Menu Development",
+        lessons: ["Recipe standardization", "Cost calculation", "Nutritional planning"]
+      },
+      {
+        module: "Module 5: Kitchen Management",
+        lessons: ["Workflow optimization", "Staff scheduling", "Quality control"]
+      },
+      {
+        module: "Module 6: Specialized Cuisines",
+        lessons: ["Indian regional foods", "Continental cuisine", "Asian preparations"]
+      }
+    ],
+    educatorBio: "Executive Chef Sunil Reddy has 22 years of experience in hotel kitchens and has managed food operations for events serving 10,000+ guests. He has trained over 600 commercial cooks.",
+    educatorImage: "👨‍🍳"
+  },
+  {
+    id: 12,
+    title: "Cyber Security Fundamentals",
+    educator: "Security Expert Pradeep Nair",
+    category: "Technology",
+    type: "white-collar",
+    price: "₹2,499",
+    image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Essential cybersecurity skills for the digital age",
+    fullDescription: "Learn cybersecurity fundamentals to protect organizations from digital threats. High demand field with excellent career growth prospects in India's digital transformation.",
+    duration: "14 weeks",
+    language: "English",
+    level: "Intermediate",
+    whatYouLearn: [
+      "Network security fundamentals",
+      "Threat detection and incident response",
+      "Security tools and technologies",
+      "Risk assessment and management",
+      "Compliance and governance",
+      "Ethical hacking basics",
+      "Security awareness and training"
+    ],
+    curriculum: [
+      {
+        module: "Module 1: Security Fundamentals",
+        lessons: ["CIA triad", "Threat landscape", "Security frameworks"]
+      },
+      {
+        module: "Module 2: Network Security",
+        lessons: ["Firewalls", "VPN technologies", "Intrusion detection"]
+      },
+      {
+        module: "Module 3: System Security",
+        lessons: ["Access controls", "Endpoint protection", "Patch management"]
+      },
+      {
+        module: "Module 4: Threat Analysis",
+        lessons: ["Malware analysis", "Vulnerability assessment", "Penetration testing"]
+      },
+      {
+        module: "Module 5: Incident Response",
+        lessons: ["Incident handling", "Forensics basics", "Recovery procedures"]
+      },
+      {
+        module: "Module 6: Compliance & Governance",
+        lessons: ["Regulatory requirements", "Policy development", "Audit procedures"]
+      },
+      {
+        module: "Module 7: Practical Applications",
+        lessons: ["Security tools", "Case studies", "Hands-on labs"]
+      }
+    ],
+    educatorBio: "Pradeep Nair is a cybersecurity consultant with 12 years of experience protecting organizations from cyber threats. He holds CISSP and CEH certifications and has trained 400+ security professionals.",
+    educatorImage: "👨‍💻"
   }
 ];
 
