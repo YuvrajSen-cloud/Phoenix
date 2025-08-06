@@ -1180,6 +1180,44 @@ const getHomePage = () => `
       </section>
 
       <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeDropdown = document.getElementById('themeDropdown');
+        const themeOptions = document.querySelectorAll('.theme-option');
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('phoenix-theme') || '';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateActiveTheme(savedTheme);
+
+        // Toggle dropdown
+        themeToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          themeDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+          themeDropdown.classList.remove('show');
+        });
+
+        // Theme selection
+        themeOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            const theme = option.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('phoenix-theme', theme);
+            updateActiveTheme(theme);
+            themeDropdown.classList.remove('show');
+          });
+        });
+
+        function updateActiveTheme(theme) {
+          themeOptions.forEach(opt => opt.classList.remove('active'));
+          const activeOption = document.querySelector('[data-theme="' + theme + '"]');
+          if (activeOption) activeOption.classList.add('active');
+        }
+
         // Add interactive hover effects
         document.querySelectorAll('.learn-more-btn').forEach(btn => {
           btn.addEventListener('click', function() {
