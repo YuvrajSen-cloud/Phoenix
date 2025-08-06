@@ -628,6 +628,12 @@ const getHomePage = () => `
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           line-height: 1.6;
           color: #333;
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="%23ffffff" stroke="%23000000" stroke-width="2"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23000000" stroke-width="1"/><circle cx="16" cy="16" r="4" fill="%23000000"/></svg>') 16 16, pointer;
+        }
+
+        /* Special cursor for interactive elements */
+        a, button, .learn-more-btn, .nav-links a {
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="%23ffffff" stroke="%232563eb" stroke-width="2"/><circle cx="16" cy="16" r="8" fill="none" stroke="%232563eb" stroke-width="1"/><circle cx="16" cy="16" r="3" fill="%232563eb"/></svg>') 16 16, pointer;
         }
 
         .container {
@@ -2820,7 +2826,7 @@ const getAboutPage = () => `
               <p>Leading the mission to bridge India's skills gap through innovative education-to-employment pathways and sustainable economic mobility solutions.</p>
             </div>
             <div class="team-card">
-              <div class="team-avatar">👩‍💻</div>
+              <div class="team-avatar">👩���💻</div>
               <h3>Co-Founder & CTO</h3>
               <p class="role">Technology Leadership</p>
               <p>Building scalable technology solutions that make quality skills training accessible to underserved communities across India.</p>
