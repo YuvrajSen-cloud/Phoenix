@@ -980,6 +980,15 @@ const getHomePage = () => `
               <a href="/courses">Courses</a>
               <a href="/about">About</a>
               <a href="/contact">Contact</a>
+              <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">🎨</button>
+                <div class="theme-dropdown" id="themeDropdown">
+                  <div class="theme-option" data-theme="">Blue</div>
+                  <div class="theme-option" data-theme="green">Green</div>
+                  <div class="theme-option" data-theme="purple">Purple</div>
+                  <div class="theme-option" data-theme="dark">Dark</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
