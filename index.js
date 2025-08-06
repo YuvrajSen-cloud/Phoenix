@@ -684,13 +684,13 @@ const getHomePage = () => `
           text-decoration: none;
           border-radius: 8px;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         .cta-button:hover {
           background: #1d4ed8;
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         /* How it Works Section */
@@ -732,7 +732,7 @@ const getHomePage = () => `
 
         .step-card:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .step-icon {
@@ -784,7 +784,7 @@ const getHomePage = () => `
 
         .impact-stat:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .stat-number {
@@ -830,7 +830,7 @@ const getHomePage = () => `
 
         .course-card:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .course-image {
@@ -1197,7 +1197,7 @@ const getCourseDetailsPage = (course) => `
 
         .course-hero-image {
           text-align: center;
-          background: rgba(34, 197, 94, 0.1);
+          background: rgba(37, 99, 235, 0.1);
           border-radius: 12px;
           padding: 1rem;
           overflow: hidden;
@@ -1432,7 +1432,7 @@ const getCourseDetailsPage = (course) => `
         .enroll-btn:hover {
           background: #1d4ed8;
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .money-back {
@@ -1831,7 +1831,7 @@ const getCoursesPage = (courses) => `
         .search-input:focus {
           outline: none;
           border-color: #2563eb;
-          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .search-icon {
@@ -1866,7 +1866,7 @@ const getCoursesPage = (courses) => `
           background: #2563eb;
           color: white;
           border-color: #2563eb;
-          box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
 
         /* Course Results Section */
@@ -1912,7 +1912,7 @@ const getCoursesPage = (courses) => `
 
         .course-card:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .course-card-image {
@@ -2319,7 +2319,7 @@ const getAboutPage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, rgba(240, 253, 244, 0.9) 0%, rgba(220, 252, 231, 0.9) 50%, rgba(187, 247, 208, 0.9) 100%), url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg') center/cover;
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(219, 234, 254, 0.9) 50%, rgba(191, 219, 254, 0.9) 100%), url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg') center/cover;
           min-height: 60vh;
           display: flex;
           align-items: center;
@@ -2336,7 +2336,7 @@ const getAboutPage = () => `
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(240, 253, 244, 0.85) 0%, rgba(220, 252, 231, 0.85) 50%, rgba(187, 247, 208, 0.85) 100%);
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(219, 234, 254, 0.85) 50%, rgba(191, 219, 254, 0.85) 100%);
           z-index: 1;
         }
 
@@ -2430,7 +2430,7 @@ const getAboutPage = () => `
 
         .mission-card:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .mission-icon {
@@ -2475,7 +2475,7 @@ const getAboutPage = () => `
 
         .team-card:hover {
           border-color: #2563eb;
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         .team-avatar {
@@ -2763,7 +2763,7 @@ const getContactPage = () => `
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(135deg, rgba(240, 253, 244, 0.9) 0%, rgba(220, 252, 231, 0.9) 50%, rgba(187, 247, 208, 0.9) 100%), url('https://images.pexels.com/photos/7709255/pexels-photo-7709255.jpeg') center/cover;
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(219, 234, 254, 0.9) 50%, rgba(191, 219, 254, 0.9) 100%), url('https://images.pexels.com/photos/7709255/pexels-photo-7709255.jpeg') center/cover;
           padding: 120px 0 60px;
           text-align: center;
           position: relative;
@@ -2776,7 +2776,7 @@ const getContactPage = () => `
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(240, 253, 244, 0.85) 0%, rgba(220, 252, 231, 0.85) 50%, rgba(187, 247, 208, 0.85) 100%);
+          background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(219, 234, 254, 0.85) 50%, rgba(191, 219, 254, 0.85) 100%);
           z-index: 1;
         }
 
@@ -2860,7 +2860,7 @@ const getContactPage = () => `
         .form-group textarea:focus {
           outline: none;
           border-color: #2563eb;
-          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .form-group textarea {
@@ -2890,7 +2890,7 @@ const getContactPage = () => `
         .submit-btn:hover {
           background: #1d4ed8;
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .submit-btn:disabled {
