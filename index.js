@@ -2245,6 +2245,1003 @@ const getCoursesPage = (courses) => `
     </html>
 `;
 
+const getAboutPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Phoenix - Bridging India's Skills Gap</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: #f8fafc;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: white;
+          padding: 1rem 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #22c55e;
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: #22c55e;
+        }
+
+        .nav-links a.active {
+          color: #22c55e;
+          font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          min-height: 60vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 80px;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          color: #1f2937;
+        }
+
+        .hero-content .highlight {
+          color: #22c55e;
+        }
+
+        .hero-content p {
+          font-size: 1.2rem;
+          color: #6b7280;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: 80px 0;
+          background: white;
+        }
+
+        .content-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+          margin-bottom: 4rem;
+        }
+
+        .content-block h2 {
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          color: #374151;
+        }
+
+        .content-block p {
+          font-size: 1.1rem;
+          color: #6b7280;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+        }
+
+        .content-image {
+          text-align: center;
+          background: #f0fdf4;
+          border-radius: 12px;
+          padding: 2rem;
+          font-size: 4rem;
+          color: #22c55e;
+        }
+
+        /* Mission Section */
+        .mission-section {
+          background: #f9fafb;
+          padding: 80px 0;
+        }
+
+        .mission-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .mission-card {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+          border-color: #22c55e;
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+        }
+
+        .mission-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          color: #22c55e;
+        }
+
+        .mission-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .mission-card p {
+          color: #6b7280;
+          line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-section {
+          padding: 80px 0;
+          background: white;
+        }
+
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .team-card {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+          border-color: #22c55e;
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+        }
+
+        .team-avatar {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          margin: 0 auto 1rem;
+        }
+
+        .team-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .team-card .role {
+          color: #22c55e;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+
+        .team-card p {
+          color: #6b7280;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        /* Section Title */
+        .section-title {
+          text-align: center;
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #374151;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1rem;
+          color: #6b7280;
+          margin-bottom: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2.5rem;
+          }
+
+          .content-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .content-image {
+            order: -1;
+          }
+
+          .mission-grid,
+          .team-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about" class="active">About</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Empowering Dreams, <br><span class="highlight">Creating Futures</span></h1>
+            <p>Phoenix is bridging India's skills gap by providing accessible, industry-vetted training that creates direct pathways from learning to meaningful employment opportunities.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container">
+          <div class="content-grid">
+            <div class="content-block">
+              <h2>Our Mission</h2>
+              <p>To bridge the gap between education and opportunity, empowering every individual with dignity and skills that lead to sustainable economic mobility.</p>
+              <p>We believe that quality skills training should be accessible to everyone, regardless of their background or financial situation. Through our platform, we're creating a direct pipeline between learners and industries that need skilled workers.</p>
+            </div>
+            <div class="content-image">
+              🎯
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-image">
+              📊
+            </div>
+            <div class="content-block">
+              <h2>The Problem We're Solving</h2>
+              <p>Rajasthan faces a significant skills gap challenge. Despite having a young, eager workforce, many individuals lack access to industry-relevant training that leads to meaningful employment.</p>
+              <p>Traditional education systems often fail to provide practical, job-ready skills. We're changing this by partnering directly with industries to understand their needs and design training programs that guarantee employment opportunities.</p>
+            </div>
+          </div>
+
+          <div class="content-grid">
+            <div class="content-block">
+              <h2>Our Solution</h2>
+              <p>Phoenix combines the accessibility of mobile learning with hands-on practical training to create a comprehensive skills development ecosystem.</p>
+              <p>Our hybrid approach ensures learners get both theoretical knowledge and real-world application, while our industry partnerships guarantee direct employment pathways upon successful completion.</p>
+            </div>
+            <div class="content-image">
+              💡
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission-section">
+        <div class="container">
+          <h2 class="section-title">Our Values</h2>
+          <p class="section-subtitle">The principles that guide everything we do</p>
+          <div class="mission-grid">
+            <div class="mission-card">
+              <div class="mission-icon">🤝</div>
+              <h3>Dignity Through Skills</h3>
+              <p>We believe everyone deserves access to quality education and meaningful work opportunities that provide economic dignity.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🌍</div>
+              <h3>Industry Relevance</h3>
+              <p>Our courses are designed in partnership with employers to ensure they meet real market demands and lead to actual jobs.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">📱</div>
+              <h3>Accessible Technology</h3>
+              <p>We use mobile-first technology to make learning accessible to everyone, regardless of location or socioeconomic background.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🎯</div>
+              <h3>Results-Driven</h3>
+              <p>Success is measured by employment outcomes, not just course completion. We're committed to real economic impact.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <div class="container">
+          <h2 class="section-title">Our Founding Team</h2>
+          <p class="section-subtitle">Passionate individuals committed to creating systemic change</p>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar">👨‍💼</div>
+              <h3>Founder & CEO</h3>
+              <p class="role">Strategic Vision</p>
+              <p>Leading the mission to bridge India's skills gap through innovative education-to-employment pathways and sustainable economic mobility solutions.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👩‍💻</div>
+              <h3>Co-Founder & CTO</h3>
+              <p class="role">Technology Leadership</p>
+              <p>Building scalable technology solutions that make quality skills training accessible to underserved communities across India.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👨‍🏫</div>
+              <h3>Head of Curriculum</h3>
+              <p class="role">Educational Excellence</p>
+              <p>Designing industry-vetted training programs that combine practical skills with employment readiness for maximum impact.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">👩‍🤝‍👨</div>
+              <h3>Partnerships Director</h3>
+              <p class="role">Industry Relations</p>
+              <p>Building strategic partnerships with employers and industry leaders to create direct employment pathways for our learners.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+    </html>
+`;
+
+const getContactPage = () => `
+    <!DOCTYPE html>
+    <html lang="hi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact Phoenix - Get in Touch</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: #f8fafc;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+          background: white;
+          padding: 1rem 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .nav-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #22c55e;
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: #22c55e;
+        }
+
+        .nav-links a.active {
+          color: #22c55e;
+          font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+          padding: 120px 0 60px;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: #1f2937;
+        }
+
+        .hero-content .highlight {
+          color: #22c55e;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+          color: #6b7280;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: 80px 0;
+          background: white;
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: start;
+        }
+
+        /* Contact Form */
+        .contact-form {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: #374151;
+        }
+
+        .form-group {
+          margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: #374151;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          width: 100%;
+          padding: 12px 15px;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+          font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: #22c55e;
+          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+
+        .form-group textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .submit-btn {
+          background: #22c55e;
+          color: white;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          width: 100%;
+        }
+
+        .submit-btn:hover {
+          background: #16a34a;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        .submit-btn:disabled {
+          background: #9ca3af;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
+        }
+
+        /* Contact Info */
+        .contact-info {
+          padding: 2rem;
+        }
+
+        .contact-info h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: #374151;
+        }
+
+        .info-cards {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .info-card {
+          background: #f9fafb;
+          padding: 1.5rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+        }
+
+        .info-card .icon {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          color: #22c55e;
+        }
+
+        .info-card h3 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .info-card p {
+          color: #6b7280;
+          margin-bottom: 0.5rem;
+        }
+
+        .info-card a {
+          color: #22c55e;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        .info-card a:hover {
+          text-decoration: underline;
+        }
+
+        /* Success Message */
+        .success-message {
+          background: #d1fae5;
+          border: 1px solid #a7f3d0;
+          color: #065f46;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          display: none;
+        }
+
+        .success-message.show {
+          display: block;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+          background: #f9fafb;
+          padding: 80px 0;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 2.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #374151;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1rem;
+          color: #6b7280;
+          margin-bottom: 4rem;
+        }
+
+        .faq-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+        }
+
+        .faq-card {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          border: 1px solid #f3f4f6;
+        }
+
+        .faq-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .faq-card p {
+          color: #6b7280;
+          line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2.2rem;
+          }
+
+          .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+
+          .faq-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .nav-links {
+            display: none;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="logo">Phoenix</a>
+            <div class="nav-links">
+              <a href="/">Home</a>
+              <a href="/courses">Courses</a>
+              <a href="/about">About</a>
+              <a href="/contact" class="active">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Get in <span class="highlight">Touch</span></h1>
+            <p>Have questions about our programs? Interested in partnering with us? We'd love to hear from you and help you take the next step in your skills journey.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+              <h2>Send us a Message</h2>
+              <div class="success-message" id="successMessage">
+                ✅ Thank you for your message! We'll get back to you within 24 hours.
+              </div>
+              <form id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                  <label for="inquiryType">Type of Inquiry *</label>
+                  <select id="inquiryType" name="inquiryType" required>
+                    <option value="">Select an option</option>
+                    <option value="course-info">Course Information</option>
+                    <option value="enrollment">Enrollment Questions</option>
+                    <option value="partnership">Partnership Opportunities</option>
+                    <option value="employer">Employer/Hiring Partner</option>
+                    <option value="media">Media Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <h2>Contact Information</h2>
+              <div class="info-cards">
+                <div class="info-card">
+                  <div class="icon">📧</div>
+                  <h3>Email Us</h3>
+                  <p>For general inquiries:</p>
+                  <a href="mailto:info@phoenix-skills.com">info@phoenix-skills.com</a>
+                  <p>For partnerships:</p>
+                  <a href="mailto:partnerships@phoenix-skills.com">partnerships@phoenix-skills.com</a>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">📱</div>
+                  <h3>Call Us</h3>
+                  <p>Student Support Helpline:</p>
+                  <a href="tel:+911234567890">+91 12345 67890</a>
+                  <p>Partnership Inquiries:</p>
+                  <a href="tel:+911234567891">+91 12345 67891</a>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">📍</div>
+                  <h3>Visit Us</h3>
+                  <p>Phoenix Skills Development Center<br>
+                  Udaipur, Rajasthan 313001<br>
+                  India</p>
+                </div>
+
+                <div class="info-card">
+                  <div class="icon">🕒</div>
+                  <h3>Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM IST<br>
+                  Saturday: 10:00 AM - 4:00 PM IST<br>
+                  Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Quick answers to common questions</p>
+          <div class="faq-grid">
+            <div class="faq-card">
+              <h3>How do I enroll in a course?</h3>
+              <p>Browse our course catalog, select a program that interests you, and click "Enroll Now". You'll be guided through the registration process step by step.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Are there any prerequisites?</h3>
+              <p>Most of our courses are designed for beginners. Specific prerequisites, if any, are listed on each course page. We believe in making skills training accessible to everyone.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Do you offer job placement assistance?</h3>
+              <p>Yes! We have partnerships with over 50 companies and provide direct employment pathways for successful course completers. Our goal is employment, not just education.</p>
+            </div>
+            <div class="faq-card">
+              <h3>What devices do I need for online learning?</h3>
+              <p>Our platform works on smartphones, tablets, and computers. Most courses can be completed using just a mobile phone, making learning accessible anywhere.</p>
+            </div>
+            <div class="faq-card">
+              <h3>Is financial assistance available?</h3>
+              <p>We offer Income Share Agreements (ISAs) for qualifying programs, meaning you pay nothing upfront and only pay after you get a job. Contact us to learn more.</p>
+            </div>
+            <div class="faq-card">
+              <h3>How can my organization partner with Phoenix?</h3>
+              <p>We're always looking for industry partners, educational institutions, and employers. Email partnerships@phoenix-skills.com to discuss collaboration opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const submitBtn = document.getElementById('submitBtn');
+          const successMessage = document.getElementById('successMessage');
+
+          // Disable submit button and show loading state
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+
+          // Simulate form submission (replace with actual form handling)
+          setTimeout(() => {
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Reset form
+            this.reset();
+
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              successMessage.classList.remove('show');
+            }, 5000);
+
+            // Scroll to top of form to show success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+          }, 2000);
+        });
+
+        // Auto-populate subject based on inquiry type
+        document.getElementById('inquiryType').addEventListener('change', function() {
+          const subjectField = document.getElementById('subject');
+          const inquiryType = this.value;
+
+          const subjectMappings = {
+            'course-info': 'Course Information Request',
+            'enrollment': 'Enrollment Question',
+            'partnership': 'Partnership Opportunity',
+            'employer': 'Employer/Hiring Partner Inquiry',
+            'media': 'Media Inquiry',
+            'support': 'Technical Support Request',
+            'other': ''
+          };
+
+          if (subjectMappings[inquiryType] !== undefined) {
+            subjectField.value = subjectMappings[inquiryType];
+          }
+        });
+
+        // Form validation enhancements
+        const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+
+        requiredFields.forEach(field => {
+          field.addEventListener('blur', function() {
+            if (!this.value.trim()) {
+              this.style.borderColor = '#ef4444';
+            } else {
+              this.style.borderColor = '#22c55e';
+            }
+          });
+
+          field.addEventListener('input', function() {
+            if (this.value.trim()) {
+              this.style.borderColor = '#22c55e';
+            }
+          });
+        });
+
+        // Email validation
+        document.getElementById('email').addEventListener('input', function() {
+          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+          if (this.value && !emailRegex.test(this.value)) {
+            this.style.borderColor = '#ef4444';
+          } else if (this.value) {
+            this.style.borderColor = '#22c55e';
+          }
+        });
+      </script>
+    </body>
+    </html>
+`;
+
 const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
